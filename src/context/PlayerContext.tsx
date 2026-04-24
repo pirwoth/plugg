@@ -1,4 +1,4 @@
-import { createContext, useCallback, useContext, useMemo, useState, ReactNode } from "react";
+import { createContext, useCallback, useContext, useMemo, useState, ReactNode, useRef, useEffect } from "react";
 import { Song, mockSongs } from "@/lib/mock-data";
 
 interface PlayerContextValue {
@@ -28,6 +28,18 @@ export const PlayerProvider = ({ children }: { children: ReactNode }) => {
   const [showFullPlayer, setShowFullPlayer] = useState(false);
   const [likedSongs, setLikedSongs] = useState<Set<string>>(new Set());
   const [followedArtists, setFollowedArtists] = useState<Set<string>>(new Set());
+  
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.play().catch(e => console.error("Audio playback failed:", e));
+      } else {
+        audioRef.current.pause();
+      }
+    }
+  }, [isPlaying, currentSong]);
 
   const play = useCallback((song: Song) => {
     setCurrentSong((cur) => {
@@ -113,7 +125,19 @@ export const PlayerProvider = ({ children }: { children: ReactNode }) => {
     };
   }, [currentSong, isPlaying, showFullPlayer, likedSongs, followedArtists, play, toggle, close, next, prev, toggleLike, toggleFollow]);
 
-  return <PlayerContext.Provider value={value}>{children}</PlayerContext.Provider>;
+  return (
+    <PlayerContext.Provider value={value}>
+      {children}
+      {currentSong && (
+        <audio 
+          ref={audioRef} 
+          src={currentSong.audioUrl} 
+          onEnded={next} 
+          autoPlay={isPlaying}
+        />
+      )}
+    </PlayerContext.Provider>
+  );
 };
 
 export const usePlayer = () => {

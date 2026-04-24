@@ -40,7 +40,10 @@ function mapToSong(dbSong: DbSong, dbArtist: DbArtist | null | undefined, dbStat
     likes: 0,
     timestamp: new Date(dbSong.first_seen_at || Date.now()),
     duration: 180, // Stub duration
-    audioUrl: dbSong.page_url || "",
+    audioUrl: (() => {
+      const match = dbSong.page_url?.match(/\/audio\/(\d+)/);
+      return match ? `https://www.westnilebiz.com/download?uh=${match[1]}` : (dbSong.page_url || "");
+    })(),
     genre: (dbArtist?.genre?.toLowerCase() as Genre) || "afrobeats",
     coverUrl: dbSong.cover_url || undefined,
     // Fallback gradient colors 
@@ -83,19 +86,22 @@ export function useAllSongs() {
 // Derived queries
 export function useTrendingSongs() {
   const { data: songs, ...rest } = useAllSongs();
+  // Trending -> plays
   const trending = songs ? [...songs].sort((a, b) => b.plays - a.plays).slice(0, 10) : [];
   return { songs: trending, ...rest };
 }
 
 export function useNewSongs() {
   const { data: songs, ...rest } = useAllSongs();
+  // New Upload -> timestamp
   const newS = songs ? [...songs].sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime()).slice(0, 10) : [];
   return { songs: newS, ...rest };
 }
 
 export function useTopHits() {
   const { data: songs, ...rest } = useAllSongs();
-  const hits = songs ? [...songs].sort((a, b) => b.plays - a.plays).slice(0, 10) : [];
+  // Hits -> downloads
+  const hits = songs ? [...songs].sort((a, b) => b.downloads - a.downloads).slice(0, 10) : [];
   return { songs: hits, ...rest };
 }
 
