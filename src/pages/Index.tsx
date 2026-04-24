@@ -4,7 +4,8 @@ import SongSection from "@/components/SongSection";
 import GenreChips from "@/components/GenreChips";
 import OnboardingCarousel from "@/components/OnboardingCarousel";
 import TrendingHero from "@/components/TrendingHero";
-import { trendingSongs, newSongs, topHits, songsByGenre, Genre } from "@/lib/mock-data";
+import { Genre } from "@/lib/mock-data";
+import { useTrendingSongs, useNewSongs, useTopHits, useSongsByGenre, useAllSongs } from "@/hooks/useSongs";
 import { usePlayer } from "@/context/PlayerContext";
 
 const ONBOARDED_KEY = "plugg.onboarded.v1";
@@ -12,14 +13,13 @@ const ONBOARDED_KEY = "plugg.onboarded.v1";
 const Index = () => {
   const { currentSong, isPlaying, play } = usePlayer();
   const [genre, setGenre] = useState<Genre | "all">("all");
-  const [loading, setLoading] = useState(true);
   const [showOnboarding, setShowOnboarding] = useState(false);
+  const { songs: trendingSongs, isLoading: trendingLoading } = useTrendingSongs();
+  const { songs: newSongs, isLoading: newLoading } = useNewSongs();
+  const { songs: topHits, isLoading: topLoading } = useTopHits();
+  const { songs: genreSongs } = useSongsByGenre(genre);
 
-  // Simulated initial loading shimmer
-  useEffect(() => {
-    const t = setTimeout(() => setLoading(false), 700);
-    return () => clearTimeout(t);
-  }, []);
+  const mainLoading = trendingLoading || newLoading || topLoading;
 
   // First-launch onboarding
   useEffect(() => {
@@ -46,7 +46,7 @@ const Index = () => {
         currentSong={currentSong}
         isPlaying={isPlaying}
         onPlay={play}
-        loading={loading}
+        loading={mainLoading}
         emptyMessage="No trending songs in this genre yet."
       />
       <SongSection
@@ -55,7 +55,7 @@ const Index = () => {
         currentSong={currentSong}
         isPlaying={isPlaying}
         onPlay={play}
-        loading={loading}
+        loading={mainLoading}
         emptyMessage="No fresh uploads here yet — try All."
       />
       <SongSection
@@ -64,14 +64,14 @@ const Index = () => {
         currentSong={currentSong}
         isPlaying={isPlaying}
         onPlay={play}
-        loading={loading}
+        loading={mainLoading}
         emptyMessage="No hits in this genre yet."
       />
       {/* Surface songs for the picked genre when filters hide top lists */}
-      {genre !== "all" && songsByGenre(genre).length > 0 && (
+      {genre !== "all" && genreSongs.length > 0 && (
         <SongSection
           title={`More in ${genre}`}
-          songs={songsByGenre(genre)}
+          songs={genreSongs}
           currentSong={currentSong}
           isPlaying={isPlaying}
           onPlay={play}

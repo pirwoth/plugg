@@ -12,22 +12,26 @@ interface SongCoverProps {
  * cover gradient + the first character of the title as a typographic mark.
  */
 const SongCover = ({ song, size = 48, className = "", rounded = "lg" }: SongCoverProps) => {
-  const initial = song.title.charAt(0).toUpperCase();
+  const initial = (song.title || "Unknown").charAt(0).toUpperCase();
   return (
     <div
-      style={{
+      style={!song.coverUrl ? {
         width: size,
         height: size,
-        backgroundImage: `linear-gradient(135deg, ${song.cover.from}, ${song.cover.to})`,
-      }}
-      className={`relative shrink-0 overflow-hidden flex items-center justify-center text-white shadow-md rounded-${rounded} ${className}`}
+        backgroundImage: `linear-gradient(135deg, ${song.cover?.from || '#000'}, ${song.cover?.to || '#333'})`,
+      } : { width: size, height: size }}
+      className={`relative shrink-0 overflow-hidden flex items-center justify-center text-white shadow-md rounded-${rounded} ${className} bg-zinc-800`}
     >
-      <span
+      {song.coverUrl ? (
+        <img src={song.coverUrl} alt={song.title} className="w-full h-full object-cover" />
+      ) : (
+        <span
         className="font-display font-black tracking-tight drop-shadow-sm select-none"
         style={{ fontSize: Math.max(12, size * 0.42) }}
       >
         {initial}
-      </span>
+        </span>
+      )}
       {/* subtle vinyl shine */}
       <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-black/20 pointer-events-none" />
     </div>

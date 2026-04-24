@@ -15,6 +15,7 @@ export interface Song {
   genre: Genre;
   /** Two HSL colors used to generate a deterministic cover gradient */
   cover: { from: string; to: string };
+  coverUrl?: string;
 }
 
 export interface Artist {
