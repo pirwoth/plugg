@@ -2,8 +2,30 @@ import { useQuery } from '@tanstack/react-query';
 import { supabase } from '../lib/supabase';
 import { Song, Genre } from '../lib/mock-data';
 
+interface DbSong {
+  id: string | number;
+  title?: string;
+  first_seen_at?: string;
+  page_url?: string;
+  cover_url?: string;
+  song_stats?: DbStats[];
+  artists?: DbArtist;
+}
+
+interface DbArtist {
+  name?: string;
+  image_url?: string;
+  genre?: string;
+}
+
+interface DbStats {
+  plays?: number;
+  downloads?: number;
+  date?: string;
+}
+
 // Helper to map DB rows to UI types
-function mapToSong(dbSong: any, dbArtist: any, dbStats: any): Song {
+function mapToSong(dbSong: DbSong, dbArtist: DbArtist | null | undefined, dbStats: DbStats | null | undefined): Song {
   // If the title is missing, fallback gracefully
   const title = dbSong.title || 'Unknown Title';
   const artistName = dbArtist?.name || 'Unknown Artist';
@@ -18,9 +40,9 @@ function mapToSong(dbSong: any, dbArtist: any, dbStats: any): Song {
     likes: 0,
     timestamp: new Date(dbSong.first_seen_at || Date.now()),
     duration: 180, // Stub duration
-    audioUrl: dbSong.page_url,
+    audioUrl: dbSong.page_url || "",
     genre: (dbArtist?.genre?.toLowerCase() as Genre) || "afrobeats",
-    coverUrl: dbSong.cover_url,
+    coverUrl: dbSong.cover_url || undefined,
     // Fallback gradient colors 
     cover: { from: 'hsl(210, 70%, 50%)', to: 'hsl(215, 65%, 35%)' }
   };
@@ -46,10 +68,10 @@ export function useAllSongs() {
         throw error;
       }
 
-      const allSongs = data.map((row: any) => {
+      const allSongs = (data as DbSong[]).map((row) => {
         // Grab the most recent stats snapshot
         const statsArray = Array.isArray(row.song_stats) ? row.song_stats : [];
-        const latestStats = statsArray.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())[0] || { plays: 0 };
+        const latestStats = statsArray.sort((a, b) => new Date(b.date || 0).getTime() - new Date(a.date || 0).getTime())[0] || { plays: 0 };
         return mapToSong(row, row.artists, latestStats);
       });
 
