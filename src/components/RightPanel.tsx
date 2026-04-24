@@ -1,6 +1,6 @@
 import { Search, Music } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { mockArtists, trendingSongs } from "@/lib/mock-data";
+import { useTrendingSongs, useAllSongs } from "@/hooks/useSongs";
 
 interface RightPanelProps {
   onSearch: () => void;
@@ -14,8 +14,29 @@ function formatCount(n: number): string {
 
 const RightPanel = ({ onSearch }: RightPanelProps) => {
   const navigate = useNavigate();
-  const suggestedArtists = mockArtists.slice(0, 5);
-  const topTrending = trendingSongs.slice(0, 5);
+  // Fetch live trending songs instead of mock data
+  const { songs: liveTrendingSongs } = useTrendingSongs();
+  const topTrending = liveTrendingSongs ? liveTrendingSongs.slice(0, 5) : [];
+
+  // Derive top 5 live artists from all songs
+  const { data: allSongs } = useAllSongs();
+  const suggestedArtists = (() => {
+    if (!allSongs) return [];
+    const seen = new Set();
+    const artists = [];
+    for (const song of allSongs) {
+      if (!seen.has(song.artistName)) {
+        seen.add(song.artistName);
+        artists.push({
+          id: song.artistName, 
+          name: song.artistName,
+          username: song.artistName.toLowerCase().replace(/\s/g, ""),
+        });
+      }
+      if (artists.length >= 5) break;
+    }
+    return artists;
+  })();
 
   return (
     <aside className="sticky top-0 h-screen overflow-y-auto py-4 pl-2 space-y-4">
