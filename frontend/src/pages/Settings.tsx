@@ -1,5 +1,4 @@
-import { ArrowLeft, Moon, Bell, Globe, Shield, LogOut, ChevronRight, Sun, Monitor } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { Moon, Bell, Globe, Shield, LogOut, ChevronRight, Sun, Monitor, Mail, MessageCircle } from "lucide-react";
 import { useTheme } from "next-themes";
 import AppShell from "@/components/AppShell";
 import { useState } from "react";
@@ -23,10 +22,8 @@ const Toggle = ({ on, onChange, ariaLabel }: { on: boolean; onChange: () => void
 );
 
 const Settings = () => {
-  const navigate = useNavigate();
   const { theme, setTheme } = useTheme();
   const [notifications, setNotifications] = useState(true);
-  const [reducedMotion, setReducedMotion] = useState(false);
 
   const themes = [
     { id: "light",  label: "Light",  icon: Sun },
@@ -35,14 +32,7 @@ const Settings = () => {
   ] as const;
 
   return (
-    <AppShell
-      title="Settings"
-      titleLeading={
-        <button onClick={() => navigate(-1)} className="p-1 text-muted-foreground hover:text-foreground" aria-label="Back">
-          <ArrowLeft size={20} />
-        </button>
-      }
-    >
+    <div className="animate-in fade-in duration-500">
       <div className="divide-y divide-border">
         {/* Appearance */}
         <section className="px-5 py-5 space-y-5">
@@ -70,10 +60,7 @@ const Settings = () => {
             </div>
           </div>
 
-          <div className="flex items-center justify-between">
-            <span className="text-sm text-foreground">Reduce motion</span>
-            <Toggle on={reducedMotion} onChange={() => setReducedMotion((m) => !m)} ariaLabel="Reduce motion" />
-          </div>
+
         </section>
 
         {/* Notifications */}
@@ -95,12 +82,7 @@ const Settings = () => {
             <span className="flex items-center gap-3 text-sm text-foreground mb-2">
               <Globe size={18} /> Language
             </span>
-            <div className="flex items-center gap-2 flex-wrap">
-              <span className="px-3 py-1.5 rounded-full text-xs font-semibold border border-primary text-primary bg-primary/10">
-                English
-              </span>
-              <span className="text-xs text-muted-foreground">More languages coming soon</span>
-            </div>
+            <span className="text-xs text-muted-foreground">Currently English · More languages coming soon</span>
           </div>
 
           <button
@@ -124,11 +106,34 @@ const Settings = () => {
           </button>
         </section>
 
+        {/* About Developer */}
+        <section className="px-5 py-5 space-y-3">
+          <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">About Developer</h3>
+          <div className="flex items-center gap-4 pt-1">
+            <a
+              href="mailto:pirwoth.me@gmail.com"
+              aria-label="Email developer"
+              className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary/20 active:scale-95 transition-all"
+            >
+              <Mail size={20} />
+            </a>
+            <a
+              href="https://wa.me/256790143564"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="WhatsApp developer"
+              className="w-11 h-11 rounded-full bg-[#25D366]/10 flex items-center justify-center text-[#25D366] hover:bg-[#25D366]/20 active:scale-95 transition-all"
+            >
+              <MessageCircle size={20} />
+            </a>
+          </div>
+        </section>
+
         <p className="text-xs text-muted-foreground px-5 py-6">
           plugg © {new Date().getFullYear()} · v0.2
         </p>
       </div>
-    </AppShell>
+    </div>
   );
 };
 

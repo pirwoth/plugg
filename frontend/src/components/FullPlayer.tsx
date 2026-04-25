@@ -27,7 +27,10 @@ function formatCount(n: number): string {
   return n.toString();
 }
 
+import { usePlayer } from "@/context/PlayerContext";
+
 const FullPlayer = ({ song, isPlaying, onToggle, onNext, onPrev, onLike, onClose }: FullPlayerProps) => {
+  const { currentTime, duration, seek, volume, setVolume, isShuffle, isRepeat, toggleShuffle, toggleRepeat } = usePlayer();
   const navigate = useNavigate();
   const [tipOpen, setTipOpen] = useState(false);
 
@@ -77,8 +80,8 @@ const FullPlayer = ({ song, isPlaying, onToggle, onNext, onPrev, onLike, onClose
       {/* ============ MOBILE LAYOUT ============ */}
       <div className="lg:hidden flex-1 flex flex-col items-center justify-center px-8 gap-6">
         <img
-          src={song.artistAvatar}
-          alt={song.artistName}
+          src={song.coverUrl || song.artistAvatar}
+          alt={song.title}
           className="w-40 h-40 rounded-2xl shadow-2xl object-cover"
         />
         <div className="text-center">
@@ -93,12 +96,22 @@ const FullPlayer = ({ song, isPlaying, onToggle, onNext, onPrev, onLike, onClose
         </div>
 
         <div className="w-full">
-          <div className="h-1 bg-secondary rounded-full overflow-hidden">
-            <div className="h-full w-1/3 bg-primary rounded-full" />
+          <div 
+            className="h-2 bg-secondary rounded-full overflow-hidden cursor-pointer"
+            onClick={(e) => {
+              const rect = e.currentTarget.getBoundingClientRect();
+              const ratio = (e.clientX - rect.left) / rect.width;
+              seek(ratio * (duration || 1));
+            }}
+          >
+            <div 
+              className="h-full bg-primary rounded-full transition-all" 
+              style={{ width: `${Math.min(100, (currentTime / (duration || 1)) * 100)}%` }} 
+            />
           </div>
           <div className="flex justify-between text-xs text-muted-foreground mt-1">
-            <span>1:12</span>
-            <span>{formatDuration(song.duration)}</span>
+            <span>{formatDuration(Math.floor(currentTime))}</span>
+            <span>{formatDuration(Math.floor(duration || song.duration))}</span>
           </div>
         </div>
 
@@ -131,7 +144,7 @@ const FullPlayer = ({ song, isPlaying, onToggle, onNext, onPrev, onLike, onClose
             <span className="text-sm">Share</span>
           </button>
           <button
-            onClick={() => setTipOpen(true)}
+            onClick={() => toast({ title: "Coming soon", description: "Tipping via MTN MoMo and Airtel is currently under development!" })}
             className="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/40 text-primary hover:bg-primary/10 transition-colors"
           >
             <Gift size={18} />
@@ -146,7 +159,7 @@ const FullPlayer = ({ song, isPlaying, onToggle, onNext, onPrev, onLike, onClose
         <div className="relative flex-1 flex items-center justify-center p-12 overflow-hidden">
           {/* Backdrop blur */}
           <div className="absolute inset-0">
-            <img src={song.artistAvatar} alt="" className="w-full h-full object-cover blur-3xl opacity-30 scale-110" />
+            <img src={song.coverUrl || song.artistAvatar} alt="" className="w-full h-full object-cover blur-3xl opacity-30 scale-110" />
             <div className="absolute inset-0 bg-background/60" />
           </div>
           {/* Foreground art */}
@@ -155,8 +168,8 @@ const FullPlayer = ({ song, isPlaying, onToggle, onNext, onPrev, onLike, onClose
             initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.4 }}
-            src={song.artistAvatar}
-            alt={song.artistName}
+            src={song.coverUrl || song.artistAvatar}
+            alt={song.title}
             className="relative w-[min(60vh,28rem)] h-[min(60vh,28rem)] rounded-3xl shadow-2xl object-cover ring-1 ring-border"
           />
         </div>
@@ -198,7 +211,7 @@ const FullPlayer = ({ song, isPlaying, onToggle, onNext, onPrev, onLike, onClose
                 <span className="text-sm font-medium">Share</span>
               </button>
               <button
-                onClick={() => setTipOpen(true)}
+                onClick={() => toast({ title: "Coming soon", description: "Tipping via MTN MoMo and Airtel is currently under development!" })}
                 className="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/40 text-primary hover:bg-primary/10 transition-colors"
               >
                 <Gift size={16} />
@@ -210,15 +223,25 @@ const FullPlayer = ({ song, isPlaying, onToggle, onNext, onPrev, onLike, onClose
           {/* Bottom bar: progress + transport */}
           <div className="border-t border-border px-8 py-5 space-y-3">
             <div className="flex items-center gap-3">
-              <span className="text-[11px] text-muted-foreground tabular-nums w-9 text-right">1:12</span>
-              <div className="flex-1 h-1 bg-secondary rounded-full overflow-hidden">
-                <div className="h-full w-1/3 bg-primary rounded-full" />
+              <span className="text-[11px] text-muted-foreground tabular-nums w-9 text-right">{formatDuration(Math.floor(currentTime))}</span>
+              <div 
+                className="flex-1 h-1 bg-secondary rounded-full overflow-hidden cursor-pointer group"
+                onClick={(e) => {
+                  const rect = e.currentTarget.getBoundingClientRect();
+                  const ratio = (e.clientX - rect.left) / rect.width;
+                  seek(ratio * (duration || 1));
+                }}
+              >
+                <div 
+                  className="h-full bg-primary rounded-full transition-all group-hover:bg-foreground" 
+                  style={{ width: `${Math.min(100, (currentTime / (duration || 1)) * 100)}%` }}
+                />
               </div>
-              <span className="text-[11px] text-muted-foreground tabular-nums w-9">{formatDuration(song.duration)}</span>
+              <span className="text-[11px] text-muted-foreground tabular-nums w-9">{formatDuration(Math.floor(duration || song.duration))}</span>
             </div>
 
             <div className="flex items-center justify-between">
-              <button className="text-muted-foreground hover:text-foreground" aria-label="Shuffle">
+              <button onClick={toggleShuffle} className={isShuffle ? "text-primary" : "text-muted-foreground hover:text-foreground"} aria-label="Shuffle">
                 <Shuffle size={18} />
               </button>
               <div className="flex items-center gap-5">
@@ -236,14 +259,23 @@ const FullPlayer = ({ song, isPlaying, onToggle, onNext, onPrev, onLike, onClose
                   <SkipForward size={22} fill="currentColor" />
                 </button>
               </div>
-              <button className="text-muted-foreground hover:text-foreground" aria-label="Repeat">
+              <button onClick={toggleRepeat} className={isRepeat ? "text-primary" : "text-muted-foreground hover:text-foreground"} aria-label="Repeat">
                 <Repeat size={18} />
               </button>
             </div>
 
             <div className="flex items-center gap-2 text-muted-foreground">
               <Volume2 size={14} />
-              <input type="range" min={0} max={100} defaultValue={70} className="flex-1 h-1 accent-primary" aria-label="Volume" />
+              <input 
+                type="range" 
+                min={0} 
+                max={1} 
+                step={0.01}
+                value={volume} 
+                onChange={(e) => setVolume(Number(e.target.value))}
+                className="flex-1 h-1 accent-primary cursor-pointer" 
+                aria-label="Volume" 
+              />
             </div>
           </div>
         </div>

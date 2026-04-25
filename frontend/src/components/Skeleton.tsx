@@ -38,3 +38,21 @@ export const ArtistCardSkeleton = () => (
     <Skeleton className="h-2.5 w-12" />
   </div>
 );
+
+export const TrendingHeroSkeleton = () => (
+  <section className="px-4 pt-4 pb-2">
+    <div className="flex items-baseline justify-between mb-3">
+      <Skeleton className="h-6 w-40" />
+      <Skeleton className="h-3 w-12" />
+    </div>
+    <div className="flex gap-3 overflow-hidden -mx-4 px-4">
+      {Array.from({ length: 3 }).map((_, i) => (
+        <div key={i} className="shrink-0 w-44 sm:w-52">
+          <Skeleton className="w-44 h-44 sm:w-52 sm:h-52 rounded-2xl shadow-lg" />
+          <Skeleton className="h-3.5 w-3/4 mt-3" />
+          <Skeleton className="h-3 w-1/2 mt-1.5" />
+        </div>
+      ))}
+    </div>
+  </section>
+);

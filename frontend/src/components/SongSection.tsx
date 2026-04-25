@@ -10,7 +10,7 @@ interface SongSectionProps {
   songs: Song[];
   currentSong: Song | null;
   isPlaying: boolean;
-  onPlay: (song: Song) => void;
+  onPlay: (song: Song, playlist?: Song[]) => void;
   loading?: boolean;
   emptyMessage?: string;
 }
@@ -45,7 +45,7 @@ const SongSection = ({
               index={i}
               rank={i + 1}
               isPlaying={isPlaying && currentSong?.id === song.id}
-              onPlay={() => onPlay(song)}
+              onPlay={() => onPlay(song, songs)}
             />
           ))}
         </div>

@@ -22,12 +22,8 @@ function formatTime(sec: number): string {
 }
 
 const MiniPlayer = ({ song, isPlaying, onToggle, onClose, onExpand }: MiniPlayerProps) => {
-  const { next, prev, toggleLike } = usePlayer();
+  const { next, prev, toggleLike, currentTime, duration, seek, volume, setVolume, isShuffle, isRepeat, toggleShuffle, toggleRepeat } = usePlayer();
   const navigate = useNavigate();
-  const [progress, setProgress] = useState(30);
-  const [volume, setVolume] = useState(70);
-  const [shuffle, setShuffle] = useState(false);
-  const [repeat, setRepeat] = useState(false);
 
   const goToArtist = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -36,21 +32,8 @@ const MiniPlayer = ({ song, isPlaying, onToggle, onClose, onExpand }: MiniPlayer
     if (id) navigate(`/artist/${id}`);
   };
 
-  // Simulated progress tick
-  useEffect(() => {
-    if (!song || !isPlaying) return;
-    const id = setInterval(() => {
-      setProgress((p) => (p >= song.duration ? 0 : p + 1));
-    }, 1000);
-    return () => clearInterval(id);
-  }, [song, isPlaying]);
-
-  useEffect(() => {
-    setProgress(0);
-  }, [song?.id]);
-
   if (!song) return null;
-  const pct = Math.min(100, (progress / song.duration) * 100);
+  const pct = Math.min(100, (currentTime / (duration || 1)) * 100);
 
   return (
     <AnimatePresence>
@@ -127,8 +110,8 @@ const MiniPlayer = ({ song, isPlaying, onToggle, onClose, onExpand }: MiniPlayer
             <div className="flex flex-col items-center gap-1.5">
               <div className="flex items-center gap-4">
                 <button
-                  onClick={() => setShuffle((s) => !s)}
-                  className={shuffle ? "text-primary" : "text-muted-foreground hover:text-foreground"}
+                  onClick={toggleShuffle}
+                  className={isShuffle ? "text-primary" : "text-muted-foreground hover:text-foreground"}
                   aria-label="Shuffle"
                 >
                   <Shuffle size={16} />
@@ -147,8 +130,8 @@ const MiniPlayer = ({ song, isPlaying, onToggle, onClose, onExpand }: MiniPlayer
                   <SkipForward size={18} fill="currentColor" />
                 </button>
                 <button
-                  onClick={() => setRepeat((r) => !r)}
-                  className={repeat ? "text-primary" : "text-muted-foreground hover:text-foreground"}
+                  onClick={toggleRepeat}
+                  className={isRepeat ? "text-primary" : "text-muted-foreground hover:text-foreground"}
                   aria-label="Repeat"
                 >
                   <Repeat size={16} />
@@ -156,23 +139,23 @@ const MiniPlayer = ({ song, isPlaying, onToggle, onClose, onExpand }: MiniPlayer
               </div>
               <div className="flex items-center gap-2 w-full">
                 <span className="text-[10px] text-muted-foreground tabular-nums w-8 text-right">
-                  {formatTime(progress)}
+                  {formatTime(currentTime)}
                 </span>
                 <div
                   className="group relative flex-1 h-1 bg-secondary rounded-full overflow-hidden cursor-pointer"
                   onClick={(e) => {
                     const rect = e.currentTarget.getBoundingClientRect();
                     const ratio = (e.clientX - rect.left) / rect.width;
-                    setProgress(Math.round(ratio * song.duration));
+                    seek(ratio * (duration || 1));
                   }}
                 >
                   <div
-                    className="h-full bg-foreground group-hover:bg-primary transition-colors"
+                    className="h-full bg-foreground group-hover:bg-primary transition-all"
                     style={{ width: `${pct}%` }}
                   />
                 </div>
                 <span className="text-[10px] text-muted-foreground tabular-nums w-8">
-                  {formatTime(song.duration)}
+                  {formatTime(duration || song.duration)}
                 </span>
               </div>
             </div>
@@ -183,7 +166,8 @@ const MiniPlayer = ({ song, isPlaying, onToggle, onClose, onExpand }: MiniPlayer
               <input
                 type="range"
                 min={0}
-                max={100}
+                max={1}
+                step={0.01}
                 value={volume}
                 onChange={(e) => setVolume(Number(e.target.value))}
                 className="w-24 h-1 accent-primary cursor-pointer"

@@ -45,8 +45,7 @@ const AppShell = ({ title, children, titleLeading }: AppShellProps) => {
           onRefresh={goHome}
         />
         <main className="border-x border-border min-h-screen">
-          <div className="sticky top-0 z-40 backdrop-blur bg-background/80 border-b border-border px-5 py-4 flex items-center gap-3">
-            {titleLeading}
+          <div className="sticky top-0 z-40 backdrop-blur bg-background/80 border-b border-border px-5 py-4">
             <h1 className="font-display text-xl font-bold tracking-tight text-foreground">{title}</h1>
           </div>
           <div className="py-2">{children}</div>
@@ -58,12 +57,7 @@ const AppShell = ({ title, children, titleLeading }: AppShellProps) => {
       {/* Mobile layout */}
       <div className="lg:hidden max-w-lg mx-auto relative">
         <Header onSearch={goSearch} onRefresh={goHome} onOpenFavorites={goFavs} />
-        {(titleLeading || title !== "Home") && (
-          <div className="flex items-center gap-2 px-4 py-3 border-b border-border bg-card">
-            {titleLeading}
-            <h1 className="font-display text-lg font-bold text-foreground">{title}</h1>
-          </div>
-        )}
+
         {children}
         {/* Bottom space: tab bar (~56px) + mini player (~64px) */}
         <div className={currentWithLike ? "pb-36" : "pb-20"} />

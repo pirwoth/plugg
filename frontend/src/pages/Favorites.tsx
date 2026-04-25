@@ -10,14 +10,7 @@ const Favorites = () => {
   const { favoriteSongs, currentSong, isPlaying, play } = usePlayer();
 
   return (
-    <AppShell
-      title="Favourites"
-      titleLeading={
-        <button onClick={() => navigate(-1)} className="p-1 text-muted-foreground hover:text-foreground" aria-label="Back">
-          <ArrowLeft size={20} />
-        </button>
-      }
-    >
+    <div className="animate-in fade-in duration-500">
       {favoriteSongs.length === 0 ? (
         <EmptyState
           icon={Heart}
@@ -41,12 +34,12 @@ const Favorites = () => {
               index={i}
               rank={i + 1}
               isPlaying={isPlaying && currentSong?.id === song.id}
-              onPlay={() => play(song)}
+              onPlay={() => play(song, favoriteSongs)}
             />
           ))}
         </div>
       )}
-    </AppShell>
+    </div>
   );
 };
 

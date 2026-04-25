@@ -41,8 +41,26 @@ function mapToSong(dbSong: DbSong, dbArtist: DbArtist | null | undefined, dbStat
     timestamp: new Date(dbSong.first_seen_at || Date.now()),
     duration: 180, // Stub duration
     audioUrl: (() => {
+      if (dbSong.page_url) {
+        const rawTitle = title || '';
+        let songPart = rawTitle;
+        let artistPart = artistName || '';
+        
+        if (rawTitle.includes('-')) {
+          const parts = rawTitle.split('-');
+          songPart = parts[0];
+          artistPart = parts.slice(1).join('-');
+        }
+        
+        const cleanSong = songPart.replace(/\s+/g, '');
+        const cleanArtist = artistPart.replace(/\s+/g, '');
+        return encodeURI(`https://www.westnilebiz.com/songs/${cleanSong} - ${cleanArtist}.mp3`);
+      }
+      return "";
+    })(),
+    westnile_id: (() => {
       const match = dbSong.page_url?.match(/\/audio\/(\d+)/);
-      return match ? `https://www.westnilebiz.com/download?uh=${match[1]}` : (dbSong.page_url || "");
+      return match ? parseInt(match[1], 10) : 0;
     })(),
     genre: (dbArtist?.genre?.toLowerCase() as Genre) || "afrobeats",
     coverUrl: dbSong.cover_url || undefined,
@@ -53,7 +71,7 @@ function mapToSong(dbSong: DbSong, dbArtist: DbArtist | null | undefined, dbStat
 
 export function useAllSongs() {
   return useQuery({
-    queryKey: ['allSongs'],
+    queryKey: ['allSongs', 'v3'],
     queryFn: async (): Promise<Song[]> => {
       // Fetch up to 100 recent songs for the UI feed
       const { data, error } = await supabase
@@ -78,7 +96,18 @@ export function useAllSongs() {
         return mapToSong(row, row.artists, latestStats);
       });
 
-      return allSongs;
+      // Safety filter: exclude any DJ mixes that weren't caught by the scraper
+      const MIXTAPE_PATTERNS = [/^\d{4}\b/, /mashup/i, /mixtape/i, /non[\s-]?stop/i];
+      const STANDALONE_MIX = /\bmix\b/i;
+      const REMIX = /remix/i;
+      const tracks = allSongs.filter((s) => {
+        const t = s.title;
+        if (MIXTAPE_PATTERNS.some((p) => p.test(t))) return false;
+        if (STANDALONE_MIX.test(t) && !REMIX.test(t)) return false;
+        return true;
+      });
+
+      return tracks;
     }
   });
 }
@@ -93,8 +122,8 @@ export function useTrendingSongs() {
 
 export function useNewSongs() {
   const { data: songs, ...rest } = useAllSongs();
-  // New Upload -> timestamp
-  const newS = songs ? [...songs].sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime()).slice(0, 10) : [];
+  // New Upload -> westnile_id
+  const newS = songs ? [...songs].sort((a, b) => (b.westnile_id || 0) - (a.westnile_id || 0)).slice(0, 10) : [];
   return { songs: newS, ...rest };
 }
 

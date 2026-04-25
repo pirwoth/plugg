@@ -5,6 +5,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { PlayerProvider } from "@/context/PlayerContext";
+import { AuthProvider } from "@/context/AuthContext";
+import RootLayout from "./components/RootLayout";
 import AccentLoader from "@/components/AccentLoader";
 import Index from "./pages/Index.tsx";
 import ArtistDashboard from "./pages/ArtistDashboard.tsx";
@@ -26,20 +28,23 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <PlayerProvider>
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/search" element={<Search />} />
-              <Route path="/favorites" element={<Favorites />} />
-              <Route path="/account" element={<Account />} />
-              <Route path="/settings" element={<Settings />} />
-              <Route path="/auth" element={<Auth />} />
-              <Route path="/artist" element={<ArtistDashboard />} />
-              <Route path="/profile/:id" element={<ArtistProfile />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </PlayerProvider>
+          <AuthProvider>
+            <PlayerProvider>
+              <Routes>
+                <Route element={<RootLayout />}>
+                  <Route path="/" element={<Index />} />
+                  <Route path="/search" element={<Search />} />
+                  <Route path="/favorites" element={<Favorites />} />
+                  <Route path="/account" element={<Account />} />
+                  <Route path="/settings" element={<Settings />} />
+                  <Route path="/auth" element={<Auth />} />
+                  <Route path="/artist" element={<ArtistDashboard />} />
+                  <Route path="/profile/:id" element={<ArtistProfile />} />
+                  <Route path="*" element={<NotFound />} />
+                </Route>
+              </Routes>
+            </PlayerProvider>
+          </AuthProvider>
         </BrowserRouter>
       </TooltipProvider>
     </ThemeProvider>

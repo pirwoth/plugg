@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Search, X, Music } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { mockArtists } from "@/lib/mock-data";
 import { motion } from "framer-motion";
+import { supabase } from "@/lib/supabase";
+import { useQuery } from "@tanstack/react-query";
 
 interface ArtistSearchProps {
   onClose: () => void;
@@ -12,13 +13,17 @@ const ArtistSearch = ({ onClose }: ArtistSearchProps) => {
   const navigate = useNavigate();
   const [query, setQuery] = useState("");
 
-  const filtered = query.trim()
-    ? mockArtists.filter(
-        (a) =>
-          a.name.toLowerCase().includes(query.toLowerCase()) ||
-          a.username.toLowerCase().includes(query.toLowerCase())
-      )
-    : mockArtists;
+  const { data: artists, isLoading } = useQuery({
+    queryKey: ['artistSearch', query],
+    queryFn: async () => {
+      if (!query.trim()) return [];
+      const res = await supabase.from('artists').select('*, songs(id)').ilike('name', `%${query.trim()}%`).limit(20);
+      return res.data || [];
+    },
+    enabled: query.trim().length > 0
+  });
+
+  const filtered = artists || [];
 
   return (
     <motion.div
@@ -43,9 +48,16 @@ const ArtistSearch = ({ onClose }: ArtistSearchProps) => {
       </div>
 
       <div className="flex-1 overflow-y-auto">
-        {filtered.length === 0 && (
+        {query.trim().length > 0 && isLoading && (
+          <p className="text-sm text-muted-foreground text-center py-8">Loading...</p>
+        )}
+        {query.trim().length > 0 && !isLoading && filtered.length === 0 && (
           <p className="text-sm text-muted-foreground text-center py-8">No artists found</p>
         )}
+        {query.trim().length === 0 && (
+           <p className="text-sm text-muted-foreground text-center py-8">Type an artist name to search</p>
+        )}
+        
         {filtered.map((artist) => (
           <button
             key={artist.id}
@@ -60,7 +72,7 @@ const ArtistSearch = ({ onClose }: ArtistSearchProps) => {
             </div>
             <div className="min-w-0">
               <p className="font-semibold text-sm text-foreground truncate">{artist.name}</p>
-              <p className="text-xs text-muted-foreground truncate">@{artist.username} · {artist.songs.length} songs</p>
+              <p className="text-xs text-muted-foreground truncate">{artist.songs?.length || 0} songs</p>
             </div>
           </button>
         ))}

@@ -1,5 +1,6 @@
-import { Play } from "lucide-react";
+import { Play, Download } from "lucide-react";
 import { Song, getArtistIdByName } from "@/lib/mock-data";
+import { supabaseUrl } from "@/lib/supabase";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import SongCover from "@/components/SongCover";
@@ -42,10 +43,10 @@ const SongItem = ({ song, isPlaying, onPlay, index, rank }: SongItemProps) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.025, duration: 0.18 }}
       onClick={onPlay}
-      className="group grid grid-cols-[24px_44px_1fr_auto_auto] items-center gap-3 px-4 py-2 rounded-md hover:bg-secondary/60 active:bg-secondary cursor-pointer transition-colors focus-within:bg-secondary/60"
+      className="group flex items-center gap-3 px-4 py-2 rounded-md hover:bg-secondary/60 active:bg-secondary cursor-pointer transition-colors focus-within:bg-secondary/60"
     >
       {/* Rank / EQ / Play hover */}
-      <div className="relative w-6 h-6 flex items-center justify-center text-muted-foreground">
+      <div className="relative flex-shrink-0 w-6 h-6 flex items-center justify-center text-muted-foreground">
         {isPlaying ? (
           <span className="text-primary group-hover:opacity-0 transition-opacity">
             <EqualizerBars size={14} />
@@ -61,10 +62,12 @@ const SongItem = ({ song, isPlaying, onPlay, index, rank }: SongItemProps) => {
       </div>
 
       {/* Cover */}
-      <SongCover song={song} size={44} rounded="lg" />
+      <div className="flex-shrink-0">
+        <SongCover song={song} size={44} rounded="lg" />
+      </div>
 
       {/* Title + artist */}
-      <div className="min-w-0">
+      <div className="flex-1 min-w-0 pr-2 sm:pr-4">
         <p className={`text-sm font-semibold truncate ${isPlaying ? "text-primary" : "text-foreground"}`}>
           {song.title}
         </p>
@@ -76,14 +79,22 @@ const SongItem = ({ song, isPlaying, onPlay, index, rank }: SongItemProps) => {
         </button>
       </div>
 
-      {/* Plays */}
-      <span className="hidden sm:inline text-xs text-muted-foreground tabular-nums w-16 text-right">
-        ▶ {formatCount(song.plays)}
-      </span>
-
-      {/* Date + duration */}
-      <div className="flex items-center gap-4 text-xs text-muted-foreground tabular-nums">
-        <span className="hidden xs:inline w-20 text-right">{formatDate(song.timestamp)}</span>
+      {/* Stats and Duration */}
+      <div className="flex flex-shrink-0 items-center justify-end text-xs text-muted-foreground tabular-nums">
+        <div className="hidden sm:flex items-center gap-3 mr-4">
+          <span title="Plays">▶ {formatCount(song.plays)}</span>
+          <a
+            href={`${supabaseUrl}/functions/v1/download?url=${encodeURIComponent(song.audioUrl)}&filename=${encodeURIComponent(`${song.title} - ${song.artistName}.mp3`)}`}
+            download={`${song.title} - ${song.artistName}.mp3`}
+            target="_blank"
+            rel="noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="hover:text-primary transition-colors flex items-center justify-center p-1 hover:bg-primary/10 rounded-full"
+            title="Download song"
+          >
+            <Download size={14} />
+          </a>
+        </div>
         <span className="w-10 text-right">{formatDuration(song.duration)}</span>
       </div>
     </motion.div>

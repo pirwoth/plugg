@@ -1,53 +1,118 @@
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { ArrowLeft, Music, UserPlus, UserCheck, BadgeCheck, Gift } from "lucide-react";
-import { mockArtists, GENRE_LABEL, GENRE_EMOJI, Genre } from "@/lib/mock-data";
+import { GENRE_LABEL, GENRE_EMOJI, Genre, Song } from "@/lib/mock-data";
 import SongItem from "@/components/SongItem";
-import AppShell from "@/components/AppShell";
 import ClampedBio from "@/components/ClampedBio";
 import TipModal from "@/components/TipModal";
 import { usePlayer } from "@/context/PlayerContext";
 import { toast } from "@/hooks/use-toast";
+import { useQuery } from "@tanstack/react-query";
+import { supabase } from "@/lib/supabase";
 
 const ArtistProfile = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const artist = mockArtists.find((a) => a.id === id);
   const [tipOpen, setTipOpen] = useState(false);
 
   const { currentSong, isPlaying, play, followedArtists, toggleFollow } = usePlayer();
 
-  if (!artist) {
+  const { data: artist, isLoading, error } = useQuery({
+    queryKey: ['artistProfile', 'v3', id],
+    queryFn: async () => {
+      if (!id) throw new Error("No ID");
+      const { data: artistData, error: artistError } = await supabase
+        .from('artists')
+        .select('*')
+        .eq('id', id)
+        .single();
+        
+      if (artistError || !artistData) throw new Error("Artist not found");
+      
+      const { data: songsData } = await supabase
+        .from('songs')
+        .select('*, song_stats(*)')
+        .eq('artist_id', id)
+        .order('first_seen_at', { ascending: false });
+
+      const mappedSongs: Song[] = (songsData || []).map(row => {
+        const statsArray = Array.isArray(row.song_stats) ? row.song_stats : [];
+        const latestStats = statsArray.sort((a, b) => new Date(b.date || 0).getTime() - new Date(a.date || 0).getTime())[0] || { plays: 0, downloads: 0 };
+        return {
+          id: row.id.toString(),
+          artistName: artistData.name,
+          artistAvatar: artistData.image_url || `https://api.dicebear.com/7.x/initials/svg?seed=${encodeURIComponent(artistData.name)}&backgroundColor=d97706`,
+          title: row.title || 'Unknown Title',
+          plays: latestStats.plays || 0,
+          downloads: latestStats.downloads || 0,
+          likes: 0,
+          timestamp: new Date(row.first_seen_at || Date.now()),
+          duration: 180,
+          audioUrl: (() => {
+            if (row.page_url) {
+              const rawTitle = row.title || '';
+              let songPart = rawTitle;
+              let artistPart = artistData.name || '';
+              
+              if (rawTitle.includes('-')) {
+                const parts = rawTitle.split('-');
+                songPart = parts[0];
+                artistPart = parts.slice(1).join('-');
+              }
+              
+              const cleanSong = songPart.replace(/\s+/g, '');
+              const cleanArtist = artistPart.replace(/\s+/g, '');
+              return encodeURI(`https://www.westnilebiz.com/songs/${cleanSong} - ${cleanArtist}.mp3`);
+            }
+            return "";
+          })(),
+          genre: (artistData.genre as Genre) || "afrobeats",
+          coverUrl: row.cover_url || undefined,
+          cover: { from: 'hsl(210, 70%, 50%)', to: 'hsl(215, 65%, 35%)' }
+        };
+      });
+
+      return {
+        ...artistData,
+        username: artistData.name.toLowerCase().replace(/\s/g, ""),
+        songs: mappedSongs
+      };
+    },
+    enabled: !!id
+  });
+
+  if (isLoading) {
     return (
-      <AppShell title="Artist">
-        <div className="px-6 py-16 text-center text-sm text-muted-foreground">Artist not found.</div>
-      </AppShell>
+      <div className="flex items-center justify-center min-h-[50vh]">
+        <div className="w-8 h-8 rounded-full border-2 border-primary border-t-transparent animate-spin" />
+      </div>
     );
   }
 
-  const isFollowing = followedArtists.has(artist.id);
+  if (error || !artist) {
+    return (
+      <div className="px-6 py-16 text-center text-sm text-muted-foreground">
+        Artist not found. Try searching for someone else.
+      </div>
+    );
+  }
+
+  const isFollowing = followedArtists.has(artist.id.toString());
 
   const handleFollow = () => {
-    toggleFollow(artist.id);
+    toggleFollow(artist.id.toString());
     toast({
       title: isFollowing ? "Unfollowed" : `Following ${artist.name}`,
       description: isFollowing ? undefined : "You'll see their new uploads first.",
     });
   };
 
-  const totalPlays = artist.songs.reduce((acc, s) => acc + s.plays, 0);
+  const totalPlays = artist.songs.reduce((acc: number, s: Song) => acc + s.plays, 0);
   const formatCount = (n: number) =>
     n >= 1000 ? (n / 1000).toFixed(1).replace(/\.0$/, "") + "k" : n.toString();
 
   return (
-    <AppShell
-      title={artist.name}
-      titleLeading={
-        <button onClick={() => navigate(-1)} className="p-1 text-muted-foreground hover:text-foreground" aria-label="Back">
-          <ArrowLeft size={20} />
-        </button>
-      }
-    >
+    <div className="animate-in fade-in slide-in-from-right-4 duration-500">
       {/* Hero */}
       <div className="relative">
         {/* Cover banner */}
@@ -55,7 +120,11 @@ const ArtistProfile = () => {
 
         <div className="px-5 -mt-10 sm:-mt-12 flex items-end gap-4">
           <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-secondary border-4 border-background flex items-center justify-center overflow-hidden flex-shrink-0">
-            <Music size={32} className="text-muted-foreground" />
+             {artist.image_url ? (
+               <img src={artist.image_url} alt={artist.name} className="w-full h-full object-cover" />
+             ) : (
+               <Music size={32} className="text-muted-foreground" />
+             )}
           </div>
         </div>
 
@@ -71,18 +140,16 @@ const ArtistProfile = () => {
             </div>
           )}
 
-          {/* Genre badges (uses artist's song genres as a stand-in until profile genres ship in Cloud) */}
+          {/* Genre badges */}
           {(() => {
-            const set = new Set<Genre>();
-            artist.songs.forEach((s) => set.add(s.genre));
-            const genres = Array.from(set).slice(0, 3);
+            const genres = artist.genre ? [artist.genre as Genre] : [];
             if (genres.length === 0) return null;
             return (
               <div className="flex flex-wrap gap-1.5 mt-3">
                 {genres.map((g) => (
-                  <span key={g} className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary text-[11px] font-medium text-foreground">
-                    <span>{GENRE_EMOJI[g]}</span>
-                    {GENRE_LABEL[g]}
+                  <span key={g} className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary text-[11px] font-medium text-foreground capitalize">
+                    <span>{GENRE_EMOJI[g] || "🎵"}</span>
+                    {GENRE_LABEL[g] || g}
                   </span>
                 ))}
               </div>
@@ -92,7 +159,7 @@ const ArtistProfile = () => {
           <div className="flex items-center gap-4 mt-3 text-xs text-muted-foreground tabular-nums">
             <span><span className="text-foreground font-semibold">{artist.songs.length}</span> songs</span>
             <span><span className="text-foreground font-semibold">{formatCount(totalPlays)}</span> plays</span>
-            <span><span className="text-foreground font-semibold">{followedArtists.has(artist.id) ? 1 : 0}</span> follower{followedArtists.has(artist.id) ? "" : "s"}</span>
+            <span><span className="text-foreground font-semibold">{followedArtists.has(artist.id.toString()) ? 1 : 0}</span> follower{followedArtists.has(artist.id.toString()) ? "" : "s"}</span>
           </div>
 
           {/* Action buttons */}
@@ -109,7 +176,7 @@ const ArtistProfile = () => {
               {isFollowing ? "Following" : "Follow"}
             </button>
             <button
-              onClick={() => setTipOpen(true)}
+              onClick={() => toast({ title: "Coming soon", description: "Tipping via MTN MoMo and Airtel is currently under development!" })}
               className="flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-semibold border border-primary/40 text-primary hover:bg-primary/10 transition-colors"
             >
               <Gift size={16} />
@@ -120,28 +187,28 @@ const ArtistProfile = () => {
       </div>
 
       {/* Songs */}
-      <div className="mt-8">
+      <div className="mt-8 mb-20">
         <h3 className="px-5 pb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
           Songs
         </h3>
         {artist.songs.length === 0 ? (
           <p className="px-5 py-8 text-sm text-muted-foreground">This artist hasn't uploaded any songs yet.</p>
         ) : (
-          artist.songs.map((song, i) => (
+          artist.songs.map((song: Song, i: number) => (
             <SongItem
               key={song.id}
               song={song}
               index={i}
               rank={i + 1}
               isPlaying={isPlaying && currentSong?.id === song.id}
-              onPlay={() => play(song)}
+              onPlay={() => play(song, artist.songs)}
             />
           ))
         )}
       </div>
 
       <TipModal open={tipOpen} onClose={() => setTipOpen(false)} artistName={artist.name} />
-    </AppShell>
+    </div>
   );
 };
 

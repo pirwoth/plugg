@@ -16,6 +16,9 @@ export interface Song {
   /** Two HSL colors used to generate a deterministic cover gradient */
   cover: { from: string; to: string };
   coverUrl?: string;
+  westnile_id?: number;
+  /** True for DJ mixtapes fetched from the playlists table */
+  isPlaylist?: boolean;
 }
 
 export interface Artist {

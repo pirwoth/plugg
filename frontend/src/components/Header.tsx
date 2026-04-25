@@ -17,7 +17,7 @@ const Header = ({ onRefresh }: HeaderProps) => {
         className="font-display text-2xl font-bold tracking-tight text-foreground lowercase"
         aria-label="Refresh feed"
       >
-        plugg
+        <img src="/logo.png" alt="Plugg" className="h-8 w-auto" />
       </button>
       <button
         onClick={() => navigate("/settings")}

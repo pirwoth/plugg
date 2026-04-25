@@ -121,14 +121,7 @@ const ArtistDashboard = () => {
   // ===== Edit profile screen =====
   if (editing) {
     return (
-      <AppShell
-        title="Edit Profile"
-        titleLeading={
-          <button onClick={() => setEditing(false)} className="p-1 text-muted-foreground hover:text-foreground" aria-label="Back">
-            <ArrowLeft size={18} />
-          </button>
-        }
-      >
+      <div className="animate-in fade-in slide-in-from-bottom-2 duration-500">
         <div className="max-w-lg mx-auto pb-8">
           {/* Cover + avatar combo */}
           <div className="relative">
@@ -202,21 +195,14 @@ const ArtistDashboard = () => {
           onCancel={handleCropCancel}
           onConfirm={handleCropConfirm}
         />
-      </AppShell>
+      </div>
     );
   }
 
   // ===== Registration form =====
   if (!registered) {
     return (
-      <AppShell
-        title="Become an Artist"
-        titleLeading={
-          <button onClick={() => navigate(-1)} className="p-1 text-muted-foreground hover:text-foreground" aria-label="Back">
-            <ArrowLeft size={18} />
-          </button>
-        }
-      >
+      <div className="animate-in fade-in slide-in-from-bottom-2 duration-500">
         <div className="max-w-lg mx-auto pb-8">
           <div className="relative">
             <label className="relative block cursor-pointer group">
@@ -305,13 +291,13 @@ const ArtistDashboard = () => {
           onCancel={handleCropCancel}
           onConfirm={handleCropConfirm}
         />
-      </AppShell>
+      </div>
     );
   }
 
   // ===== Registered Dashboard =====
   return (
-    <AppShell title="Artist Studio">
+    <div className="animate-in fade-in duration-500">
       <div className="px-4 py-5 space-y-5">
         {/* Profile header with cover */}
         <div className="rounded-xl overflow-hidden border border-border bg-card">
@@ -364,7 +350,7 @@ const ArtistDashboard = () => {
           />
         )}
       </div>
-    </AppShell>
+    </div>
   );
 };
 
