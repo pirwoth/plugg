@@ -1,0 +1,116 @@
+Latest trending news in Uganda, Trending News in Kampala, Latest Alur Music, Northern Uganda ,Best Entertainment Website in East Africa ,Latest Entertainment news in Tanzania 
+Latest News On Diamond Platnumz, Lates News on Bebe Cool, Latest News on Bebe cool,Latest News on Bobi Wine">
+      <meta name="tags" content="Uganda Celebrity News,Latest Uganda Music,Uganda Celebrity Gossip,Latest Uganda News, Best Entertainment Website in Uganda,UgandaCelebrity Gossip and News,Latest luo music and news,Latest East African News 
+Latest trending news in Uganda, Trending News in Kampala, Latest Alur Music, Northern Uganda ,Best Entertainment Website in East Africa ,Latest Entertainment news in Tanzania 
+Latest News On Diamond Platnumz, Lates News on Bebe Cool, Latest News on Bebe cool,Latest News on Bobi Wine,Lucky Dee,Best Ugandan Website,Top Ugandan Website 2024">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-widtath, initial-scale=1.0">        
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="flexslider/flexslider.css">
+        <link rel="stylesheet" href="css/styles.css?1777050073">
+        <link href="https://www.westnilebiz.com/images/logos/favicon.png" rel="shortcut icon" />
+            <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+            <script src="js/jquery-1.10.2.js"></script>
+             <script src="js/tabs.js"></script>
+             <script src="js/vticker.js"></script>
+         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128685632-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-128685632-1');
+</script>
+
+<style>
+.tabs-cont h1{position:relative}
+.tabs-cont h1 span{background-color: white;    padding-right: 10px;}
+.tabs-cont h1:after {
+    content:"";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0.5em;
+    border-top: 1px solid black;
+    z-index: -1;
+}
+
+.arrow {
+    display: none;
+    position: absolute;
+    font-size: 1.2rem;
+    background-color: #fff;
+    align-items: center;
+    margin: 0;
+    cursor: pointer;
+    padding: 10px 15px;
+    transition: transform .1s ease-out,opacity .1s ease-in-out;
+    z-index: 100;
+}
+--
+             <div  class="top-trending-sec">
+             <div  class="row">
+                 <div  class="col-lg-2">
+                     <div class="top-trending-ttle">Trending Songs</div>
+                 </div>
+                 <div  class="col-lg-8" style="padding-top: 4px">
+        <div  id="trendingsongs">
+  <ul>
+      
+      
+              <li><em>1</em>    <a href="https://www.westnilebiz.com/audio/29270/pressurebinegi">
+              Pressure Binegi - Maya Keys</a> <span>1955 plays , 1663 Downloads </span></li>
+                             <li><em>2</em>    <a href="https://www.westnilebiz.com/audio/29215/dongemudong">
+              Donge Mudong - Small Rapper X Roy TV</a> <span>1594 plays , 1543 Downloads </span></li>
+                             <li><em>3</em>    <a href="https://www.westnilebiz.com/audio/29098/mikira">
+              Mik Ira - Lion Man</a> <span>3609 plays , 3387 Downloads </span></li>
+                             <li><em>4</em>    <a href="https://www.westnilebiz.com/audio/29059/jokowonda">
+              Jok Owonda - Nigga X Pomba Ft Slim Diva</a> <span>2777 plays , 2410 Downloads </span></li>
+                             <li><em>5</em>    <a href="https://www.westnilebiz.com/audio/29030/jeba">
+              Jeba - Bush Boy Ft Ramsey</a> <span>5484 plays , 4421 Downloads </span></li>
+                             <li><em>6</em>    <a href="https://www.westnilebiz.com/audio/29197/doyouknow">
+              Do You Know - Don Popular</a> <span>1873 plays , 1248 Downloads </span></li>
+                             <li><em>7</em>    <a href="https://www.westnilebiz.com/audio/29045/candhok">
+              Can Dhok - Riaso Boy Ft Ashley D</a> <span>2864 plays , 1947 Downloads </span></li>
+                             <li><em>8</em>    <a href="https://www.westnilebiz.com/audio/29222/latestofjanuary2026newugandanonstop">
+              Latest Of January 2026 New Uganda Nonstop - DJ Amozo</a> <span>905 plays , 555 Downloads </span></li>
+                         </ul>
+</div>
+</div>
+             <div  class="col-lg-2">
+                 <a href="audios" class="pull-right text-primary">View All ››</a>
+             </div>
+</div>
+</div>
+         <div class="row">
+               <div class="col-lg-8"> <div id="promo-slider" class="slider flexslider">
+                <ul class="slides">
+                                                                <li>
+                                 <div class="slider-content">
+                                     <div class="slider-inner"><a href="https://www.westnilebiz.com/category/11/Entertainment">Entertainment </a>/ 14/Apr/2026</div>
+                <h2><a href="https://www.westnilebiz.com/2595/West-Nile-Music-Awards-Unveil-25-Categories-to-Recognize-Regional-Talent-in-2026">West Nile Music Awards Unveil 25 Categories to Recognize Regional Talent in 2026</a></h2>
+                 <div class="" style="color: #fff;">
+                     The West Nile Music Awards (WNMA) organizers have unveiled 25 nomination categories for the 2026 edition.
+
+
+The categories were formulated after thorough analysis and extensive consultations with m...</div>
+            </div>
+                               <img src="https://www.westnilebiz.com/images/news/thumbs660/453fadbd8a1a3af50a9df4df899537b5.jpg?1777050075" class="img img-responsive" >
+                    </li>
+                                                  <li>
+                                 <div class="slider-content">
+                                     <div class="slider-inner"><a href="https://www.westnilebiz.com/category/11/Entertainment">Entertainment </a>/ 13/Apr/2026</div>
+                <h2><a href="https://www.westnilebiz.com/2594/West-Nile-Music-Awards-Unveils-Revenue-Sharing-Model-to-Empower-Artistses-Mcz--Djz">West Nile Music Awards Unveils Revenue-Sharing Model to Empower Artistses, Mcz & Djz</a></h2>
+                 <div class="" style="color: #fff;">
+                     The organizers of the West Nile Music Awards (WNMA) have unveiled a revenue-sharing model to be used during the voting process of the forthcoming awards ceremony, aimed at financially empowering artis...</div>
+            </div>
+                               <img src="https://www.westnilebiz.com/images/news/thumbs660/ce758408f6ef98d7c7a7b786eca7b3a8.jpg?1777050075" class="img img-responsive" >
+--
+  $('#trendingsongs').vTicker();
+});
+    </script>
