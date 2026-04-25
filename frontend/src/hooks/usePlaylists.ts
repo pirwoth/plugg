@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { supabase } from '../lib/supabase';
-import { Song } from '../lib/mock-data'; // playlists share the same UI shape as songs
+import { Song, Genre } from '../lib/mock-data'; // playlists share the same UI shape as songs
 
 interface DbPlaylist {
   id: string | number;
@@ -62,7 +62,7 @@ function mapToPlaylist(row: DbPlaylist): Song {
       const cleanArtist = artistPart.replace(/\s+/g, '');
       return encodeURI(`https://www.westnilebiz.com/songs/${cleanSong} - ${cleanArtist}.mp3`);
     })(),
-    genre: 'afrobeats' as any,
+    genre: 'afrobeats' as Genre,
     coverUrl: row.cover_url || undefined,
     cover: { from: 'hsl(262, 60%, 40%)', to: 'hsl(270, 55%, 25%)' }, // purple gradient for DJ mixes
     isPlaylist: true,

@@ -15,14 +15,14 @@ const GoogleIcon = () => (
 );
 
 // Password must be 8+ chars, 1 uppercase, 1 number, 1 special character
-const PASSWORD_REGEX = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{8,}$/;
+const PASSWORD_REGEX = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]).{8,}$/;
 
 interface Requirement { label: string; test: (pw: string) => boolean; }
 const REQUIREMENTS: Requirement[] = [
   { label: "At least 8 characters", test: (p) => p.length >= 8 },
   { label: "One uppercase letter", test: (p) => /[A-Z]/.test(p) },
   { label: "One number", test: (p) => /\d/.test(p) },
-  { label: "One special character (!@#$…)", test: (p) => /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(p) },
+  { label: "One special character (!@#$…)", test: (p) => /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/.test(p) },
 ];
 
 const PasswordRequirements = ({ password }: { password: string }) => (
@@ -113,8 +113,9 @@ const Auth = () => {
         toast({ title: "Welcome back! 🎵" });
         navigate("/account");
       }
-    } catch (err: any) {
-      toast({ title: "Error", description: err.message, variant: "destructive" });
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "Authentication error";
+      toast({ title: "Error", description: message, variant: "destructive" });
     } finally {
       setSubmitting(false);
     }

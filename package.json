@@ -1,12 +1,13 @@
 {
   "name": "plugg-root",
   "private": true,
+  "workspaces": [
+    "frontend"
+  ],
   "scripts": {
     "dev": "npm run dev --prefix frontend",
     "build": "npm run build --prefix frontend",
     "start": "npm run start --prefix frontend"
   },
-  "dependencies": {
-    "@vercel/analytics": "^2.0.1"
-  }
+  "dependencies": {}
 }

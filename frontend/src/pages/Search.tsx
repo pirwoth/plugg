@@ -7,7 +7,7 @@ import SongCover from "@/components/SongCover";
 import { usePlayer } from "@/context/PlayerContext";
 import { supabase } from "@/lib/supabase";
 import { useQuery } from "@tanstack/react-query";
-import { Song } from "@/lib/mock-data";
+import { Song, Genre } from "@/lib/mock-data";
 
 type Filter = "all" | "songs" | "artists";
 
@@ -60,13 +60,25 @@ const Search = () => {
         supabase.from('playlists').select('*, artists(*), playlist_stats(*)').ilike('title', `%${debouncedQuery}%`).limit(20),
       ]);
 
-      const mapRow = (row: any, isPlaylist = false): Song => {
+      interface RawRow {
+        id: number | string;
+        title?: string;
+        artists?: { name?: string; image_url?: string };
+        song_stats?: { plays?: number; date?: string }[];
+        playlist_stats?: { plays?: number; date?: string }[];
+        page_url?: string;
+        cover_url?: string;
+        first_seen_at?: string;
+      }
+
+      const mapRow = (row: RawRow, isPlaylist = false): Song => {
         const statsArray = (isPlaylist ? row.playlist_stats : row.song_stats) || [];
-        const latestStats = statsArray.sort((a: any, b: any) => new Date(b.date || 0).getTime() - new Date(a.date || 0).getTime())[0] || { plays: 0 };
+        const latestStats = [...statsArray].sort((a, b) => new Date(b.date || 0).getTime() - new Date(a.date || 0).getTime())[0] || { plays: 0 };
         const artistName = row.artists?.name || 'Unknown';
         const title = row.title || 'Unknown';
         const rawTitle = title;
-        let songPart = rawTitle, artistPart = artistName;
+        let songPart = rawTitle;
+        let artistPart = artistName;
         if (rawTitle.includes('-')) {
           const parts = rawTitle.split('-');
           songPart = parts[0];
@@ -78,12 +90,12 @@ const Search = () => {
           artistAvatar: row.artists?.image_url || `https://api.dicebear.com/7.x/initials/svg?seed=${encodeURIComponent(artistName)}&backgroundColor=${isPlaylist ? '7c3aed' : 'd97706'}`,
           title,
           plays: latestStats.plays || 0,
-          downloads: latestStats.downloads || 0,
+          downloads: 0,
           likes: 0,
           timestamp: new Date(row.first_seen_at || Date.now()),
           duration: isPlaylist ? 3600 : 180,
           audioUrl: row.page_url ? encodeURI(`https://www.westnilebiz.com/songs/${songPart.replace(/\s+/g, '')} - ${artistPart.replace(/\s+/g, '')}.mp3`) : '',
-          genre: 'afrobeats' as any,
+          genre: 'afrobeats' as Genre,
           coverUrl: row.cover_url || undefined,
           cover: isPlaylist ? { from: 'hsl(262, 60%, 40%)', to: 'hsl(270, 55%, 25%)' } : { from: 'hsl(210, 70%, 50%)', to: 'hsl(215, 65%, 35%)' },
           isPlaylist,
@@ -103,7 +115,7 @@ const Search = () => {
     queryKey: ['letterArtists', letterFilter],
     queryFn: async () => {
       if (!letterFilter) return [];
-      let queryStr = `${letterFilter}%`;
+      const queryStr = `${letterFilter}%`;
       let res;
       if (letterFilter === '0-9') {
         res = await supabase.from('artists').select('*').limit(50); // simplified fallback, postgres regex is tricky with postgrest 
