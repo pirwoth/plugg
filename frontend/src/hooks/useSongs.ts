@@ -134,6 +134,21 @@ export function useTopHits() {
   return { songs: hits, ...rest };
 }
 
+export function useTopArtists() {
+  return useQuery({
+    queryKey: ['topArtists'],
+    queryFn: async (): Promise<any[]> => {
+      const { data, error } = await supabase
+        .from('artists')
+        .select('*')
+        .limit(10);
+      
+      if (error) throw error;
+      return data || [];
+    }
+  });
+}
+
 export function useSongsByGenre(genre: Genre | 'all') {
   const { data: songs, ...rest } = useAllSongs();
   if (!songs) return { songs: [], ...rest };

@@ -43,43 +43,45 @@ const MiniPlayer = ({ song, isPlaying, onToggle, onClose, onExpand }: MiniPlayer
           animate={{ y: 0 }}
           exit={{ y: 100 }}
           transition={{ type: "spring", damping: 24, stiffness: 280 }}
-          className="fixed bottom-14 lg:bottom-0 left-0 right-0 z-40 bg-card border-t border-border"
+          className="fixed bottom-[68px] lg:bottom-2 left-2 right-2 lg:left-6 lg:right-6 z-40 bg-[#1A1A1A] rounded-[20px] lg:rounded-[32px] shadow-2xl border border-white/5 overflow-hidden"
         >
-          {/* Mini progress bar across the top */}
-          <div className="lg:hidden h-0.5 bg-secondary">
-            <div className="h-full bg-primary transition-[width]" style={{ width: `${pct}%` }} />
-          </div>
-
-          {/* MOBILE: compact row with cover + title + play */}
-          <div className="lg:hidden px-3 py-2 flex items-center gap-2">
+          {/* MOBILE: compact row with cover + title + controls */}
+          <div className="lg:hidden px-3 py-2.5 flex items-center gap-3">
             <button onClick={onExpand} aria-label="Expand player" className="shrink-0">
-              <SongCover song={song} size={44} />
+              <SongCover song={song} size={48} rounded="xl" />
             </button>
-            <div className="min-w-0 flex-1">
-              <button
-                onClick={onExpand}
-                className="text-sm font-semibold truncate text-foreground block max-w-full text-left"
-              >
+            <div className="min-w-0 flex-1" onClick={onExpand}>
+              <p className="text-[14px] font-bold truncate text-white leading-tight">
                 {song.title}
-              </button>
-              <button
-                onClick={goToArtist}
-                className="text-xs text-muted-foreground truncate hover:text-foreground hover:underline block max-w-full text-left"
-              >
+              </p>
+              <p className="text-[11px] text-muted-foreground truncate font-medium mt-0.5">
                 {song.artistName}
+              </p>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <HeartBurstButton 
+                liked={!!song.liked} 
+                onToggle={() => toggleLike(song.id)} 
+                size={18} 
+                activeColor="#7CFF01" 
+                className="p-1.5" 
+              />
+              <button
+                onClick={onToggle}
+                className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center hover:scale-105 active:scale-95 transition-transform shadow-lg"
+                aria-label={isPlaying ? "Pause" : "Play"}
+              >
+                {isPlaying ? <Pause size={20} fill="currentColor" /> : <Play size={20} fill="currentColor" className="ml-0.5" />}
+              </button>
+              <button onClick={onClose} className="p-1.5 text-white/40 hover:text-white" aria-label="Close">
+                <X size={18} />
               </button>
             </div>
-            <HeartBurstButton liked={!!song.liked} onToggle={() => toggleLike(song.id)} size={18} className="p-2" />
-            <button
-              onClick={onToggle}
-              className="p-2 rounded-full bg-primary text-primary-foreground"
-              aria-label={isPlaying ? "Pause" : "Play"}
-            >
-              {isPlaying ? <Pause size={18} /> : <Play size={18} />}
-            </button>
-            <button onClick={onClose} className="p-2 text-muted-foreground" aria-label="Close">
-              <X size={16} />
-            </button>
+          </div>
+          
+          {/* Subtle progress line at the very bottom */}
+          <div className="lg:hidden h-[2px] bg-white/5">
+            <div className="h-full bg-primary transition-[width] duration-300" style={{ width: `${pct}%` }} />
           </div>
 
           {/* DESKTOP: full-width Spotify-style bar */}

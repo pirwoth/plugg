@@ -1,4 +1,4 @@
-import { Settings } from "lucide-react";
+import { Menu } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 interface HeaderProps {
@@ -11,20 +11,13 @@ const Header = ({ onRefresh }: HeaderProps) => {
   const navigate = useNavigate();
 
   return (
-    <header className="lg:hidden flex items-center justify-between px-4 py-3 bg-card border-b border-border sticky top-0 z-50">
+    <header className="lg:hidden flex items-center justify-between px-5 py-4 bg-background border-b border-border/50 sticky top-0 z-50">
       <button
         onClick={onRefresh}
-        className="font-display text-2xl font-bold tracking-tight text-foreground lowercase"
-        aria-label="Refresh feed"
+        className="flex items-center"
+        aria-label="Plugg Home"
       >
-        <img src="/logo.png" alt="Plugg" className="h-8 w-auto" />
-      </button>
-      <button
-        onClick={() => navigate("/settings")}
-        className="p-2 rounded-full text-muted-foreground hover:text-foreground transition-colors"
-        aria-label="Settings"
-      >
-        <Settings size={20} />
+        <img src="/logo.png" alt="plugg" className="h-6 w-auto opacity-90" />
       </button>
     </header>
   );
