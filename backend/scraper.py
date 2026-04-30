@@ -4,6 +4,7 @@ from urllib.parse import urljoin
 from bs4 import BeautifulSoup
 from playwright.async_api import async_playwright
 import config
+import requests
 from database import (
     upsert_artist, upsert_song, upsert_stats, update_artist_genre,
     upsert_playlist, upsert_playlist_stats,
@@ -167,9 +168,6 @@ async def scrape_artist_page(artist_url: str, artist_name: str, artist_image_url
         extracted_song_titles = []
 
         for item in links:
-            if song_count >= 50:
-                break
-                
             href = item.get('href')
             if not href:
                 continue
@@ -264,121 +262,237 @@ async def scrape_artist_page(artist_url: str, artist_name: str, artist_image_url
         await context.close()
 
 
-async def process_artists_batch(artists, browser):
-    """Process multiple artist pages concurrently."""
-    semaphore = asyncio.Semaphore(config.MAX_CONCURRENT_ARTISTS)
 
-    async def process_one(artist):
-        async with semaphore:
-            await scrape_artist_page(artist['url'], artist['name'], artist['image_url'], browser)
+def process_audio_card(container):
+    """Parses a single audio card and saves it to the database.
+    Returns the extracted song ID if successful.
+    """
+    link_elem = container.find('a', href=re.compile(r'/audio/\d+'))
+    if not link_elem:
+        return None
+        
+    href = link_elem.get('href')
+    song_url = urljoin(config.BASE_URL, href)
+    
+    # Extract ID from URL
+    id_match = re.search(r'/audio/(\d+)', song_url)
+    song_id_int = int(id_match.group(1)) if id_match else None
+    
+    # Get image
+    img = container.find('img')
+    cover_url = img.get('src') if img else None
+    if cover_url and cover_url.startswith('/'):
+        cover_url = urljoin(config.BASE_URL, cover_url)
+        
+    # Title processing
+    title_elem = container.find('div', class_=re.compile(r'other-sng-title|sng-title|title', re.I))
+    if not title_elem:
+        title_elem = container.find(['h2', 'h3'])
+    
+    title_text = ''
+    if title_elem:
+        h_link = title_elem.find('a')
+        if h_link:
+            title_text = h_link.text.strip()
+        else:
+            h2h3 = title_elem.find(['h2', 'h3'])
+            title_text = h2h3.text.strip() if h2h3 else title_elem.text.strip()
+    else:
+        title_text = link_elem.text.strip()
+        
+    if not title_text:
+        return song_id_int
+        
+    # Parse Artist and Song Name from title (format: "SongName - ArtistName")
+    artist_name = "Unknown Artist"
+    if "-" in title_text:
+        parts = title_text.split("-", 1)
+        artist_name = parts[1].strip()
+
+    if not artist_name:
+        artist_name = "Unknown Artist"
+
+    # Fuzzy-match artist name to avoid duplicates
+    normalised = re.sub(r'\s+', ' ', artist_name).strip()
+    artist_id = find_artist_by_name(normalised)
+    if not artist_id:
+        artist_id = upsert_artist(normalised)
+
+    # Stats
+    stats_text = container.get_text()
+    plays_match = re.search(r'([\d,.]+[KMB]?)\s*plays?', stats_text, re.I)
+    downloads_match = re.search(r'([\d,.]+[KMB]?)\s*downloads?', stats_text, re.I)
+
+    plays = 0
+    downloads = 0
+    if plays_match:
+        p = plays_match.group(1).replace(',', '')
+        if 'K' in p: plays = int(float(p.replace('K', '')) * 1000)
+        elif 'M' in p: plays = int(float(p.replace('M', '')) * 1000000)
+        else: plays = int(float(p))
+    if downloads_match:
+        d = downloads_match.group(1).replace(',', '')
+        if 'K' in d: downloads = int(float(d.replace('K', '')) * 1000)
+        elif 'M' in d: downloads = int(float(d.replace('M', '')) * 1000000)
+        else: downloads = int(float(d))
+        
+    # Db integration
+    try:
+        if is_dj_playlist(title_text):
+            rec_id = upsert_playlist(artist_id, title_text, cover_url, song_url)
+            upsert_playlist_stats(rec_id, plays, downloads)
+        else:
+            song_id = upsert_song(artist_id, title_text, cover_url, song_url)
+            upsert_stats(song_id, plays, downloads)
+    except Exception as e:
+        print(f"      ❌ Ghost sync error for {artist_name}: {e}")
+        
+    return song_id_int
+
+
+async def scrape_newsongs_sequentially():
+    """Extracts all songs using the moresongs.php AJAX endpoint."""
+    print("🚀 Starting Chronological Deep Scrape...")
+    
+    # 1. Get initial last_loaded_id from /newsongs
+    url = f"{config.BASE_URL}/newsongs"
+    async with async_playwright() as p:
+        browser = await p.chromium.launch(headless=config.HEADLESS)
+        page = await browser.new_page()
+        await page.goto(url, wait_until='domcontentloaded', timeout=60000)
+        
+        try:
+            last_loaded_id_val = await page.input_value('#last_loaded_id')
+        except:
+            # Fallback if the input is not yet present
+            await page.wait_for_selector('#last_loaded_id', timeout=10000)
+            last_loaded_id_val = await page.input_value('#last_loaded_id')
+            
+        print(f"  Starting from ID: {last_loaded_id_val}")
+        
+        # Initial scrape of the first batch on the page
+        html = await page.content()
+        soup = BeautifulSoup(html, 'html.parser')
+        containers = soup.find_all('div', class_=re.compile(r'col-lg-2|col-lg-3|col-md-3|col-sm-4'))
+        for c in containers:
+            process_audio_card(c)
+            
+        await browser.close()
+
+    # 2. Loop through moresongs.php
+    current_id = last_loaded_id_val
+    total_new = 0
+    
+    while current_id:
+        print(f"  📥 Fetching batch before ID {current_id}...")
+        try:
+            response = requests.post(
+                f"{config.BASE_URL}/moresongs.php",
+                data={'last_loaded_id': current_id},
+                headers={'Content-Type': 'application/x-www-form-urlencoded', **config.HEADERS},
+                timeout=30
+            )
+            if response.status_code != 200:
+                print(f"    ❌ Error: Server returned {response.status_code}")
+                break
+                
+            batch_html = response.text
+            if not batch_html.strip():
+                print("    🏁 No more songs found.")
+                break
+                
+            soup = BeautifulSoup(batch_html, 'html.parser')
+            # The AJAX response might be just a list of items, not a full page
+            potential_links = soup.find_all('a', href=re.compile(r'/audio/\d+'))
+            if not potential_links:
+                print("    🏁 No more audio cards found in response.")
+                break
+
+            # Find unique containers
+            containers = []
+            seen_containers = set()
+            for l in potential_links:
+                c = l.find_parent('div', class_=re.compile(r'col-lg-2|col-lg-3|col-md-3|col-sm-4'))
+                if not c:
+                    c = l.find_parent('div')
+                if c and id(c) not in seen_containers:
+                    containers.append(c)
+                    seen_containers.add(id(c))
+
+            batch_ids = []
+            for c in containers:
+                sid = process_audio_card(c)
+                if sid:
+                    batch_ids.append(sid)
+            
+            if not batch_ids:
+                print("    🏁 No valid song IDs found in this batch.")
+                break
+                
+            # Update current_id to the smallest ID found
+            next_id = min(batch_ids)
+            if next_id >= int(current_id):
+                # This could happen if the batch only contains the same ID or if the server repeats data
+                # We should stop to avoid infinite loops
+                print(f"    ⚠️ Warning: ID did not decrease ({current_id} -> {next_id}). Breaking.")
+                break
+                
+            current_id = str(next_id)
+            total_new += len(batch_ids)
+            print(f"    ✅ Batch processed. Next ID: {current_id}. Total so far: {total_new}")
+            
             await asyncio.sleep(config.PAGE_DELAY)
+            
+        except Exception as e:
+            print(f"    ❌ Request error: {e}")
+            break
+            
+    print(f"🎉 Deep Scrape complete! Extracted {total_new} items.")
 
-    await asyncio.gather(*[process_one(a) for a in artists])
 
 async def scrape_audios_from_letter(letter: str, page):
-    """Fallback sweep to extract audios directly and implicitly create missing artists."""
-    url = f"{config.BASE_URL}/audios/letter/{letter}.html"
-    print(f"  🎶 Audio Sweep {letter.upper()}: {url}")
+    """Fallback sweep to extract audios directly and implicitly create missing artists.
+    Supports pagination via ?page=N.
+    """
+    total_count = 0
+    for p_num in range(1, config.MAX_PAGES_PER_LETTER + 1):
+        url = f"{config.BASE_URL}/audios/letter/{letter}.html?page={p_num}"
+        print(f"  🎶 Audio Sweep {letter.upper()} (Page {p_num}): {url}")
 
-    try:
-        res = await page.goto(url, wait_until='domcontentloaded', timeout=60000)
-        if res.status == 404:
-            return 0
-    except Exception as e:
-        print(f"  Failed to load audios for {letter.upper()}: {e}")
-        return 0
-
-    html = await page.content()
-    soup = BeautifulSoup(html, 'html.parser')
-    
-    songs = soup.find_all('div', class_='col-lg-2') or soup.find_all('div', class_='col-lg-3')
-    if not songs:
-        songs = soup.find_all('div', class_='col-md-3') or soup.find_all('div', class_='col-sm-4')
-    
-    print(f"      Matched {len(songs)} audio cards.")
-    count = 0
-    
-    for container in songs:
-        link_elem = container.find('a', href=re.compile(r'/audio/\d+'))
-        if not link_elem:
-            continue
-            
-        href = link_elem.get('href')
-        song_url = urljoin(config.BASE_URL, href)
-        
-        # Get image
-        img = container.find('img')
-        cover_url = img.get('src') if img else None
-        if cover_url and cover_url.startswith('/'):
-            cover_url = urljoin(config.BASE_URL, cover_url)
-            
-        # Title processing
-        title_elem = container.find('div', class_=re.compile(r'other-sng-title'))
-        if not title_elem:
-            title_elem = container.find(['h2', 'h3'])
-        
-        title_text = ''
-        if title_elem:
-            h_link = title_elem.find('a')
-            if h_link:
-                title_text = h_link.text.strip()
-            else:
-                title_text = title_elem.find(['h2', 'h3']).text.strip() if title_elem.find(['h2', 'h3']) else title_elem.text.strip()
-        else:
-            title_text = link_elem.text.strip()
-            
-        if not title_text:
-            continue
-            
-        # Parse Artist and Song Name from title (format: "SongName - ArtistName")
-        song_name = title_text
-        artist_name = "Unknown Artist"
-        if "-" in title_text:
-            parts = title_text.split("-", 1)
-            song_name = parts[0].strip()
-            artist_name = parts[1].strip()
-
-        if not artist_name or len(artist_name) == 0:
-            artist_name = "Unknown Artist"
-
-        # Fuzzy-match artist name to avoid duplicates — normalise whitespace & case
-        normalised = re.sub(r'\s+', ' ', artist_name).strip()
-        existing_id = find_artist_by_name(normalised)
-        if existing_id:
-            artist_id = existing_id
-        else:
-            artist_id = upsert_artist(normalised)
-
-        # Stats
-        stats_text = container.get_text()
-        plays_match = re.search(r'([\d,.]+[KMB]?)\s*plays?', stats_text, re.I)
-        downloads_match = re.search(r'([\d,.]+[KMB]?)\s*downloads?', stats_text, re.I)
-
-        plays = 0
-        downloads = 0
-        if plays_match:
-            p = plays_match.group(1).replace(',', '')
-            if 'K' in p: plays = int(float(p.replace('K', '')) * 1000)
-            elif 'M' in p: plays = int(float(p.replace('M', '')) * 1000000)
-            else: plays = int(float(p))
-        if downloads_match:
-            d = downloads_match.group(1).replace(',', '')
-            if 'K' in d: downloads = int(float(d.replace('K', '')) * 1000)
-            elif 'M' in d: downloads = int(float(d.replace('M', '')) * 1000000)
-            else: downloads = int(float(d))
-            
-        # Db integration
         try:
-            artist_id = upsert_artist(artist_name)
-            if is_dj_playlist(title_text):
-                rec_id = upsert_playlist(artist_id, title_text, cover_url, song_url)
-                upsert_playlist_stats(rec_id, plays, downloads)
-            else:
-                song_id = upsert_song(artist_id, title_text, cover_url, song_url)
-                upsert_stats(song_id, plays, downloads)
-            count += 1
+            res = await page.goto(url, wait_until='domcontentloaded', timeout=60000)
+            if res.status == 404:
+                print(f"    No more pages for {letter.upper()}.")
+                break
         except Exception as e:
-            print(f"      ❌ Ghost sync error for {artist_name}: {e}")
+            print(f"  Failed to load audios for {letter.upper()} P{p_num}: {e}")
+            break
+
+        html = await page.content()
+        soup = BeautifulSoup(html, 'html.parser')
+        
+        songs = soup.find_all('div', class_='col-lg-2') or soup.find_all('div', class_='col-lg-3')
+        if not songs:
+            songs = soup.find_all('div', class_='col-md-3') or soup.find_all('div', class_='col-sm-4')
+        
+        if not songs:
+            print(f"    No songs found on page {p_num}. Finishing sweep.")
+            break
             
-    print(f"      ✅ Safely swept {count}/{len(songs)} into DB.")
-    return count
+        print(f"      Matched {len(songs)} audio cards.")
+        page_count = 0
+        
+        for container in songs:
+            process_audio_card(container)
+            page_count += 1
+                
+        total_count += page_count
+        print(f"      ✅ Page {p_num} swept: {page_count} items. Total so far: {total_count}")
+        
+        # If we got significantly less than a full page (usually 100), we've reached the end
+        if len(songs) < 50:
+            break
+            
+        await asyncio.sleep(config.PAGE_DELAY)
+
+    return total_count

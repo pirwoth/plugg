@@ -24,6 +24,7 @@ interface AuthContextValue {
   updateProfile: (updates: Partial<Omit<Profile, "id">>) => Promise<{ error: string | null }>;
   updateAvatar: (blob: string) => Promise<{ error: string | null }>;
   checkHandleAvailable: (handle: string) => Promise<boolean>;
+  incrementListens: () => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextValue | null>(null);
@@ -79,15 +80,32 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     return () => subscription.unsubscribe();
   }, [fetchProfile]);
 
-  // Update streak — call after every listening session
+  // Atomic increment for total listens
+  const incrementListens = useCallback(async () => {
+    if (!user || !profile) return;
+    
+    const newCount = (profile.streak || 0) + 1;
+
+    // Optimistic local update
+    setProfile(p => p ? { ...p, streak: newCount } : null);
+    localStorage.setItem("plugg_cached_profile", JSON.stringify({ ...profile, streak: newCount }));
+
+    // Update database
+    const { error } = await supabase
+      .from("profiles")
+      .update({ streak: newCount })
+      .eq("id", user.id);
+
+    if (error) {
+      console.error("Error updating listens count:", error);
+      // Optional: rollback local state if we want to be strict, but for listens it's fine
+    }
+  }, [user, profile]);
+
   const touchStreak = useCallback(async (uid: string) => {
+    // Keep last_active updated but don't reset streak
     const today = new Date().toISOString().split("T")[0];
-    const { data } = await supabase.from("profiles").select("streak, last_active").eq("id", uid).single();
-    if (!data) return;
-    const last = data.last_active;
-    const yesterday = new Date(Date.now() - 86400000).toISOString().split("T")[0];
-    const newStreak = last === today ? data.streak : last === yesterday ? data.streak + 1 : 1;
-    await supabase.from("profiles").update({ streak: newStreak, last_active: today }).eq("id", uid);
+    await supabase.from("profiles").update({ last_active: today }).eq("id", uid);
   }, []);
 
   const signUp = useCallback(async (email: string, password: string, name: string, handle: string) => {
@@ -144,7 +162,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     if (!user) return { error: "Not authenticated" };
     const blob = await (await fetch(dataUrl)).blob();
     const ext = blob.type.split("/")[1] || "jpg";
-    const path = `avatars/${user.id}.${ext}`;
+    const path = `${user.id}/avatar.${ext}`;
     const { error: uploadErr } = await supabase.storage.from("avatars").upload(path, blob, { upsert: true });
     if (uploadErr) return { error: uploadErr.message };
     const { data } = supabase.storage.from("avatars").getPublicUrl(path);
@@ -161,6 +179,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       user, session, profile, loading,
       signUp, signIn, signInWithGoogle, signOut,
       updateProfile, updateAvatar, checkHandleAvailable,
+      incrementListens,
     }}>
       {children}
     </AuthContext.Provider>

@@ -30,6 +30,7 @@ interface PlayerContextValue {
   toggleShuffle: () => void;
   toggleRepeat: () => void;
   recentlyPlayed: Song[];
+  loadingFavorites: boolean;
 }
 
 const PlayerContext = createContext<PlayerContextValue | null>(null);
@@ -63,8 +64,11 @@ export const PlayerProvider = ({ children }: { children: ReactNode }) => {
       return saved ? JSON.parse(saved) : [];
     } catch { return []; }
   });
+  const [favoriteSongs, setFavoriteSongs] = useState<Song[]>([]);
+  const [loadingFavorites, setLoadingFavorites] = useState(false);
+  const [hasCountedCurrent, setHasCountedCurrent] = useState(false);
   
-  const { user } = useAuth();
+  const { user, profile, incrementListens } = useAuth();
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   // Load user data (likes/follows) when authenticated
@@ -78,7 +82,7 @@ export const PlayerProvider = ({ children }: { children: ReactNode }) => {
     // Load likes
     supabase.from("user_favourites").select("song_id").eq("user_id", user.id)
       .then(({ data }) => {
-        if (data) setLikedSongs(new Set(data.map(d => d.song_id)));
+        if (data) setLikedSongs(new Set(data.map(d => d.song_id.toString())));
       });
 
     // Load follows
@@ -99,6 +103,99 @@ export const PlayerProvider = ({ children }: { children: ReactNode }) => {
       });
     }
   }, [currentSong?.id]);
+
+  // Sync favoriteSongs with likedSongs
+  useEffect(() => {
+    const fetchFavorites = async () => {
+      if (likedSongs.size === 0) {
+        setFavoriteSongs([]);
+        setLoadingFavorites(false);
+        return;
+      }
+
+      setLoadingFavorites(true);
+
+      // Check which ones are in mockSongs
+      const fromMock = mockSongs.filter(s => likedSongs.has(s.id.toString()));
+      const missingIds = Array.from(likedSongs).filter(id => !mockSongs.some(m => m.id.toString() === id.toString()));
+
+      if (missingIds.length === 0) {
+        setFavoriteSongs(fromMock);
+        setLoadingFavorites(false);
+        return;
+      }
+
+      // Fetch missing ones from Supabase
+      try {
+        const numericIds = missingIds.map(id => parseInt(id)).filter(id => !isNaN(id));
+        
+        if (numericIds.length === 0) {
+          setFavoriteSongs(fromMock);
+          return;
+        }
+
+        const { data: songsData, error: songsError } = await supabase
+          .from("songs")
+          .select("*")
+          .in("id", numericIds);
+
+        if (songsError) throw songsError;
+
+        // Fetch unique artist IDs from these songs to get artist details
+        const artistIds = Array.from(new Set(songsData?.map(s => s.artist_id).filter(Boolean) || []));
+        const { data: artistsData } = await supabase
+          .from("artists")
+          .select("id, name, image_url, genre")
+          .in("id", artistIds);
+
+        const fromSupabase: Song[] = (songsData || []).map(s => {
+          const artist = artistsData?.find(a => a.id === s.artist_id);
+          return {
+            id: s.id.toString(),
+            title: s.title,
+            artistName: artist?.name || "Unknown",
+            artistAvatar: artist?.image_url || "",
+            plays: 0,
+            downloads: 0,
+            likes: 0,
+            timestamp: new Date(s.first_seen_at || Date.now()),
+            duration: 180,
+            audioUrl: (() => {
+              const rawTitle = s.title || '';
+              let songPart = rawTitle;
+              let artistPart = artist?.name || '';
+              
+              if (rawTitle.includes(' - ')) {
+                const parts = rawTitle.split(' - ');
+                songPart = parts[0];
+                artistPart = parts[1];
+              } else if (rawTitle.includes('-')) {
+                const parts = rawTitle.split('-');
+                songPart = parts[0];
+                artistPart = parts[1];
+              }
+              
+              const cleanSong = songPart.trim().replace(/\s+/g, '');
+              const cleanArtist = artistPart.trim().replace(/\s+/g, '');
+              return encodeURI(`https://www.westnilebiz.com/songs/${cleanSong} - ${cleanArtist}.mp3`);
+            })(),
+            genre: (artist?.genre as Genre) || "afrobeats",
+            coverUrl: s.cover_url || undefined,
+            cover: { from: "#333", to: "#000" }
+          };
+        });
+
+        setFavoriteSongs([...fromMock, ...fromSupabase]);
+      } catch (err) {
+        console.error("Error fetching favorites:", err);
+        setFavoriteSongs(fromMock);
+      } finally {
+        setLoadingFavorites(false);
+      }
+    };
+
+    fetchFavorites();
+  }, [likedSongs]);
 
   useEffect(() => {
     if (audioRef.current) {
@@ -199,9 +296,9 @@ export const PlayerProvider = ({ children }: { children: ReactNode }) => {
 
     if (user) {
       if (isLiked) {
-        await supabase.from("user_favourites").delete().eq("user_id", user.id).eq("song_id", songId);
+        await supabase.from("user_favourites").delete().eq("user_id", user.id).eq("song_id", parseInt(songId));
       } else {
-        await supabase.from("user_favourites").insert({ user_id: user.id, song_id: songId });
+        await supabase.from("user_favourites").insert({ user_id: user.id, song_id: parseInt(songId) });
       }
     }
   }, [currentSong, likedSongs, user]);
@@ -226,6 +323,19 @@ export const PlayerProvider = ({ children }: { children: ReactNode }) => {
     }
   }, [followedArtists, user]);
 
+  // Track playback time to count as a "listen" after 10 seconds
+  useEffect(() => {
+    if (currentTime >= 10 && !hasCountedCurrent && currentSong) {
+      incrementListens();
+      setHasCountedCurrent(true);
+    }
+  }, [currentTime, hasCountedCurrent, currentSong, incrementListens]);
+
+  // Reset counted flag when song changes
+  useEffect(() => {
+    setHasCountedCurrent(false);
+  }, [currentSong?.id]);
+
   const seek = useCallback((time: number) => {
     if (audioRef.current) {
       audioRef.current.currentTime = time;
@@ -245,7 +355,6 @@ export const PlayerProvider = ({ children }: { children: ReactNode }) => {
     const currentWithLike = currentSong
       ? { ...currentSong, liked: likedSongs.has(currentSong.id) }
       : null;
-    const favoriteSongs = mockSongs.filter((s) => likedSongs.has(s.id));
     return {
       currentSong,
       isPlaying,
@@ -263,6 +372,7 @@ export const PlayerProvider = ({ children }: { children: ReactNode }) => {
       closeFullPlayer: () => setShowFullPlayer(false),
       currentWithLike,
       favoriteSongs,
+      loadingFavorites,
       currentTime,
       duration,
       volume: volumeState,
@@ -274,7 +384,7 @@ export const PlayerProvider = ({ children }: { children: ReactNode }) => {
       toggleRepeat: () => setIsRepeat(r => !r),
       recentlyPlayed
     };
-  }, [currentSong, isPlaying, showFullPlayer, likedSongs, followedArtists, play, toggle, close, next, prev, toggleLike, toggleFollow, currentTime, duration, volumeState, isShuffle, isRepeat, seek, setVolume, recentlyPlayed]);
+  }, [currentSong, isPlaying, showFullPlayer, likedSongs, followedArtists, play, toggle, close, next, prev, toggleLike, toggleFollow, currentTime, duration, volumeState, isShuffle, isRepeat, seek, setVolume, recentlyPlayed, favoriteSongs, loadingFavorites]);
 
   return (
     <PlayerContext.Provider value={value}>
@@ -283,7 +393,10 @@ export const PlayerProvider = ({ children }: { children: ReactNode }) => {
         <audio 
           ref={audioRef} 
           src={currentSong.audioUrl} 
-          onEnded={next} 
+          onEnded={() => {
+            if (!hasCountedCurrent) incrementListens();
+            next();
+          }} 
           autoPlay={isPlaying}
           loop={isRepeat}
           onTimeUpdate={(e) => setCurrentTime(e.currentTarget.currentTime)}

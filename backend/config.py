@@ -21,3 +21,4 @@ HEADERS = {'User-Agent': 'InternalMigrationBot/1.0'}
 MAX_CONCURRENT_ARTISTS = 10
 PAGE_DELAY = 1.0  
 HEADLESS = True  
+MAX_PAGES_PER_LETTER = 100

@@ -1,4 +1,4 @@
-import { Heart, ArrowLeft, Compass } from "lucide-react";
+import { Heart, Compass } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import AppShell from "@/components/AppShell";
 import SongItem from "@/components/SongItem";
@@ -7,11 +7,15 @@ import { usePlayer } from "@/context/PlayerContext";
 
 const Favorites = () => {
   const navigate = useNavigate();
-  const { favoriteSongs, currentSong, isPlaying, play } = usePlayer();
+  const { favoriteSongs, loadingFavorites, currentSong, isPlaying, play } = usePlayer();
 
   return (
     <div className="animate-in fade-in duration-500">
-      {favoriteSongs.length === 0 ? (
+      {loadingFavorites ? (
+        <div className="flex items-center justify-center py-20">
+          <div className="w-8 h-8 rounded-full border-2 border-primary border-t-transparent animate-spin" />
+        </div>
+      ) : favoriteSongs.length === 0 ? (
         <EmptyState
           icon={Heart}
           title="No favourites yet"

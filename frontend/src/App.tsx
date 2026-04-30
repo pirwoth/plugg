@@ -36,6 +36,8 @@ const App = () => (
                   <Route path="/search" element={<Search />} />
                   <Route path="/favorites" element={<Favorites />} />
                   <Route path="/account" element={<Account />} />
+                  <Route path="/account/following" element={<Account />} />
+                  <Route path="/account/history" element={<Account />} />
                   <Route path="/settings" element={<Settings />} />
                   <Route path="/auth" element={<Auth />} />
                   <Route path="/artist" element={<ArtistDashboard />} />
