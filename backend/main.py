@@ -1,7 +1,7 @@
 import asyncio
 from playwright.async_api import async_playwright
 import config
-from scraper import scrape_artists_from_letter, process_artists_batch, scrape_audios_from_letter
+from scraper import scrape_artists_from_letter, process_artists_batch, scrape_audios_from_letter, scrape_newsongs_sequentially
 
 async def main():
     async with async_playwright() as p:
@@ -23,6 +23,9 @@ async def main():
 
         await main_page.close()
         await browser.close()
+
+    print("\n🚀 Starting Deep Scrape for all remaining songs...")
+    await scrape_newsongs_sequentially()
 
     print("\n🎉 Full migration complete!")
 

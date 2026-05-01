@@ -15,7 +15,7 @@ ENABLE_AI_GENRE = True if GEMINI_API_KEY else False
 # Scraping
 BASE_URL = "https://www.westnilebiz.com"
 LETTERS = "abcdefghijklmnopqrstuvwxyz0123456789"
-HEADERS = {'User-Agent': 'InternalMigrationBot/1.0'}
+HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'}
 
 # Performance
 MAX_CONCURRENT_ARTISTS = 10

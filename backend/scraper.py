@@ -372,30 +372,30 @@ async def scrape_newsongs_sequentially():
     """Extracts all songs using the moresongs.php AJAX endpoint."""
     print("🚀 Starting Chronological Deep Scrape...")
     
-    # 1. Get initial last_loaded_id from /newsongs
+    # 1. Get initial last_loaded_id from /newsongs using requests (much faster and avoids playwright hangs)
     url = f"{config.BASE_URL}/newsongs"
-    async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=config.HEADLESS)
-        page = await browser.new_page()
-        await page.goto(url, wait_until='domcontentloaded', timeout=60000)
+    try:
+        response = requests.get(url, headers=config.HEADERS, timeout=30)
+        response.raise_for_status()
+        html = response.text
+        soup = BeautifulSoup(html, 'html.parser')
         
-        try:
-            last_loaded_id_val = await page.input_value('#last_loaded_id')
-        except:
-            # Fallback if the input is not yet present
-            await page.wait_for_selector('#last_loaded_id', timeout=10000)
-            last_loaded_id_val = await page.input_value('#last_loaded_id')
+        last_loaded_id_input = soup.find('input', id='last_loaded_id')
+        if not last_loaded_id_input:
+            print("  ❌ Could not find last_loaded_id input. Aborting deep scrape.")
+            return
             
+        last_loaded_id_val = last_loaded_id_input.get('value')
         print(f"  Starting from ID: {last_loaded_id_val}")
         
         # Initial scrape of the first batch on the page
-        html = await page.content()
-        soup = BeautifulSoup(html, 'html.parser')
         containers = soup.find_all('div', class_=re.compile(r'col-lg-2|col-lg-3|col-md-3|col-sm-4'))
         for c in containers:
             process_audio_card(c)
             
-        await browser.close()
+    except Exception as e:
+        print(f"  ❌ Failed to fetch initial deep scrape page: {e}")
+        return
 
     # 2. Loop through moresongs.php
     current_id = last_loaded_id_val
