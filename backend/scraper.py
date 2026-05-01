@@ -37,8 +37,11 @@ def is_dj_playlist(title: str) -> bool:
 # ────────────────────────────────────────────────────────────
 
 if config.ENABLE_AI_GENRE:
-    import google.generativeai as genai
-    genai.configure(api_key=config.GEMINI_API_KEY)
+    from google import genai
+    # Global client for Gemini API
+    gemini_client = genai.Client(api_key=config.GEMINI_API_KEY)
+else:
+    gemini_client = None
 
 async def infer_genre(artist_name: str, bio: str, song_titles: list) -> str:
     """Uses Gemini to guess the genre of the artist based on their info."""
@@ -58,8 +61,10 @@ async def infer_genre(artist_name: str, bio: str, song_titles: list) -> str:
     Return ONLY the exact genre string from the list above, nothing else.
     """
     try:
-        model = genai.GenerativeModel('gemini-1.5-flash')
-        response = await model.generate_content_async(prompt)
+        response = await gemini_client.aio.models.generate_content(
+            model='gemini-1.5-flash',
+            contents=prompt
+        )
         genre = response.text.strip()
         genre = re.sub(r'[^a-zA-Z& ]', '', genre).strip()
         return genre
@@ -106,6 +111,19 @@ async def scrape_artists_from_letter(letter: str, page):
 
     print(f"  Total artists for {letter.upper()}: {len(artists)}")
     return artists
+
+
+async def process_artists_batch(artists, browser):
+    """Process a list of artists with limited concurrency."""
+    semaphore = asyncio.Semaphore(config.MAX_CONCURRENT_ARTISTS)
+
+    async def sem_scrape(artist):
+        async with semaphore:
+            await scrape_artist_page(artist['url'], artist['name'], artist['image_url'], browser)
+
+    print(f"  🚀 Processing {len(artists)} artists (Concurrency: {config.MAX_CONCURRENT_ARTISTS})...")
+    tasks = [sem_scrape(artist) for artist in artists]
+    await asyncio.gather(*tasks)
 
 
 async def scrape_artist_page(artist_url: str, artist_name: str, artist_image_url: str, browser):
