@@ -404,14 +404,26 @@ async def scrape_newsongs_sequentially():
     while current_id:
         print(f"  📥 Fetching batch before ID {current_id}...")
         try:
-            response = requests.post(
-                f"{config.BASE_URL}/moresongs.php",
-                data={'last_loaded_id': current_id},
-                headers={'Content-Type': 'application/x-www-form-urlencoded', **config.HEADERS},
-                timeout=30
-            )
-            if response.status_code != 200:
-                print(f"    ❌ Error: Server returned {response.status_code}")
+            max_retries = 3
+            response = None
+            for attempt in range(max_retries):
+                try:
+                    response = requests.post(
+                        f"{config.BASE_URL}/moresongs.php",
+                        data={'last_loaded_id': current_id},
+                        headers={'Content-Type': 'application/x-www-form-urlencoded', **config.HEADERS},
+                        timeout=30
+                    )
+                    break
+                except requests.exceptions.RequestException as e:
+                    print(f"    ⚠️ Connection error on attempt {attempt+1}/{max_retries}: {e}")
+                    if attempt == max_retries - 1:
+                        raise
+                    await asyncio.sleep(5 * (attempt + 1))
+                    
+            if not response or response.status_code != 200:
+                status = response.status_code if response else 'Unknown'
+                print(f"    ❌ Error: Server returned {status}")
                 break
                 
             batch_html = response.text
