@@ -2,15 +2,15 @@ name: Nightly Music Sync
 
 on:
   schedule:
-    - cron: '0 2 * * *'
-  workflow_dispatch:
+    - cron: '0 2 * * *'       # 2 AM UTC daily
+  workflow_dispatch:           # Manual trigger
 
 jobs:
   scrape-and-sync:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: backend   # ← This sets the working directory
+        working-directory: backend
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -22,9 +22,6 @@ jobs:
 
       - name: Install dependencies
         run: pip install -r requirements.txt
-
-      - name: Install Playwright browsers
-        run: playwright install --with-deps chromium
 
       - name: Run migration script
         env:
