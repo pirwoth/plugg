@@ -1,5 +1,4 @@
 // Lightweight client-side persistence for simulated tips.
-// Once Lovable Cloud is wired up this can be swapped for a real DB table.
 
 export type Provider = "mtn" | "airtel";
 

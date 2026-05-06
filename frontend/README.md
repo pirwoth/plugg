@@ -1,3 +1,3 @@
-# Welcome to your Lovable project
+# Plugg
 
-TODO: Document your project here
+Discover local music and support local artists.

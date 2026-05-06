@@ -29,7 +29,7 @@ const DesktopSidebar = ({ onSearch, onOpenFavorites, onRefresh }: DesktopSidebar
         className="flex items-center px-3 py-2 mb-4 self-start"
         aria-label="Plugg home"
       >
-        <img src="/logo.png" alt="Plugg" className="h-28 w-auto" />
+        <span className="text-2xl font-bold tracking-tight text-foreground">plugg</span>
       </button>
 
       <nav className="flex flex-col gap-1">
