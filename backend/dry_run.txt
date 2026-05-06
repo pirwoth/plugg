@@ -1,0 +1,2142 @@
+Fetching artists and songs...
+Total artists: 3976
+Total songs & playlists: 12648
+Unique primary names (before fuzzy): 3160
+Running fuzzy matching...
+Unique clusters (after fuzzy): 2976
+
+Cluster Master: 'Busy Boy' (ID 2390, Items: 4)
+  -> Merging: 'Bush Boy' (ID 6, Items: 3)
+  -> Merging: 'Bush Boy Ft Ramsey' (ID 1, Items: 1)
+  -> Merging: 'Bush Boy Ft JM Kennedy' (ID 3278, Items: 1)
+  -> Merging: 'Bush Boy Ft Rank Jalur' (ID 4281, Items: 1)
+
+Cluster Master: 'Nigga X Pomba' (ID 1346, Items: 8)
+  -> Merging: 'Nigga X Pomba Ft Slim Diva' (ID 2, Items: 1)
+
+Cluster Master: 'Mungu Feni' (ID 3, Items: 9)
+  -> Merging: 'Mungu Feni ft Levixone' (ID 3160, Items: 2)
+  -> Merging: 'Mungu Feni x Levixone' (ID 3158, Items: 1)
+  -> Merging: 'Mungu Feni ft Pr Wilson Bugembe' (ID 4160, Items: 1)
+
+Cluster Master: 'Lion Man' (ID 7, Items: 3)
+  -> Merging: 'Lion Man Ft Elton Loverboy' (ID 2316, Items: 1)
+
+Cluster Master: 'Supper Deno' (ID 2496, Items: 2)
+  -> Merging: 'Super Deno' (ID 8, Items: 1)
+  -> Merging: 'Super Deno X Eco Zaq' (ID 3895, Items: 1)
+  -> Merging: 'Super Deno X Slim Diva' (ID 3266, Items: 1)
+
+Cluster Master: 'Veriasco Boy' (ID 1933, Items: 7)
+  -> Merging: 'Riaso Boy 15' (ID 2583, Items: 6)
+  -> Merging: 'Riaso Boy Ft Ashley D' (ID 10, Items: 1)
+  -> Merging: 'Riaso Boy X Jeezy 128' (ID 4086, Items: 1)
+  -> Merging: 'Veriasco Boy Ft Franc Dee Master' (ID 2720, Items: 0)
+
+Cluster Master: 'Black Mamba' (ID 12, Items: 4)
+  -> Merging: 'Black Mamba Ft Chally Pro' (ID 2655, Items: 1)
+
+Cluster Master: 'Don Popular' (ID 15, Items: 9)
+  -> Merging: 'Don Popular X Piaxy' (ID 3156, Items: 1)
+  -> Merging: 'Don Popular X Street G' (ID 2880, Items: 1)
+  -> Merging: 'Don Popular X Ug Senior' (ID 4338, Items: 1)
+  -> Merging: 'Don Popular Ft Lito Kid' (ID 3472, Items: 1)
+  -> Merging: 'Don Popular X Kiss Prizzy' (ID 2288, Items: 1)
+  -> Merging: 'Don Popular Ft Big Mafia Pro' (ID 2714, Items: 1)
+
+Cluster Master: 'Produza Brayo' (ID 16, Items: 1)
+  -> Merging: 'Prroduza Brayo' (ID 2834, Items: 1)
+
+Cluster Master: 'Small Rapper' (ID 3466, Items: 3)
+  -> Merging: 'Small Rapper X Roy TV' (ID 17, Items: 1)
+  -> Merging: 'Small Rapper X Slim Diva' (ID 2743, Items: 1)
+  -> Merging: 'Small Rapper X Miray Badboy' (ID 3958, Items: 1)
+  -> Merging: 'Small Rapper X Trajor Justone' (ID 4022, Items: 1)
+
+Cluster Master: 'Lucky Dee' (ID 19, Items: 2)
+  -> Merging: 'Lucky Dee X Ska Jeune' (ID 3398, Items: 1)
+
+Cluster Master: 'Cool Williams' (ID 22, Items: 1)
+  -> Merging: 'Cool Williams Ft LMB Ragz' (ID 2333, Items: 1)
+
+Cluster Master: 'Wizzy 125' (ID 2042, Items: 9)
+  -> Merging: 'WizZy 125 X NuTTy Fresh' (ID 4417, Items: 0)
+  -> Merging: 'WizZy 125 Ft Small Cuch' (ID 2721, Items: 0)
+  -> Merging: 'WizZy 125 X Mallie Geng Star' (ID 2284, Items: 0)
+  -> Merging: 'WizZy 125 X Young Boy X Aroo Boy X Money K X Javas Oscar X Okirwoth Steven' (ID 2793, Items: 0)
+
+Cluster Master: 'Afande Bullet' (ID 70, Items: 2)
+  -> Merging: 'Afande Bullet X Boykee' (ID 3921, Items: 0)
+
+Cluster Master: 'Africa Joanah' (ID 78, Items: 9)
+  -> Merging: 'Africa Joanah  X Dry tee' (ID 3329, Items: 0)
+  -> Merging: 'Africa Joanah X Tumu Zaga' (ID 2543, Items: 0)
+
+Cluster Master: 'AB King Ug' (ID 36, Items: 4)
+  -> Merging: 'Ab King Ug Ft Cavity Da De' (ID 4100, Items: 0)
+  -> Merging: 'Ab King Ug Ft Cavity Da De X Rap Rop' (ID 3147, Items: 0)
+
+Cluster Master: 'Ryan B' (ID 4307, Items: 4)
+  -> Merging: 'Ryan B X Better Kling X Gift Zella' (ID 4337, Items: 1)
+
+Cluster Master: 'AlbertK 1' (ID 110, Items: 5)
+  -> Merging: 'Albert K1' (ID 2358, Items: 0)
+
+Cluster Master: 'Aga Praise' (ID 87, Items: 9)
+  -> Merging: 'Aga Praise X C Molly' (ID 2656, Items: 0)
+  -> Merging: 'Aga Praise X C Molly ft Gonrison' (ID 3335, Items: 0)
+
+Cluster Master: 'Maya Keys' (ID 4, Items: 9)
+  -> Merging: 'Maya Keys Ft Rapan B' (ID 3901, Items: 0)
+
+Cluster Master: 'Kasenge Sugar' (ID 993, Items: 4)
+  -> Merging: 'Kasenge Sugar X Pals B' (ID 4310, Items: 0)
+
+Cluster Master: 'Young Life' (ID 2137, Items: 7)
+  -> Merging: 'Young Life X Sharpness Boy' (ID 2286, Items: 0)
+
+Cluster Master: 'Yamby Abrakadabra' (ID 2082, Items: 4)
+  -> Merging: 'Yamby Abrakadabra X Sure Boy' (ID 2290, Items: 0)
+
+Cluster Master: 'Vaila Bank' (ID 1901, Items: 3)
+  -> Merging: 'Vaila Bank X Fredee Bwoy' (ID 4305, Items: 0)
+
+Cluster Master: 'Back Fire' (ID 156, Items: 5)
+  -> Merging: 'Black Figure' (ID 3176, Items: 2)
+
+Cluster Master: 'Badman Governor' (ID 176, Items: 9)
+  -> Merging: 'Badman Governor X Jakie Bae' (ID 2833, Items: 0)
+
+Cluster Master: 'Baracka Yesu Ni Njiya' (ID 186, Items: 9)
+  -> Merging: 'Baraka Yesu Ni Njiya' (ID 2971, Items: 0)
+  -> Merging: 'Baraka Yesu Nijiya X F.David' (ID 4167, Items: 0)
+  -> Merging: 'Baracka Yesu Ni Njiya X OM Moses' (ID 3986, Items: 0)
+
+Cluster Master: 'Bastrian' (ID 194, Items: 9)
+  -> Merging: 'Bastrian Ft Love Forex' (ID 2935, Items: 0)
+
+Cluster Master: 'Lil GN' (ID 1149, Items: 7)
+  -> Merging: 'Lil G' (ID 1151, Items: 4)
+  -> Merging: 'Lil G Ft Iyann Donny' (ID 2287, Items: 0)
+
+Cluster Master: 'Muzy G' (ID 2294, Items: 4)
+  -> Merging: 'Muzy G X Satz Ug X Ice Man' (ID 2398, Items: 2)
+  -> Merging: 'Muzy G Ft Small Rapper X Slim Diva' (ID 2293, Items: 1)
+
+Cluster Master: 'J Broboy' (ID 857, Items: 8)
+  -> Merging: 'J Bro Boy X Solo B' (ID 2527, Items: 0)
+  -> Merging: 'J Broboy Ft ft Solo B Latic' (ID 4306, Items: 0)
+
+Cluster Master: 'Kats Pro' (ID 1002, Items: 1)
+  -> Merging: 'Kats Pro Ft Danny' (ID 2565, Items: 0)
+
+Cluster Master: 'Change Dani' (ID 256, Items: 5)
+  -> Merging: 'Change Dani feat Desanto' (ID 3383, Items: 0)
+
+Cluster Master: 'Chede' (ID 262, Items: 1)
+  -> Merging: 'Chede Ft Diano Jax Mikie Official' (ID 2627, Items: 0)
+
+Cluster Master: 'Chosen Praise' (ID 283, Items: 6)
+  -> Merging: 'Chosen Praise X Maya Keys' (ID 3051, Items: 0)
+  -> Merging: 'Chosen Praise X Prince MB' (ID 4278, Items: 0)
+
+Cluster Master: 'Chosen' (ID 281, Items: 9)
+  -> Merging: 'Chosen Ft Allstars' (ID 3038, Items: 0)
+
+Cluster Master: 'City Bowy Lyince' (ID 310, Items: 10)
+  -> Merging: 'City Bowy Lyinc' (ID 2280, Items: 0)
+
+Cluster Master: 'Eddy Wizzy' (ID 446, Items: 9)
+  -> Merging: 'Daddy Wizzy' (ID 337, Items: 7)
+  -> Merging: 'Eddy Wizzy ft Lyferic Ug' (ID 3393, Items: 0)
+
+Cluster Master: 'Cashnova' (ID 237, Items: 5)
+  -> Merging: 'Cash Novah' (ID 235, Items: 3)
+
+Cluster Master: 'Chance Boy' (ID 264, Items: 4)
+  -> Merging: 'Chance Boy Ft Dr Ice Man' (ID 3933, Items: 0)
+
+Cluster Master: 'Davi King' (ID 392, Items: 7)
+  -> Merging: 'Da King' (ID 328, Items: 2)
+
+Cluster Master: 'DR Rock' (ID 2569, Items: 5)
+  -> Merging: 'Dr Rock Ft Star One' (ID 4291, Items: 1)
+
+Cluster Master: 'Nega Lenox' (ID 1302, Items: 6)
+  -> Merging: 'Nega Lenox Ft Daddy Andre X Ranks Nature' (ID 2572, Items: 0)
+
+Cluster Master: 'Smarto Gang Gang' (ID 2292, Items: 3)
+  -> Merging: 'Smarto Gang Gang X Slim Diva' (ID 4319, Items: 1)
+
+Cluster Master: 'Dansol Gman' (ID 379, Items: 7)
+  -> Merging: 'Dansol Gman Ft Heavenz Man X Big Son' (ID 2925, Items: 0)
+
+Cluster Master: 'Davido S Simple' (ID 398, Items: 4)
+  -> Merging: 'Davido S Simple X Terminator' (ID 3519, Items: 0)
+
+Cluster Master: 'De Polo' (ID 406, Items: 2)
+  -> Merging: 'De Polo Ft Aenon G' (ID 3083, Items: 0)
+
+Cluster Master: 'Eddy Fresh Boy' (ID 436, Items: 5)
+  -> Merging: 'Eddy Freshboy' (ID 2671, Items: 0)
+
+Cluster Master: 'Dj Rodgo 256' (ID 4315, Items: 2)
+  -> Merging: 'Dj Rodgo 256 Ft Vyroota' (ID 2769, Items: 1)
+
+Cluster Master: 'Damage Boy Official' (ID 351, Items: 3)
+  -> Merging: 'Jam Boy Official' (ID 900, Items: 1)
+
+Cluster Master: 'Danny B' (ID 363, Items: 4)
+  -> Merging: 'Danny Boy' (ID 3504, Items: 0)
+
+Cluster Master: 'Dr Iceman' (ID 2295, Items: 6)
+  -> Merging: 'Dr Iceman Ft Chris B' (ID 3462, Items: 1)
+  -> Merging: 'Dr Iceman Ft Kyali Pro' (ID 2616, Items: 1)
+  -> Merging: 'Dr Iceman Ft Young Blood' (ID 3114, Items: 1)
+  -> Merging: 'Dr Iceman Ft Slow Bwoy Master' (ID 2617, Items: 1)
+
+Cluster Master: 'Elvegaz' (ID 481, Items: 9)
+  -> Merging: 'Elvegaz Ft Dj Rojjabwoy' (ID 2882, Items: 0)
+
+Cluster Master: 'Expert Boy' (ID 2416, Items: 4)
+  -> Merging: 'Expert Boy X Mr Lovy' (ID 2983, Items: 1)
+  -> Merging: 'Expert Boy X Neek Cypher' (ID 2567, Items: 1)
+  -> Merging: 'Expert Boy Ft Mk Martins' (ID 3920, Items: 1)
+  -> Merging: 'Expert Boy Ft Xtreme Stars' (ID 2417, Items: 1)
+
+Cluster Master: 'Crush Otim' (ID 2651, Items: 3)
+  -> Merging: 'Crush Otim ft Lil Chris' (ID 4287, Items: 2)
+  -> Merging: 'Crush Otim x Jal Mazoo' (ID 4312, Items: 1)
+  -> Merging: 'Crush Otim ft Ja3I Pro' (ID 4288, Items: 1)
+
+Cluster Master: 'Emma Dee' (ID 495, Items: 9)
+  -> Merging: 'Emma Dee X Fred Smart Boy' (ID 2422, Items: 0)
+  -> Merging: 'Emma Dee X Fred Smart Boy X Gimmaxy' (ID 2439, Items: 0)
+
+Cluster Master: 'Fabiansky' (ID 512, Items: 3)
+  -> Merging: 'Fabiansky Ft Ex Gang' (ID 4251, Items: 0)
+
+Cluster Master: 'Fabulas Bwoy' (ID 506, Items: 9)
+  -> Merging: 'Fabulas Bwoy X Red Zam' (ID 4128, Items: 0)
+  -> Merging: 'Fabulas Bwoy X Red Python' (ID 4123, Items: 0)
+
+Cluster Master: 'FD Link' (ID 528, Items: 9)
+  -> Merging: 'FD Link ft Frenzy Boi' (ID 4230, Items: 0)
+
+Cluster Master: 'Fecko' (ID 529, Items: 9)
+  -> Merging: 'Fecko Ft Monday Official' (ID 4085, Items: 0)
+
+Cluster Master: 'Feg Dola' (ID 536, Items: 2)
+  -> Merging: 'Feg Dolla' (ID 538, Items: 1)
+
+Cluster Master: 'Fidorido' (ID 552, Items: 9)
+  -> Merging: 'Fidodido' (ID 548, Items: 9)
+  -> Merging: 'Fidodido X Force Boy' (ID 4168, Items: 0)
+  -> Merging: 'Fidodido X Messiah King' (ID 2815, Items: 0)
+  -> Merging: 'Fido Dido X Jeko Smiles' (ID 2414, Items: 0)
+
+Cluster Master: 'Fineboy' (ID 563, Items: 6)
+  -> Merging: 'Fireboy' (ID 558, Items: 3)
+  -> Merging: 'Fine Boys' (ID 567, Items: 3)
+  -> Merging: 'Fireboy X Ice boy' (ID 3904, Items: 0)
+  -> Merging: 'Fireboy X Super Boy' (ID 3903, Items: 0)
+
+Cluster Master: 'Fiffy Bwoy' (ID 556, Items: 5)
+  -> Merging: 'Fiffy Bwoy Ft Diera' (ID 2629, Items: 0)
+  -> Merging: 'Fiffy Bwoy Ft Unique Giants' (ID 2373, Items: 0)
+
+Cluster Master: 'Fik Favic Ug' (ID 554, Items: 9)
+  -> Merging: 'Fik Favic' (ID 2907, Items: 0)
+  -> Merging: 'Fik Favic Ft Beyonce Da Queen' (ID 2552, Items: 0)
+
+Cluster Master: 'Fik Flow' (ID 549, Items: 3)
+  -> Merging: 'Fik Flow Ft D Delta' (ID 3007, Items: 0)
+  -> Merging: 'Fik Flow Ft Delta X King Rapper' (ID 3037, Items: 0)
+
+Cluster Master: 'KLB X Dianumz Ft Jona' (ID 3424, Items: 2)
+  -> Merging: 'KLB' (ID 4314, Items: 1)
+
+Cluster Master: 'Milo Vybez' (ID 2570, Items: 3)
+  -> Merging: 'Milo Vybez Ft DJ Joel' (ID 3323, Items: 1)
+
+Cluster Master: 'King Saul Lee' (ID 2571, Items: 7)
+  -> Merging: 'King Saul Lee Ft Iansonic' (ID 4380, Items: 1)
+
+Cluster Master: 'Clever Boy' (ID 2573, Items: 6)
+  -> Merging: 'Clever Boy Ft Allstar' (ID 4141, Items: 1)
+  -> Merging: 'Clever Boy Ft Octobus Riddims' (ID 4130, Items: 1)
+
+Cluster Master: 'Fm Magic' (ID 588, Items: 9)
+  -> Merging: 'Fk Magic' (ID 576, Items: 2)
+
+Cluster Master: 'Force Boy' (ID 585, Items: 9)
+  -> Merging: 'Force Boy Ft Fidodido' (ID 4169, Items: 0)
+  -> Merging: 'Force Boy Ft Marley Brown' (ID 2751, Items: 0)
+
+Cluster Master: 'Flash Bwoy' (ID 575, Items: 4)
+  -> Merging: 'Flash Bwoy X Jezz Bang' (ID 3012, Items: 0)
+
+Cluster Master: 'Gashdi' (ID 623, Items: 9)
+  -> Merging: 'Gashdi X Kabalega Boys' (ID 4322, Items: 0)
+
+Cluster Master: 'Gimnaztik Rock' (ID 658, Items: 5)
+  -> Merging: 'Gimnaztik Rock Ft B3 Music Ug' (ID 3184, Items: 0)
+
+Cluster Master: 'Gng Music' (ID 675, Items: 9)
+  -> Merging: 'Gng music Ft Lady Morin' (ID 4151, Items: 0)
+
+Cluster Master: 'Slim Diva' (ID 2754, Items: 1)
+  -> Merging: 'Slim Diva X Smarto' (ID 4318, Items: 1)
+  -> Merging: 'Slim Diva X Super Deno' (ID 3267, Items: 1)
+  -> Merging: 'Slim Diva X Small Rapper' (ID 2742, Items: 1)
+  -> Merging: 'Slim Diva X Nigga X Pomba' (ID 3464, Items: 1)
+
+Cluster Master: 'Grave Mart' (ID 2528, Items: 10)
+  -> Merging: 'Grave Mart Ft XVG' (ID 3313, Items: 2)
+  -> Merging: 'Grave Mart Ft X V' (ID 4093, Items: 1)
+  -> Merging: 'Grave Mart X  Subs B' (ID 3161, Items: 1)
+  -> Merging: 'Grave Mart X Kiss Boy' (ID 2524, Items: 1)
+  -> Merging: 'Grave Mart X Stanley X Mr Story Boy' (ID 2523, Items: 1)
+
+Cluster Master: 'Cross Of Calvary Worships' (ID 2531, Items: 1)
+  -> Merging: 'Cross Of Calvary Worship Ministry' (ID 2530, Items: 1)
+
+Cluster Master: 'Coxson Kabaka' (ID 4317, Items: 3)
+  -> Merging: 'Coxson Kabaka X Aston Pilipili X Freeman X Khalid X Latii k' (ID 2488, Items: 2)
+  -> Merging: 'Coxson Kabaka X Aston Pilipili' (ID 2481, Items: 1)
+
+Cluster Master: 'Hallon GFS Da Maracha Boy' (ID 705, Items: 16)
+  -> Merging: 'Hallo GFS Da Maracha Boy' (ID 4273, Items: 1)
+  -> Merging: 'Hallo GFS Da Maracha Boy Ft Uhuru' (ID 4274, Items: 1)
+  -> Merging: 'Hallon GFS Da Maracha Boy Ft CVG' (ID 4272, Items: 0)
+
+Cluster Master: 'Hanky Bouy' (ID 714, Items: 6)
+  -> Merging: 'Hank Bouy' (ID 2486, Items: 0)
+
+Cluster Master: 'Rash Bwoy' (ID 1631, Items: 14)
+  -> Merging: 'Hash Bwoy' (ID 725, Items: 2)
+  -> Merging: 'Rash Bwoy Ft Lb Jivan' (ID 3997, Items: 1)
+  -> Merging: 'Rash Bwoy Ft Kaga Boy' (ID 4004, Items: 1)
+  -> Merging: 'Rash Bwoy X Smart King' (ID 3001, Items: 1)
+  -> Merging: 'Rash Bwoy Ft Willy Vybez' (ID 2759, Items: 1)
+  -> Merging: 'Rash Bwoy Ft ASA Chris' (ID 3987, Items: 0)
+  -> Merging: 'Rash Bwoy Ft Smart King' (ID 2992, Items: 0)
+
+Cluster Master: 'Honest Rule' (ID 761, Items: 8)
+  -> Merging: 'Honest Rule Ft King Samba' (ID 4105, Items: 0)
+
+Cluster Master: 'Ice B' (ID 791, Items: 9)
+  -> Merging: 'Icez B' (ID 793, Items: 3)
+
+Cluster Master: 'Joxy Christian' (ID 2300, Items: 13)
+  -> Merging: 'Joxy Christian X Yankee Max' (ID 4050, Items: 1)
+  -> Merging: 'Joxy Christian Boy X Chosen Kid' (ID 2916, Items: 1)
+
+Cluster Master: 'DJ Tip Despina 256 Ft Ruger' (ID 3500, Items: 1)
+  -> Merging: 'DJ Tip Despina 256 Ft Vyroota' (ID 2783, Items: 1)
+  -> Merging: 'DJ Tip Despina 256 Ft Rappan B' (ID 2304, Items: 1)
+  -> Merging: 'DJ Tip Despina 256 Ft FidoDido' (ID 3140, Items: 1)
+  -> Merging: 'DJ Tip Despina 256 Ft Kyali Pro' (ID 4390, Items: 1)
+  -> Merging: 'DJ Tip Despina 256 Ft RB_Zabbie' (ID 3778, Items: 1)
+  -> Merging: 'DJ Tip Despina 256 Ft Love Forex' (ID 3227, Items: 1)
+  -> Merging: 'DJ Tip Despina 256 Ft Don Popular' (ID 2836, Items: 1)
+  -> Merging: 'DJ Tip Despina 256 Ft MC Godzilla' (ID 2827, Items: 1)
+  -> Merging: 'DJ Tip Despina 256 Ft Heavenz Man' (ID 3467, Items: 1)
+  -> Merging: 'DJ Tip Despina 256 Ft Anj Bad Gyal' (ID 3151, Items: 1)
+  -> Merging: 'DJ Tip Despina 256 Ft Dannie Cleem' (ID 4031, Items: 1)
+  -> Merging: 'DJ Tip Despina 256 Ft Small Rapper' (ID 4037, Items: 1)
+  -> Merging: 'DJ TIP Despina 256 Ft Joanitah D Gyal' (ID 3216, Items: 1)
+  -> Merging: 'DJ Tip Despina 256 Ft Lucky Dee X Ska' (ID 3397, Items: 1)
+  -> Merging: 'DJ Tip Despina 256 Ft Samsea Super Boy' (ID 2319, Items: 1)
+  -> Merging: 'DJ Tip Despina 256 Ft Eezzy Da Lyrical' (ID 2458, Items: 1)
+  -> Merging: 'DJ Tip Despina 256 Ft Sam Sea Super Boy' (ID 4376, Items: 1)
+  -> Merging: 'DJ Tip Despina 256 Ft Heavenz Man X Ramcey' (ID 4325, Items: 1)
+  -> Merging: 'DJ Tip Despina 256 Ft Neshlyn X Daddy Andre' (ID 2954, Items: 1)
+  -> Merging: 'DJ Tip Despina 256 Ft Heavenz Man X Dj Ramzy' (ID 2584, Items: 1)
+  -> Merging: 'DJ Tip Despina 256 Ft Small Rapper X Slim Diva' (ID 2731, Items: 1)
+  -> Merging: 'DJ Tip Despina 256 Ft El Vegas X Dj Rojja Bwoy' (ID 2854, Items: 1)
+  -> Merging: 'DJ Tip Despina 256 Ft Alvo Misty X Double Keyz' (ID 3098, Items: 1)
+  -> Merging: 'DJ Tip Despina 256 Ft Starboy Junior X Bundi Boy' (ID 2965, Items: 1)
+  -> Merging: 'DJ Tip Despina 256 Ft Elton Lover Boy X Don Popular' (ID 4377, Items: 1)
+  -> Merging: 'DJ Tip Despina 256 Ft Baby Junior X Eezzy Da Lyrical' (ID 4323, Items: 1)
+
+Cluster Master: 'Boss Bae' (ID 2305, Items: 6)
+  -> Merging: 'Boss Bea' (ID 3035, Items: 1)
+  -> Merging: 'Boss Bae feat Heavenz Man' (ID 4203, Items: 1)
+
+Cluster Master: 'Ik Rapper Ug' (ID 805, Items: 5)
+  -> Merging: 'IK Rapper UG Ft Easy' (ID 2684, Items: 0)
+
+Cluster Master: 'Innox Brown' (ID 822, Items: 3)
+  -> Merging: 'Innox Brown X Swagg Man' (ID 3497, Items: 0)
+
+Cluster Master: 'Innoxcy' (ID 828, Items: 7)
+  -> Merging: 'Innoxy' (ID 824, Items: 6)
+
+Cluster Master: 'J Dee X Nasty' (ID 853, Items: 3)
+  -> Merging: 'Jdee' (ID 943, Items: 2)
+
+Cluster Master: 'Ivan Star' (ID 847, Items: 5)
+  -> Merging: 'Ivan Star X Kaga Boy' (ID 4276, Items: 0)
+
+Cluster Master: 'Jabirunga' (ID 864, Items: 9)
+  -> Merging: 'Jabirunga Ft Papa Las' (ID 4350, Items: 0)
+
+Cluster Master: 'Jackie Da Don' (ID 877, Items: 4)
+  -> Merging: 'Jacke Da Don' (ID 874, Items: 0)
+
+Cluster Master: 'Jagen Don Jerry' (ID 886, Items: 9)
+  -> Merging: 'Jagen Don Jerry Ft Listo Boy' (ID 2704, Items: 0)
+
+Cluster Master: 'Icytrey' (ID 799, Items: 9)
+  -> Merging: 'IcyTrey ft Macos J' (ID 3389, Items: 0)
+
+Cluster Master: 'Imak Ug' (ID 808, Items: 1)
+  -> Merging: 'Imak Ug Ft Da Wizgun' (ID 3889, Items: 0)
+
+Cluster Master: 'GAL G' (ID 624, Items: 9)
+  -> Merging: 'GAL G X Lady Gladys' (ID 2301, Items: 0)
+
+Cluster Master: 'Jophex Izaek' (ID 2653, Items: 5)
+  -> Merging: 'Jophex Izaak' (ID 4321, Items: 1)
+  -> Merging: 'Jophex Izaak X Rwoth Vio' (ID 4296, Items: 1)
+
+Cluster Master: 'Jay Bruz' (ID 922, Items: 9)
+  -> Merging: 'Jay Bruz Ft D'urban Shatta' (ID 4264, Items: 0)
+
+Cluster Master: 'K Jacks' (ID 960, Items: 5)
+  -> Merging: 'K Jack' (ID 953, Items: 3)
+
+Cluster Master: 'K2 Lucky J' (ID 963, Items: 7)
+  -> Merging: 'K2 Lucky J X Free Bwoy' (ID 2677, Items: 0)
+  -> Merging: 'K2 Lucky J X Ali Breezy' (ID 2778, Items: 0)
+  -> Merging: 'K2 Lucky J X Black Nigga' (ID 4178, Items: 0)
+  -> Merging: 'K2 Lucky J X Selecter Cable' (ID 4177, Items: 0)
+
+Cluster Master: 'Kabs Magic' (ID 970, Items: 4)
+  -> Merging: 'Kabz Magic' (ID 969, Items: 2)
+
+Cluster Master: 'Kaga Boy' (ID 977, Items: 10)
+  -> Merging: 'Wysa Boy' (ID 2057, Items: 5)
+  -> Merging: 'Saga Boy' (ID 1674, Items: 3)
+  -> Merging: 'Saya Boy' (ID 1721, Items: 1)
+  -> Merging: 'Kaga Boy X Dagi West' (ID 4424, Items: 1)
+  -> Merging: 'Kaga Boy X Swagg Dee' (ID 4210, Items: 1)
+  -> Merging: 'Kaga Boy X Arson Killaz' (ID 4408, Items: 1)
+  -> Merging: 'Kaga Boy X Genius Brown' (ID 3069, Items: 1)
+  -> Merging: 'Kaga Boy X Snear Da King' (ID 4056, Items: 1)
+  -> Merging: 'Kaga Boy X Gimaxy X Ashley Dee' (ID 2706, Items: 1)
+  -> Merging: 'Kaga Boy Ft Emmatic 256 X Rizzo' (ID 4238, Items: 1)
+  -> Merging: 'Kaga Boy Ft Asa Chris X Daxxy Giver' (ID 3492, Items: 1)
+  -> Merging: 'Kaga Boy ft Asa Chris & Daxxy Giver' (ID 3494, Items: 1)
+  -> Merging: 'Waya Boy' (ID 1982, Items: 0)
+  -> Merging: 'Kaga Boy X Asa' (ID 3310, Items: 0)
+  -> Merging: 'Kaga Boy X New Kally' (ID 2830, Items: 0)
+  -> Merging: 'Kaga Boy X Mally Wine' (ID 2959, Items: 0)
+  -> Merging: 'Wysa Boy X King Beibe' (ID 2538, Items: 0)
+  -> Merging: 'Kaga Boy X Queen Viola' (ID 2436, Items: 0)
+  -> Merging: 'Kaga Boy X VSDI X Swagg Dee' (ID 2966, Items: 0)
+  -> Merging: 'Kaga Boy X Max Dee X Detron Boy' (ID 3475, Items: 0)
+  -> Merging: 'Kaga Boy X Dj Weird X Frenzy Boy' (ID 3272, Items: 0)
+
+Cluster Master: 'Kawiz' (ID 1003, Items: 3)
+  -> Merging: 'Kahwiz' (ID 973, Items: 1)
+
+Cluster Master: 'Kas Joe' (ID 989, Items: 9)
+  -> Merging: 'Kasq Joe' (ID 994, Items: 2)
+
+Cluster Master: 'Kay Jemo' (ID 1006, Items: 1)
+  -> Merging: 'Kay Jemo X Freakin Don Peter' (ID 3940, Items: 0)
+
+Cluster Master: 'Jast Aret' (ID 919, Items: 4)
+  -> Merging: 'Jast Aret Ft Shakira Mikeila' (ID 4117, Items: 0)
+
+Cluster Master: 'Free Daddy X AKA Derrick' (ID 2534, Items: 4)
+  -> Merging: 'Free Daddy' (ID 2533, Items: 3)
+  -> Merging: 'Free Daddy X Young Vanny X Lati Boy' (ID 4131, Items: 2)
+  -> Merging: 'Free Daddy X Lati Boy' (ID 4126, Items: 1)
+  -> Merging: 'Free Daddy Ft Stallone Boy' (ID 2446, Items: 1)
+
+Cluster Master: 'DJ Boyz Gmaxx' (ID 2576, Items: 3)
+  -> Merging: 'Dj Boyz Gmaxx  Ft Owens' (ID 3376, Items: 1)
+  -> Merging: 'Dj Boyz Gmaxx Ft King Saha' (ID 3370, Items: 1)
+
+Cluster Master: 'Kelly West  Ug' (ID 1031, Items: 2)
+  -> Merging: 'Kelly Swt Ug' (ID 1028, Items: 1)
+
+Cluster Master: 'Kenny Boom' (ID 1042, Items: 6)
+  -> Merging: 'Kenny Bom' (ID 1037, Items: 1)
+
+Cluster Master: 'L.tone Dikon' (ID 1052, Items: 7)
+  -> Merging: 'Lton Dickon' (ID 2636, Items: 0)
+  -> Merging: 'Ltone Dikon' (ID 4279, Items: 0)
+  -> Merging: 'Lton Dickon X Big Drimz' (ID 2447, Items: 0)
+
+Cluster Master: 'Lady Gladys' (ID 1061, Items: 9)
+  -> Merging: 'LADY GLADYS ft Gal G' (ID 4104, Items: 0)
+
+Cluster Master: 'Landmine Natty' (ID 1073, Items: 5)
+  -> Merging: 'Landmine Natty X Alvo Misty' (ID 4155, Items: 0)
+
+Cluster Master: 'Laxzy Mover' (ID 1088, Items: 11)
+  -> Merging: 'Laxzy Mover Ft Astro Lifa' (ID 3823, Items: 0)
+
+Cluster Master: 'Rappa Peippah' (ID 1613, Items: 9)
+  -> Merging: 'Rappa Peippah X Feloxie' (ID 2395, Items: 0)
+  -> Merging: 'Rappa Peippah X Kelvin Drayz' (ID 4326, Items: 0)
+
+Cluster Master: 'Aaron Jay' (ID 30, Items: 5)
+  -> Merging: 'Aaron B' (ID 23, Items: 3)
+  -> Merging: 'Aaron Day' (ID 31, Items: 3)
+  -> Merging: 'Aaron J ft Summy Wine' (ID 4165, Items: 2)
+  -> Merging: 'Aaron G feat Sammy Wine' (ID 3079, Items: 1)
+
+Cluster Master: 'Vano Vino' (ID 1923, Items: 9)
+  -> Merging: 'Vanovino' (ID 1925, Items: 1)
+  -> Merging: 'Vano Vino X Navy Boy' (ID 3882, Items: 1)
+  -> Merging: 'Vano Vino X Elton Lover Boy' (ID 3359, Items: 1)
+  -> Merging: 'Vano Vino X 2C Killer' (ID 3023, Items: 0)
+  -> Merging: 'Vano Vino Ft Bestman Banzo' (ID 4330, Items: 0)
+
+Cluster Master: 'King Chiru' (ID 2375, Items: 5)
+  -> Merging: 'Kung Chiru' (ID 4331, Items: 1)
+
+Cluster Master: 'Ajax Wine' (ID 95, Items: 9)
+  -> Merging: 'Ajax Wine X OJ Smiles' (ID 3205, Items: 0)
+
+Cluster Master: 'Alcaane' (ID 113, Items: 9)
+  -> Merging: 'Alcaane X Bullet Proof Ug' (ID 3128, Items: 0)
+
+Cluster Master: 'Akila Dondada' (ID 108, Items: 9)
+  -> Merging: 'Akila Dondada ft Andona UG' (ID 4102, Items: 0)
+
+Cluster Master: 'B Square' (ID 125, Items: 5)
+  -> Merging: 'T Square' (ID 1765, Items: 4)
+
+Cluster Master: 'Afro Daddy' (ID 83, Items: 8)
+  -> Merging: 'Afro Daddy Ft Deoxy' (ID 3105, Items: 0)
+  -> Merging: 'Afro Daddy X Kyali Pro' (ID 4096, Items: 0)
+
+Cluster Master: 'Africanna Ville' (ID 80, Items: 2)
+  -> Merging: 'Africannaville' (ID 81, Items: 1)
+
+Cluster Master: 'Born J' (ID 2536, Items: 2)
+  -> Merging: 'Born J X MM Style' (ID 3179, Items: 1)
+  -> Merging: 'Born J X Double P' (ID 4185, Items: 1)
+  -> Merging: 'Born J X King Figure' (ID 4182, Items: 1)
+
+Cluster Master: 'Fat A' (ID 524, Items: 10)
+  -> Merging: 'Fat A X Alpher' (ID 3351, Items: 0)
+  -> Merging: 'Fat A X Beatman' (ID 3352, Items: 0)
+  -> Merging: 'Fat A ft Jada Chris' (ID 2540, Items: 0)
+
+Cluster Master: 'Badman Deemer' (ID 170, Items: 2)
+  -> Merging: 'Badman Deemer Ft Gimaxy X Jackz B' (ID 4324, Items: 0)
+
+Cluster Master: 'Rap Velocity' (ID 1607, Items: 9)
+  -> Merging: 'Rap Velocity UG' (ID 3097, Items: 0)
+  -> Merging: 'Rap Velocity X Kid Mercy X Agaba Alexon' (ID 2579, Items: 0)
+
+Cluster Master: 'Baby Junior' (ID 144, Items: 9)
+  -> Merging: 'Baby Junior X Brayo' (ID 3499, Items: 0)
+
+Cluster Master: 'Bad Zeam Ziggy' (ID 163, Items: 1)
+  -> Merging: 'Bad Zeam Ziggy X Travor Fresh' (ID 3460, Items: 0)
+
+Cluster Master: 'Beenie K' (ID 201, Items: 9)
+  -> Merging: 'Beenie K X Pondiranking' (ID 2606, Items: 0)
+
+Cluster Master: 'Captain Chii' (ID 218, Items: 7)
+  -> Merging: 'Captain Chi' (ID 224, Items: 3)
+
+Cluster Master: 'Andona 256' (ID 2393, Items: 11)
+  -> Merging: 'Andona 256 ft Tino Beliz' (ID 2412, Items: 1)
+  -> Merging: 'Andona 256 ft Phify Music' (ID 4328, Items: 1)
+  -> Merging: 'Andona 256 ft Akila Dondada' (ID 4101, Items: 1)
+
+Cluster Master: 'King Chappa' (ID 4332, Items: 1)
+  -> Merging: 'King Chappa X Kasbon Ft Kakiri Stars' (ID 3347, Items: 1)
+
+Cluster Master: 'Chammy Blaq' (ID 255, Items: 4)
+  -> Merging: 'Chami Blaq' (ID 251, Items: 2)
+
+Cluster Master: 'Casio Crimz' (ID 238, Items: 5)
+  -> Merging: 'Casio Crimz X Rnb Music' (ID 4029, Items: 0)
+
+Cluster Master: 'Cd Smiles' (ID 249, Items: 7)
+  -> Merging: 'CD Smiles X Klax G' (ID 4385, Items: 0)
+  -> Merging: 'CD Smiles ft Kings Crown' (ID 4379, Items: 0)
+  -> Merging: 'CD Smiles X King's Crown' (ID 4403, Items: 0)
+
+Cluster Master: 'Chozen Kid' (ID 293, Items: 9)
+  -> Merging: 'Chozen Kid X Brian Dee' (ID 2444, Items: 0)
+
+Cluster Master: 'Chikeh Navy' (ID 270, Items: 10)
+  -> Merging: 'Chikeh Navy ft Azumbe Snake Face' (ID 3897, Items: 0)
+  -> Merging: 'Chikeh Navy Ft Merve X Love Forex' (ID 4298, Items: 0)
+
+Cluster Master: 'Chris B' (ID 292, Items: 15)
+  -> Merging: 'Chris B Ft Smart Ever' (ID 4374, Items: 0)
+  -> Merging: 'Chris B Ft Lucky Flash' (ID 4360, Items: 0)
+  -> Merging: 'Chris B Ft Prince Cool Man' (ID 3053, Items: 0)
+  -> Merging: 'Chris B Ft Young Kid Ug Afrika' (ID 4361, Items: 0)
+
+Cluster Master: 'Chrisakon Madder' (ID 302, Items: 3)
+  -> Merging: 'Chrisakon Madder Ft Shenseea' (ID 2692, Items: 0)
+
+Cluster Master: 'Elephant Man' (ID 470, Items: 5)
+  -> Merging: 'Elephant Man ft Wiz Gibz' (ID 2609, Items: 0)
+
+Cluster Master: 'UG Senior' (ID 1865, Items: 9)
+  -> Merging: 'Ug Senior Ft Bkba' (ID 3914, Items: 0)
+  -> Merging: 'Ug senior Ft Don Popular' (ID 4339, Items: 0)
+  -> Merging: 'Ug senior Ft Young Rider' (ID 3250, Items: 0)
+
+Cluster Master: 'Eagle Man' (ID 417, Items: 9)
+  -> Merging: 'Eagle Man X Jabirunga' (ID 4341, Items: 0)
+
+Cluster Master: 'Artillary Miles' (ID 2311, Items: 3)
+  -> Merging: 'Artillery Miles' (ID 4063, Items: 2)
+  -> Merging: 'Artillary Miles Ft Best Man Ricky' (ID 3909, Items: 1)
+
+Cluster Master: 'Justin Smile' (ID 2345, Items: 5)
+  -> Merging: 'Justin Smile Ft Sam P' (ID 2857, Items: 1)
+  -> Merging: 'Justin Smile ft Sam Pee' (ID 2313, Items: 1)
+  -> Merging: 'Justin Smile Ft Dano Boy' (ID 3520, Items: 1)
+  -> Merging: 'Justin Smile Ft Lady Mildray' (ID 2728, Items: 1)
+  -> Merging: 'Justin Smile X Snoop Jay Swagg Dee' (ID 2402, Items: 1)
+
+Cluster Master: 'Elton Lover Boy' (ID 483, Items: 9)
+  -> Merging: 'Elton Lover Boy X Lion Man' (ID 2315, Items: 0)
+  -> Merging: 'Elton Lover Boy X Vano Vino' (ID 3358, Items: 0)
+
+Cluster Master: 'Crown Music' (ID 2544, Items: 2)
+  -> Merging: 'Crown Music X Mp Poel' (ID 2580, Items: 1)
+
+Cluster Master: 'D Kee' (ID 321, Items: 9)
+  -> Merging: 'D Kee Ft Lb Sweaz' (ID 4107, Items: 0)
+
+Cluster Master: 'Dacoolman' (ID 331, Items: 9)
+  -> Merging: 'Coolman' (ID 2678, Items: 0)
+
+Cluster Master: 'Daivox Official' (ID 343, Items: 6)
+  -> Merging: 'Daivox Official X Bond X' (ID 4054, Items: 0)
+  -> Merging: 'Daivox Official X Erymozak' (ID 4055, Items: 0)
+  -> Merging: 'Daivox Official X Samon X Land Blaq' (ID 4046, Items: 0)
+
+Cluster Master: 'Dagi West' (ID 347, Items: 9)
+  -> Merging: 'Dagi West Ft Kaga Boy' (ID 4425, Items: 0)
+
+Cluster Master: 'Dannie Cleem' (ID 364, Items: 9)
+  -> Merging: 'Daniel Cleem' (ID 4250, Items: 0)
+  -> Merging: 'Dannie Cleem X Sabiboss' (ID 3042, Items: 0)
+  -> Merging: 'Dannie Cleem X Dias Wopamora' (ID 4290, Items: 0)
+
+Cluster Master: 'Danny Fik' (ID 366, Items: 5)
+  -> Merging: 'Danny Fik X Albert K1' (ID 2661, Items: 0)
+
+Cluster Master: 'D Boy' (ID 314, Items: 9)
+  -> Merging: 'Ld Boy' (ID 1105, Items: 9)
+
+Cluster Master: 'Appointed Son' (ID 2942, Items: 3)
+  -> Merging: 'Appointed Son Ft Ibube Bright Life' (ID 4347, Items: 1)
+
+Cluster Master: 'Zion King' (ID 2212, Items: 9)
+  -> Merging: 'Cion King' (ID 309, Items: 3)
+  -> Merging: 'Zion King X Nedu King' (ID 2469, Items: 0)
+
+Cluster Master: 'Eva Nice' (ID 2557, Items: 3)
+  -> Merging: 'Eva Nice X Kis Matic' (ID 2581, Items: 1)
+
+Cluster Master: 'Wuven UG Boy' (ID 2055, Items: 8)
+  -> Merging: 'Wuven UG Boy X Fresh Kabs X Allan BB' (ID 4335, Items: 0)
+
+Cluster Master: 'DDK Brown' (ID 405, Items: 6)
+  -> Merging: 'DDK Brown X Juma K' (ID 4396, Items: 0)
+
+Cluster Master: 'Davy D' (ID 404, Items: 5)
+  -> Merging: 'Davy D x Riaso By' (ID 4158, Items: 0)
+
+Cluster Master: 'Dawanton' (ID 396, Items: 4)
+  -> Merging: 'Dawanton X Nigga ARV' (ID 3438, Items: 0)
+
+Cluster Master: 'Eco Zaq' (ID 429, Items: 9)
+  -> Merging: 'Eco Zaq X M Kapa' (ID 2766, Items: 0)
+
+Cluster Master: 'Eddy Slimboy Ug' (ID 445, Items: 6)
+  -> Merging: 'Eddy Slimboy' (ID 3224, Items: 0)
+
+Cluster Master: 'Elly Branty' (ID 479, Items: 8)
+  -> Merging: 'Elly Branty ft Da Prince' (ID 3229, Items: 0)
+
+Cluster Master: 'Davis Mj' (ID 403, Items: 9)
+  -> Merging: 'Davis Mj Ft Black Eyes' (ID 3898, Items: 0)
+
+Cluster Master: 'Emma' (ID 493, Items: 9)
+  -> Merging: 'Emma Ft dan' (ID 4214, Items: 0)
+  -> Merging: 'Emma Ft Blessed Son Jepta' (ID 4222, Items: 0)
+
+Cluster Master: 'Faiba Newaz' (ID 520, Items: 7)
+  -> Merging: 'Faiba Newaz Ft Victor Nector' (ID 2840, Items: 0)
+
+Cluster Master: 'Micky Music' (ID 2470, Items: 3)
+  -> Merging: 'Ficky Music' (ID 546, Items: 2)
+
+Cluster Master: 'Felix Diy' (ID 539, Items: 9)
+  -> Merging: 'Felix Diy Ft Bro Peace' (ID 3532, Items: 0)
+
+Cluster Master: 'Emmason' (ID 498, Items: 9)
+  -> Merging: 'Emmason ft Kabanga' (ID 3367, Items: 1)
+
+Cluster Master: 'Voice Trigger' (ID 1961, Items: 3)
+  -> Merging: 'Voice Trigger X Black Man Ug' (ID 2318, Items: 0)
+
+Cluster Master: 'Lucky Orphan' (ID 2353, Items: 3)
+  -> Merging: 'Lucky Orphan X Lucky Moon' (ID 3295, Items: 1)
+  -> Merging: 'Lucky Orphan X Lucky Moon X Star Boy Reech X Tristan X Zarack' (ID 4340, Items: 1)
+
+Cluster Master: 'Freakin Don Peter' (ID 601, Items: 2)
+  -> Merging: 'Freakin Don Peter Ft Kay Jemo' (ID 3941, Items: 0)
+  -> Merging: 'Freakin Don Peter X Jordan Da Rapper' (ID 3088, Items: 0)
+
+Cluster Master: 'Game Boy' (ID 618, Items: 3)
+  -> Merging: 'T Game Boy' (ID 1760, Items: 0)
+
+Cluster Master: 'Genius Brown' (ID 640, Items: 9)
+  -> Merging: 'Genius Brown X Kaga Boy' (ID 3070, Items: 2)
+  -> Merging: 'Genius Brown Ft Sorri Boy' (ID 4198, Items: 0)
+  -> Merging: 'Genius Brown Ft Heavenz Man' (ID 4081, Items: 0)
+
+Cluster Master: 'Gift Zella' (ID 656, Items: 9)
+  -> Merging: 'Gift Zella X Olah Freazy' (ID 2722, Items: 0)
+  -> Merging: 'Gift Zella X Jah Luo Max' (ID 3918, Items: 0)
+
+Cluster Master: 'Genius Silencer' (ID 641, Items: 5)
+  -> Merging: 'Genius Silencer Ft Humble Boy' (ID 4115, Items: 0)
+
+Cluster Master: 'Gildan official' (ID 659, Items: 9)
+  -> Merging: 'Gildan Official X Skyler Nana' (ID 4358, Items: 0)
+
+Cluster Master: 'Gimaxy' (ID 661, Items: 9)
+  -> Merging: 'Gimaxy Ft Allstars' (ID 2708, Items: 0)
+  -> Merging: 'Gimaxy X Emma Dee X Fred Smartboy' (ID 2427, Items: 0)
+
+Cluster Master: 'Giga Byte' (ID 660, Items: 6)
+  -> Merging: 'Giga Byte X Zapa Rapper' (ID 3411, Items: 0)
+
+Cluster Master: 'Bro Salvation' (ID 4352, Items: 1)
+  -> Merging: 'Br Salvation X Edison Smile' (ID 4353, Items: 1)
+
+Cluster Master: 'Gleemar' (ID 667, Items: 9)
+  -> Merging: 'Gleemar Ft Queen Kellisha' (ID 3138, Items: 0)
+
+Cluster Master: 'Dj T Rexs 256 ft D Kee' (ID 2928, Items: 3)
+  -> Merging: 'Dj T Rexs 256' (ID 3786, Items: 1)
+  -> Merging: 'DJ T Rexs 256 Ft Kaga Boy X D Kee' (ID 4355, Items: 1)
+
+Cluster Master: 'Brown Son' (ID 2789, Items: 5)
+  -> Merging: 'Brown Son Ft Astro Lifa' (ID 4342, Items: 1)
+
+Cluster Master: 'Big Ragz' (ID 3939, Items: 3)
+  -> Merging: 'Big Ragz X Robin Man' (ID 2585, Items: 1)
+
+Cluster Master: 'Goddy Johnson' (ID 677, Items: 7)
+  -> Merging: 'Goddy Johnson Ft P Jae Official' (ID 2961, Items: 0)
+
+Cluster Master: 'Goldstee' (ID 694, Items: 9)
+  -> Merging: 'Gold Stee' (ID 4147, Items: 0)
+
+Cluster Master: 'Hard Boy' (ID 713, Items: 3)
+  -> Merging: 'Head Boy' (ID 734, Items: 3)
+
+Cluster Master: 'HD Pro  ft Van Vigo' (ID 728, Items: 7)
+  -> Merging: 'HD Pro Ft Van Viko' (ID 2908, Items: 0)
+
+Cluster Master: 'Heavenz Man' (ID 735, Items: 9)
+  -> Merging: 'Heavenz Man ft Dj Ramzy' (ID 2608, Items: 1)
+  -> Merging: 'Heavenz Man X Boifriendz' (ID 3503, Items: 1)
+  -> Merging: 'Heavenz Man Ft Chikeh Navy' (ID 3218, Items: 1)
+  -> Merging: 'Heavenz Man Ft LB Sweaz' (ID 3093, Items: 0)
+  -> Merging: 'Heavenz Man Ft Boss Bae' (ID 4184, Items: 0)
+  -> Merging: 'Heavenz Man X Mikhi Focus' (ID 2494, Items: 0)
+  -> Merging: 'Heavenz Man Ft King Rider' (ID 2979, Items: 0)
+  -> Merging: 'Heavenz Man X Trajor X Juni Breezy' (ID 2797, Items: 0)
+
+Cluster Master: 'God Rapper' (ID 678, Items: 2)
+  -> Merging: 'Golden Rapper Ft Raga Pyton' (ID 4270, Items: 0)
+
+Cluster Master: 'Robin Man' (ID 2380, Items: 4)
+  -> Merging: 'Robin Man ft Ramcey' (ID 4207, Items: 1)
+  -> Merging: 'Robin Man ft Big Ragz' (ID 2586, Items: 1)
+
+Cluster Master: 'Hot Doggy' (ID 774, Items: 6)
+  -> Merging: 'Hot Dogy' (ID 4226, Items: 0)
+  -> Merging: 'Hot Doggy Ft Zed Boy X WizZy 125' (ID 3321, Items: 0)
+
+Cluster Master: 'Hope Rise' (ID 768, Items: 10)
+  -> Merging: 'Hope Rise Ft Allstars' (ID 2707, Items: 0)
+  -> Merging: 'Hope Rise Ft Papi Thumbala' (ID 2719, Items: 0)
+
+Cluster Master: 'Hot Man' (ID 772, Items: 9)
+  -> Merging: 'OT Man ft Savi T Star Big Family' (ID 3522, Items: 1)
+
+Cluster Master: 'Host B' (ID 771, Items: 7)
+  -> Merging: 'Host B X Mum Sboi' (ID 3124, Items: 0)
+
+Cluster Master: 'Humble Kid' (ID 781, Items: 9)
+  -> Merging: 'Humble Kid X Master Ft Big Jay' (ID 2718, Items: 0)
+
+Cluster Master: 'Ik Flavio' (ID 802, Items: 6)
+  -> Merging: 'IK Flavio Ft Kait Potebo' (ID 2949, Items: 0)
+
+Cluster Master: 'Inno Boy' (ID 812, Items: 7)
+  -> Merging: 'Inno B' (ID 814, Items: 4)
+  -> Merging: 'Inno Boy X Small Boy' (ID 3032, Items: 0)
+
+Cluster Master: 'Index Official' (ID 810, Items: 4)
+  -> Merging: 'Bondhex Official' (ID 2387, Items: 3)
+  -> Merging: 'Bondhex Official X White B' (ID 3534, Items: 1)
+  -> Merging: 'Bondhex Official X Freeman' (ID 4008, Items: 1)
+  -> Merging: 'Bondhex Official Ft Muffler' (ID 4007, Items: 1)
+  -> Merging: 'Bondhex Official X Light Don' (ID 3535, Items: 1)
+  -> Merging: 'Bondhex Official X Ezzy Celso' (ID 2897, Items: 1)
+  -> Merging: 'Bondhex Official X Young Master' (ID 2996, Items: 1)
+  -> Merging: 'Bondhex Official X Prince Cool Man' (ID 4009, Items: 1)
+
+Cluster Master: 'Invisible At Da Great' (ID 832, Items: 3)
+  -> Merging: 'Invisible At Da Great X BTS Boys' (ID 3961, Items: 0)
+
+Cluster Master: 'Isakabaz Ug' (ID 839, Items: 9)
+  -> Merging: 'Isakabaz Ug X Prince Robert' (ID 2700, Items: 0)
+
+Cluster Master: 'Steve Walsh' (ID 2591, Items: 1)
+  -> Merging: 'Steve Walsh X Plan B' (ID 3894, Items: 1)
+
+Cluster Master: 'J Kent De Fighter' (ID 866, Items: 3)
+  -> Merging: 'J Kent Da Fighter' (ID 861, Items: 1)
+
+Cluster Master: 'J Chris' (ID 859, Items: 5)
+  -> Merging: 'J Chris X 4C1' (ID 3512, Items: 0)
+  -> Merging: 'J Chris Ft Solo King' (ID 3132, Items: 0)
+
+Cluster Master: 'J Francis' (ID 852, Items: 1)
+  -> Merging: 'J Francis Ft Selector Love' (ID 3166, Items: 0)
+
+Cluster Master: 'Jack 256' (ID 870, Items: 9)
+  -> Merging: 'Jack 256 Ft De Hottest Rappa X Teke Teke' (ID 2870, Items: 0)
+
+Cluster Master: 'Jabila Lutura' (ID 868, Items: 13)
+  -> Merging: 'Jabila Lutura X Sweet Vanny' (ID 2451, Items: 0)
+
+Cluster Master: 'J Mylz' (ID 871, Items: 5)
+  -> Merging: 'J Mylz ft Ivan G' (ID 3485, Items: 0)
+
+Cluster Master: 'Jada Chris' (ID 889, Items: 12)
+  -> Merging: 'Jada chris ft LB3' (ID 4204, Items: 0)
+
+Cluster Master: 'Jann Steve' (ID 909, Items: 9)
+  -> Merging: 'Jann Steve ft Fresh Guy' (ID 3476, Items: 0)
+
+Cluster Master: 'Jal Douglas' (ID 899, Items: 9)
+  -> Merging: 'Jal Douglas X De Mike' (ID 2958, Items: 0)
+  -> Merging: 'Jal Douglas X Jb Messiah' (ID 2283, Items: 0)
+  -> Merging: 'Jal Douglas Ft JB Messiah' (ID 2454, Items: 0)
+
+Cluster Master: 'Dj Innocent' (ID 3419, Items: 3)
+  -> Merging: 'Dj Innocent Ft Lb Sweaz X D Kee Music' (ID 2745, Items: 3)
+  -> Merging: 'Dj Innocent Ft D Kee' (ID 2929, Items: 1)
+  -> Merging: 'Dj Innocent Ft Samsea' (ID 4405, Items: 1)
+  -> Merging: 'Dj Innocent Ft Kaga Boy X D Kee' (ID 4394, Items: 1)
+  -> Merging: 'Dj Innocent Ft Mr Kama Bor X D Kee music' (ID 2911, Items: 1)
+  -> Merging: 'Dj Innocent Ft Astro Lifa X Rolling Snake X LB Sweaz X Baby junior X D Kee Kaga Boy' (ID 4348, Items: 1)
+
+Cluster Master: 'Hope In Christ' (ID 3065, Items: 0)
+  -> Merging: 'Hope In Christ ft Fat A' (ID 4354, Items: 0)
+
+Cluster Master: 'Jeko Smile' (ID 950, Items: 8)
+  -> Merging: 'Jeko Smiles Ft Kins Bwoy' (ID 3172, Items: 0)
+
+Cluster Master: 'K.I Rap Legend' (ID 965, Items: 8)
+  -> Merging: 'K.I Rap Legend Ft WizB Mazina Allstar' (ID 3232, Items: 0)
+
+Cluster Master: 'Noland' (ID 2267, Items: 6)
+  -> Merging: 'Noland X Mr Money' (ID 3246, Items: 1)
+  -> Merging: 'Noland X Moto X Maskini' (ID 3247, Items: 1)
+
+Cluster Master: 'Young B' (ID 2116, Items: 15)
+  -> Merging: 'Young Boy' (ID 2119, Items: 9)
+  -> Merging: 'Young Kid' (ID 2131, Items: 9)
+  -> Merging: 'Young D' (ID 2117, Items: 4)
+  -> Merging: 'Young Don' (ID 2121, Items: 4)
+  -> Merging: 'Young Dragon' (ID 2120, Items: 3)
+  -> Merging: 'Young Z' (ID 2163, Items: 1)
+  -> Merging: 'Young Boy Ft Wizzy 125' (ID 2269, Items: 0)
+  -> Merging: 'Young Boy ft Javas Oscar' (ID 4407, Items: 0)
+  -> Merging: 'Young Kid Ug Ft Princess Dee' (ID 4293, Items: 0)
+
+Cluster Master: 'Summy Wine' (ID 2516, Items: 8)
+  -> Merging: 'Sammy Wine' (ID 2271, Items: 3)
+  -> Merging: 'Summy Wine ft Aaron J' (ID 4042, Items: 3)
+  -> Merging: 'Summy Wine ft Aaron' (ID 4043, Items: 1)
+
+Cluster Master: 'DJ Jomatic Pro Ug' (ID 4349, Items: 2)
+  -> Merging: 'DJ Jomatic Pro' (ID 2715, Items: 1)
+
+Cluster Master: 'Kelly Sniper' (ID 1027, Items: 5)
+  -> Merging: 'Kelly Snipper' (ID 2803, Items: 0)
+
+Cluster Master: 'Kevin Zhaky' (ID 1048, Items: 1)
+  -> Merging: 'Kevin Zhaky Ft Bodi Dee' (ID 4038, Items: 0)
+
+Cluster Master: 'Land Blaq' (ID 1072, Items: 9)
+  -> Merging: 'Land Blaq X Samon' (ID 4003, Items: 0)
+
+Cluster Master: 'Lati Bwoy' (ID 1076, Items: 2)
+  -> Merging: 'Lati Boy Ft Os Touch' (ID 3307, Items: 0)
+
+Cluster Master: 'Love Boy' (ID 2268, Items: 3)
+  -> Merging: 'Love Boy X Saviour Money' (ID 2810, Items: 1)
+
+Cluster Master: 'Lb Kee' (ID 1103, Items: 6)
+  -> Merging: 'LB Kee Ft Better Boy' (ID 2800, Items: 0)
+  -> Merging: 'Lb Kee Ft Royal Emma' (ID 3259, Items: 0)
+  -> Merging: 'Lb Kee Ft Gt50 Blood' (ID 3274, Items: 0)
+
+Cluster Master: 'LB Sweaz' (ID 1104, Items: 9)
+  -> Merging: 'LB Sweaz X Trevour Bao' (ID 3016, Items: 1)
+  -> Merging: 'LB Sweaz X D Kee' (ID 4106, Items: 0)
+  -> Merging: 'Lb Sweaz X Alansko' (ID 3524, Items: 0)
+  -> Merging: 'Lb Sweaz feat Slim Diva' (ID 2791, Items: 0)
+
+Cluster Master: 'Prosper Suga Bwoy' (ID 4351, Items: 1)
+  -> Merging: 'Prosper Suga Bwoy Ft Queen Viola' (ID 3955, Items: 1)
+
+Cluster Master: 'King Solo' (ID 2997, Items: 3)
+  -> Merging: 'King Solo X Tripple G' (ID 3308, Items: 1)
+  -> Merging: 'King Solo X Collinator' (ID 4011, Items: 1)
+  -> Merging: 'King Slov Ft Jim Killa' (ID 2561, Items: 1)
+
+Cluster Master: 'LG Skillz' (ID 1135, Items: 3)
+  -> Merging: 'Ng Skillz' (ID 1319, Items: 2)
+
+Cluster Master: 'Lessbouy De Thunder' (ID 1129, Items: 9)
+  -> Merging: 'Less Buoy De Thunder' (ID 3969, Items: 0)
+
+Cluster Master: 'Lil Dread X Racha Gomez' (ID 1152, Items: 7)
+  -> Merging: 'Lil Dread X Racha Romez ft Laxian Tipzo X Spice Rapper X Totolynne' (ID 4124, Items: 0)
+
+Cluster Master: 'M Justine' (ID 1156, Items: 1)
+  -> Merging: 'M Justine Ft Trajor Juston' (ID 2753, Items: 0)
+
+Cluster Master: 'Lil Joax' (ID 1154, Items: 4)
+  -> Merging: 'Lil Joax X Star Kid' (ID 4020, Items: 0)
+
+Cluster Master: 'M Kapa' (ID 1159, Items: 9)
+  -> Merging: 'M Kapa Ft Eco Zaq' (ID 2767, Items: 0)
+
+Cluster Master: 'Lee Boyz' (ID 1112, Items: 9)
+  -> Merging: 'Lee Boyz X Kiwi' (ID 3006, Items: 1)
+
+Cluster Master: 'M Soldier' (ID 1158, Items: 9)
+  -> Merging: 'MB Soldiers' (ID 1241, Items: 6)
+  -> Merging: 'MTK Soldier' (ID 4221, Items: 1)
+
+Cluster Master: 'Level Dad' (ID 1128, Items: 9)
+  -> Merging: 'Level Dad X Love X Money' (ID 4132, Items: 0)
+  -> Merging: 'Level Dad Ft Funny Boy X Xtra Boy' (ID 3057, Items: 0)
+
+Cluster Master: 'Mak Flow' (ID 1189, Items: 9)
+  -> Merging: 'Mack Flow' (ID 1167, Items: 2)
+  -> Merging: 'Mark Flow' (ID 1209, Items: 1)
+  -> Merging: 'Mak Flow Ft Slow Bwoy' (ID 4200, Items: 0)
+
+Cluster Master: 'Mafi' (ID 1176, Items: 9)
+  -> Merging: 'Mafia X Don Popular' (ID 2711, Items: 0)
+
+Cluster Master: 'Magmanizo' (ID 1178, Items: 9)
+  -> Merging: 'Magmanizo X Odech Buoy' (ID 3257, Items: 0)
+
+Cluster Master: 'Mally Chapter' (ID 1187, Items: 7)
+  -> Merging: 'Mally Shapter' (ID 1190, Items: 2)
+
+Cluster Master: 'Mally Wine' (ID 1193, Items: 9)
+  -> Merging: 'Mally Wine X Yobow' (ID 3965, Items: 0)
+  -> Merging: 'Mally Wine Ft Kaga Boy' (ID 2960, Items: 0)
+
+Cluster Master: 'Azumbe Bway' (ID 3178, Items: 1)
+  -> Merging: 'Azumbe Bway X Owaze' (ID 4362, Items: 1)
+  -> Merging: 'Azumbe Bway X Licky Jeje' (ID 3061, Items: 1)
+
+Cluster Master: 'M-Segge' (ID 1166, Items: 9)
+  -> Merging: 'M Segge Ft Dommy Gunter' (ID 4404, Items: 0)
+  -> Merging: 'M Segge X Jiden Innocent Boy' (ID 3493, Items: 0)
+
+Cluster Master: 'King Godwin' (ID 2594, Items: 1)
+  -> Merging: 'King Godwino' (ID 3908, Items: 1)
+
+Cluster Master: 'DJ Opdaviq Pro' (ID 2449, Items: 4)
+  -> Merging: 'DJ Opdaviq Pro Ft Navy Boy' (ID 4369, Items: 1)
+  -> Merging: 'DJ Opdaviq Pro Ft Baby Junior X EeZzy' (ID 4356, Items: 1)
+
+Cluster Master: 'Max Dee' (ID 1228, Items: 2)
+  -> Merging: 'Max Dee X Kefa Best' (ID 4256, Items: 0)
+
+Cluster Master: 'Maxyclaque Dtb' (ID 1237, Items: 3)
+  -> Merging: 'Maxyclaque Dtb Ft De Bhighezt' (ID 2734, Items: 0)
+  -> Merging: 'Maxyclaque Dtb Ft Panyango SS Allstar' (ID 3256, Items: 0)
+
+Cluster Master: 'Nana Nancy Pimerpamungu' (ID 1260, Items: 9)
+  -> Merging: 'Nana Nancy Primerpanungu' (ID 1263, Items: 0)
+
+Cluster Master: 'King Rock Da Killer Smile' (ID 4202, Items: 3)
+  -> Merging: 'King Rock Da Killer Smile Ft Mile' (ID 3030, Items: 1)
+  -> Merging: 'King Rock Da Killer Smile Ft Guava Bwoy' (ID 4242, Items: 1)
+  -> Merging: 'King Rock Da Killer Smile ft Chozen Emma' (ID 4357, Items: 1)
+  -> Merging: 'King Rock Da Killer Smile Ft Fresh Lover' (ID 4235, Items: 1)
+
+Cluster Master: 'Jetkid' (ID 3400, Items: 1)
+  -> Merging: 'Jetkid X Kido Bwoy' (ID 2596, Items: 1)
+
+Cluster Master: 'S Boy' (ID 1661, Items: 4)
+  -> Merging: 'S Boy X B Ckay X S Lover' (ID 2600, Items: 0)
+
+Cluster Master: 'Navy Boy' (ID 1283, Items: 9)
+  -> Merging: 'Navy Boy Ft Bad Billo' (ID 2521, Items: 0)
+
+Cluster Master: 'Navi M Dee' (ID 1281, Items: 4)
+  -> Merging: 'Navi Mdee' (ID 3004, Items: 0)
+
+Cluster Master: 'Nays Official' (ID 1288, Items: 3)
+  -> Merging: 'Nays Official X Pato Loverboy' (ID 4174, Items: 0)
+
+Cluster Master: 'Neety Wine' (ID 1296, Items: 9)
+  -> Merging: 'Neety Wine Ft Kaga Boy' (ID 2445, Items: 0)
+  -> Merging: 'Neety Wine Ft Queen Recho' (ID 4133, Items: 0)
+
+Cluster Master: 'Nelly Ja' (ID 1305, Items: 7)
+  -> Merging: 'Nelly Ja X Lost Luo' (ID 3086, Items: 0)
+
+Cluster Master: 'Nelly VIK' (ID 1304, Items: 9)
+  -> Merging: 'Nelly Vik Ft Sharon' (ID 3536, Items: 0)
+  -> Merging: 'Nelly Vik Ft A Face' (ID 4018, Items: 0)
+  -> Merging: 'Nelly Vik Ft Street Kid' (ID 3537, Items: 0)
+
+Cluster Master: 'New Kally' (ID 1309, Items: 9)
+  -> Merging: 'New Kally Ft Kaga Boy' (ID 2831, Items: 0)
+  -> Merging: 'New Kally Ft Soldier Boy' (ID 2643, Items: 0)
+
+Cluster Master: 'Super Snazzy UG' (ID 3010, Items: 2)
+  -> Merging: 'Super Snazzy' (ID 2601, Items: 1)
+
+Cluster Master: 'Allan BB' (ID 2851, Items: 2)
+  -> Merging: 'Allan BB Ft Fresh Kabz' (ID 4397, Items: 1)
+
+Cluster Master: 'Nico J' (ID 1340, Items: 7)
+  -> Merging: 'Nico J Ft Nana Ug X JB Clever X JY Noxy X King B' (ID 2681, Items: 0)
+
+Cluster Master: 'Niga Rich' (ID 1342, Items: 11)
+  -> Merging: 'Niga Rich X Master Jaso' (ID 4187, Items: 1)
+  -> Merging: 'Niga Rich Ft Sturbon K' (ID 2457, Items: 0)
+  -> Merging: 'Niga Rich X Reggea Born' (ID 2725, Items: 0)
+
+Cluster Master: 'OK James' (ID 1385, Items: 9)
+  -> Merging: 'O James' (ID 1357, Items: 8)
+  -> Merging: 'OK James Ft Nigo Kiss Boy' (ID 4260, Items: 0)
+  -> Merging: 'Ok James X Jonathan Rapper' (ID 3501, Items: 0)
+
+Cluster Master: 'Newton Rap Nation' (ID 1320, Items: 9)
+  -> Merging: 'Newton Rap Nation X Kalvin Kleins' (ID 4051, Items: 0)
+
+Cluster Master: 'Owaze Ft Azumbe' (ID 3507, Items: 1)
+  -> Merging: 'Owaze Ft Azumbe Bway' (ID 4363, Items: 1)
+
+Cluster Master: 'Nana Ug' (ID 1270, Items: 6)
+  -> Merging: 'Nana Ug Ft Jay D' (ID 4028, Items: 0)
+  -> Merging: 'Nana Ug Ft Allstar' (ID 4120, Items: 0)
+  -> Merging: 'Nana Ug X Ekco Thursday' (ID 2602, Items: 0)
+
+Cluster Master: 'Piaxy Music' (ID 1516, Items: 6)
+  -> Merging: 'Piaxy Music Ft Skkie Masc' (ID 2603, Items: 0)
+
+Cluster Master: 'Odech Bouy' (ID 1370, Items: 8)
+  -> Merging: 'Odech Buoy' (ID 3491, Items: 0)
+  -> Merging: 'Odech Buoy Ft Magmanizo' (ID 3258, Items: 0)
+
+Cluster Master: 'Oj Smiles' (ID 1379, Items: 2)
+  -> Merging: 'OJ Smiles X Ajax Wine' (ID 3206, Items: 0)
+
+Cluster Master: 'Ogona Mazima' (ID 1375, Items: 10)
+  -> Merging: 'Ogona Mazima X Slim Diva' (ID 3211, Items: 1)
+  -> Merging: 'Ogona Mazima X Ekzo Ekzo' (ID 2890, Items: 0)
+
+Cluster Master: 'Og Sav' (ID 1380, Items: 4)
+  -> Merging: 'Og Save' (ID 1376, Items: 4)
+
+Cluster Master: 'Olah Freazy' (ID 1402, Items: 9)
+  -> Merging: 'Olah Freazy Ft Zina Ray' (ID 4103, Items: 0)
+  -> Merging: 'Olah Freazy Ft Gift Zela' (ID 2723, Items: 0)
+
+Cluster Master: 'One Blood Gang' (ID 1411, Items: 9)
+  -> Merging: 'One Blood Gang Ft All Star' (ID 3282, Items: 0)
+  -> Merging: 'One Blood Gang Ft Daddy mike' (ID 2632, Items: 0)
+
+Cluster Master: 'Ocean King' (ID 1369, Items: 9)
+  -> Merging: 'Ocean King Ft Navy J' (ID 4052, Items: 0)
+  -> Merging: 'Ocean King Ft Chris Lovy' (ID 4053, Items: 0)
+
+Cluster Master: 'OS Touch' (ID 1443, Items: 11)
+  -> Merging: 'Os Touch X Lati Boy' (ID 3306, Items: 0)
+  -> Merging: 'Os Touch X Umeme Chance Boy' (ID 3280, Items: 0)
+
+Cluster Master: 'OR Innox' (ID 1434, Items: 9)
+  -> Merging: 'OR Innox Ft Freshman' (ID 2484, Items: 0)
+  -> Merging: 'OR Innox Ft Smile Boy' (ID 2901, Items: 0)
+  -> Merging: 'OR Innox Ft Gaadhie P' (ID 3480, Items: 0)
+  -> Merging: 'OR Innox Ft Chiro Boy' (ID 4030, Items: 0)
+  -> Merging: 'OR Innox X Mr Eromo Dhano zo' (ID 2839, Items: 0)
+
+Cluster Master: 'Orion Stars' (ID 1441, Items: 9)
+  -> Merging: 'Orion Stars Ft Freedom Man' (ID 3194, Items: 0)
+
+Cluster Master: 'Os Emmaxy' (ID 1444, Items: 9)
+  -> Merging: 'Os Emmaxy Ft Raystar Wenda' (ID 3982, Items: 0)
+
+Cluster Master: 'OSB De Mighty' (ID 1447, Items: 9)
+  -> Merging: 'OSB De Mighty Ft Kins Buoy' (ID 3186, Items: 0)
+
+Cluster Master: 'Packo george' (ID 1451, Items: 9)
+  -> Merging: 'Packo George Ft Jhamore' (ID 3018, Items: 0)
+
+Cluster Master: 'YP Star' (ID 2167, Items: 7)
+  -> Merging: 'P Stars' (ID 1459, Items: 3)
+
+Cluster Master: 'Osboy Ray' (ID 1450, Items: 5)
+  -> Merging: 'Osboy Ray X Stamina Coco' (ID 3919, Items: 0)
+
+Cluster Master: 'Pastor David' (ID 1482, Items: 10)
+  -> Merging: 'Pastor David X Dorcus Pimungu' (ID 2887, Items: 0)
+  -> Merging: 'Pastor David X Dorcas Pimungu' (ID 3533, Items: 0)
+
+Cluster Master: 'Pat Breezy' (ID 1484, Items: 4)
+  -> Merging: 'Pat Breezy X Brother Lameck' (ID 3951, Items: 0)
+
+Cluster Master: 'Peace Daddy' (ID 1500, Items: 5)
+  -> Merging: 'Peace Daddy X Senior Baby' (ID 2514, Items: 0)
+
+Cluster Master: 'Pato Loverboy' (ID 1491, Items: 9)
+  -> Merging: 'Samo Lover Boy' (ID 1693, Items: 1)
+  -> Merging: 'Pato Lover Boy X High Prist' (ID 3014, Items: 1)
+  -> Merging: 'Samo Lover Boy Ft Shadoxy' (ID 2732, Items: 0)
+  -> Merging: 'Pato Loverboy X Nays Official' (ID 4175, Items: 0)
+
+Cluster Master: 'Pauline Praise' (ID 1493, Items: 9)
+  -> Merging: 'Pauline Praise Ft New Son' (ID 3482, Items: 0)
+  -> Merging: 'Pauline Praise X Kwiocwiny Choir New Son X M.Oscar' (ID 4012, Items: 0)
+
+Cluster Master: 'Peterson Q' (ID 1511, Items: 5)
+  -> Merging: 'Peterson Q Ft Crysto King' (ID 2902, Items: 0)
+
+Cluster Master: 'Perfect Official' (ID 1508, Items: 4)
+  -> Merging: 'Perfect Official Ft Justine J' (ID 2429, Items: 0)
+
+Cluster Master: 'Rocky Dennz' (ID 2277, Items: 7)
+  -> Merging: 'Rocky Dennz Ft Nature Vybz Killa' (ID 3020, Items: 1)
+
+Cluster Master: '4c1' (ID 2250, Items: 9)
+  -> Merging: '4C1 X Ebinz' (ID 2607, Items: 0)
+  -> Merging: '4c1 Ft L2k Wizzy Bwoy N Gatsy Boy' (ID 2642, Items: 0)
+
+Cluster Master: 'Pius City' (ID 1529, Items: 8)
+  -> Merging: 'Pius City Ft Chief Deno' (ID 3222, Items: 0)
+  -> Merging: 'Pius City Ft Wiz B X Tripple J' (ID 3260, Items: 0)
+
+Cluster Master: 'Playboy' (ID 1542, Items: 9)
+  -> Merging: 'Playboy Ft Kaga Boy' (ID 2972, Items: 0)
+  -> Merging: 'Playboy Ft Suuna Ben' (ID 2856, Items: 0)
+  -> Merging: 'Playboy X Eddy Wuzzy' (ID 2973, Items: 0)
+
+Cluster Master: 'Pistal Yang' (ID 1522, Items: 6)
+  -> Merging: 'Pistal Yang X Josh B' (ID 2347, Items: 0)
+
+Cluster Master: 'Queen Glo' (ID 1556, Items: 5)
+  -> Merging: 'Queen Glo Ft WizB Mazina Allstar' (ID 3236, Items: 0)
+
+Cluster Master: 'PN Jasko' (ID 1544, Items: 9)
+  -> Merging: 'PN Jasko X Young Plag' (ID 2332, Items: 0)
+
+Cluster Master: 'Qal Boys B2S' (ID 1553, Items: 6)
+  -> Merging: 'Qa Bys B2S' (ID 2628, Items: 0)
+
+Cluster Master: 'Queen Viola' (ID 1558, Items: 3)
+  -> Merging: 'Queen Viola X Kaga Boy' (ID 2435, Items: 0)
+  -> Merging: 'Queen Viola X Prosper Suga Bwoy' (ID 3956, Items: 0)
+
+Cluster Master: 'R Kelli De Legend' (ID 1566, Items: 9)
+  -> Merging: 'R Kelly Di Legend' (ID 1563, Items: 0)
+
+Cluster Master: 'Rampa Ling' (ID 1591, Items: 3)
+  -> Merging: 'Tampa Ling' (ID 1773, Items: 0)
+
+Cluster Master: 'Ranking Faya music' (ID 1596, Items: 3)
+  -> Merging: 'Ranking Faya Music X jim Jazzy Afroboy' (ID 4383, Items: 0)
+
+Cluster Master: 'Rank Jalur' (ID 1597, Items: 9)
+  -> Merging: 'Rank Jalur X Bush Boy' (ID 4280, Items: 0)
+
+Cluster Master: 'Rapcha Guhvan' (ID 1606, Items: 7)
+  -> Merging: 'Rapcha Guhvan Ft LKP X Klaxx Banton X Basha Vybz' (ID 3292, Items: 0)
+
+Cluster Master: 'Rappan B' (ID 1614, Items: 6)
+  -> Merging: 'Rapan B' (ID 4062, Items: 0)
+
+Cluster Master: 'Raba' (ID 1567, Items: 7)
+  -> Merging: 'Raba Ft All Starz' (ID 4119, Items: 0)
+
+Cluster Master: 'Rayzo Kruzz' (ID 1643, Items: 9)
+  -> Merging: 'Rayzo Kruzz Ft Mc Spade' (ID 3019, Items: 1)
+
+Cluster Master: 'Rapstone Kid ug' (ID 1626, Items: 3)
+  -> Merging: 'Rapstone kid' (ID 1627, Items: 1)
+
+Cluster Master: 'Rasport Music' (ID 1630, Items: 4)
+  -> Merging: 'Rasport Music Ft Kapirish' (ID 3226, Items: 0)
+
+Cluster Master: 'Ready Boy' (ID 1651, Items: 2)
+  -> Merging: 'Dread Boy' (ID 4420, Items: 1)
+  -> Merging: 'Red Boy Ft Up Town' (ID 3063, Items: 0)
+
+Cluster Master: 'RB Zabbie' (ID 1648, Items: 7)
+  -> Merging: 'Rb Zabbie X Swagg Dee' (ID 4201, Items: 0)
+
+Cluster Master: 'Sabi Boss' (ID 1667, Items: 9)
+  -> Merging: 'Sabi Boss Ft Dannie Cleem' (ID 3041, Items: 0)
+  -> Merging: 'Sabi Boss Ft Daily Rapper' (ID 4036, Items: 0)
+
+Cluster Master: 'MM Style' (ID 2276, Items: 4)
+  -> Merging: 'MM Style X Born J - westnilexpozed.com | westnilebiz.com' (ID 3150, Items: 1)
+
+Cluster Master: 'Sammix Pro' (ID 1684, Items: 5)
+  -> Merging: 'Sammix Pro Ft Thotho Feiva' (ID 2735, Items: 0)
+
+Cluster Master: 'Sammy Kios' (ID 1691, Items: 3)
+  -> Merging: 'Sammy Kios Ft Bosmic Otim X Everyoung Ajulu X Nuclear Ug X Hosani Music' (ID 4427, Items: 0)
+
+Cluster Master: 'Samon MainMan Gipir' (ID 1695, Items: 9)
+  -> Merging: 'Samon Mainman Gipir X Land Blaq' (ID 4002, Items: 0)
+  -> Merging: 'Samon MainMan Gipir X Diavox Official X Landblaq' (ID 4044, Items: 0)
+
+Cluster Master: 'Sarah Pink' (ID 1707, Items: 4)
+  -> Merging: 'Sara Pinky' (ID 1708, Items: 2)
+
+Cluster Master: 'Samsea' (ID 1698, Items: 9)
+  -> Merging: 'Samsea X G Man' (ID 3999, Items: 0)
+
+Cluster Master: 'Sarah Bea' (ID 1710, Items: 3)
+  -> Merging: 'Sarah Bae' (ID 3085, Items: 0)
+  -> Merging: 'Sarah Bae X Red Zam' (ID 2964, Items: 0)
+
+Cluster Master: 'Saviour Money' (ID 1716, Items: 5)
+  -> Merging: 'Saviour Money X Love Boy' (ID 2844, Items: 0)
+
+Cluster Master: 'Satz Ug' (ID 1713, Items: 10)
+  -> Merging: 'Satz Ug Ft King Rider' (ID 2823, Items: 0)
+  -> Merging: 'Satz Ug Ft Muzy G X Ice Man' (ID 3932, Items: 0)
+
+Cluster Master: 'Savedee In Christ' (ID 1719, Items: 8)
+  -> Merging: 'Savedee In Christ Ft James' (ID 3299, Items: 0)
+  -> Merging: 'Savedee In Christ Ft Ogis MAn' (ID 3254, Items: 0)
+
+Cluster Master: 'Profesa Elmos' (ID 3330, Items: 5)
+  -> Merging: 'Profesa Elmos Ft Black Tii' (ID 4384, Items: 1)
+
+Cluster Master: 'Seleckta Sendo 256' (ID 1739, Items: 10)
+  -> Merging: 'Seleckta Sendo 256 ft D Kee Music' (ID 2924, Items: 0)
+
+Cluster Master: 'Shadow Prince' (ID 1748, Items: 4)
+  -> Merging: 'Shadow Prince X Cyrus Pro' (ID 2978, Items: 0)
+
+Cluster Master: 'Ta2 Boy Johnex' (ID 1759, Items: 2)
+  -> Merging: 'Ta2 Boy Johnex Ft Joenavy MVP' (ID 4040, Items: 0)
+
+Cluster Master: 'Gospel Armour' (ID 2917, Items: 4)
+  -> Merging: 'Gospel Armour ft Jobian Tick & Black Lion' (ID 4392, Items: 1)
+
+Cluster Master: 'Mp Powel Muziki' (ID 2683, Items: 8)
+  -> Merging: 'Mp Poel Muziki' (ID 2489, Items: 3)
+  -> Merging: 'Mp Powel Muziki Ft Bro Yoo' (ID 4386, Items: 1)
+  -> Merging: 'Mp Poel Muziki X Single Wizzy' (ID 2994, Items: 1)
+
+Cluster Master: 'Talented Boys' (ID 1772, Items: 7)
+  -> Merging: 'Talent Boy' (ID 1777, Items: 4)
+  -> Merging: 'Talent Boy X MJ Tecno' (ID 2809, Items: 0)
+  -> Merging: 'Talent Boy X Fresh Boy' (ID 2772, Items: 0)
+  -> Merging: 'Talent Boy X Unzero the Rapper' (ID 3513, Items: 0)
+
+Cluster Master: 'Tcorner Boyz' (ID 1786, Items: 5)
+  -> Merging: 'T-Corner Boyz' (ID 2370, Items: 0)
+  -> Merging: 'Tcorner Boyz X K Blaze' (ID 2619, Items: 0)
+  -> Merging: 'T-Corner Boyz X Mc Deno' (ID 3269, Items: 0)
+  -> Merging: 'Tcorner Boyz Ft Mozey Stylo X Dj Jackie 256' (ID 4283, Items: 0)
+
+Cluster Master: 'Tee Price' (ID 1783, Items: 7)
+  -> Merging: 'Tee Price Ft Finest Zaddy' (ID 3238, Items: 0)
+
+Cluster Master: 'The Lord's Army' (ID 1805, Items: 9)
+  -> Merging: 'The Lord's Army X Bible Son' (ID 4275, Items: 0)
+
+Cluster Master: 'The Wizgun' (ID 1806, Items: 7)
+  -> Merging: 'The Wizgun X Mc Bonjour Kumasegere' (ID 2903, Items: 0)
+
+Cluster Master: 'Tino Beliz' (ID 1815, Items: 9)
+  -> Merging: 'Tino Beliz ft Monopoly Badcharacter' (ID 3525, Items: 1)
+  -> Merging: 'Tino Beliz  ft Quin Gee' (ID 2713, Items: 0)
+
+Cluster Master: 'Juma K' (ID 3251, Items: 2)
+  -> Merging: 'Juma K X DDK Brown' (ID 4395, Items: 1)
+  -> Merging: 'Juma K X Black Face' (ID 3214, Items: 1)
+  -> Merging: 'Juma K X Boy Jackson' (ID 4239, Items: 1)
+
+Cluster Master: 'Wise Man' (ID 2019, Items: 8)
+  -> Merging: 'Wise Man Ft X One ug' (ID 2279, Items: 0)
+
+Cluster Master: 'Oneway' (ID 3264, Items: 0)
+  -> Merging: 'One Way' (ID 4388, Items: 0)
+
+Cluster Master: 'Miray' (ID 2425, Items: 1)
+  -> Merging: 'Miray ft Innoxx' (ID 4389, Items: 1)
+  -> Merging: 'Miray ft Kaga Boy' (ID 4246, Items: 1)
+
+Cluster Master: 'Iceman Iman' (ID 797, Items: 9)
+  -> Merging: 'Iceman Iman Ft Jimmi King UG' (ID 3115, Items: 1)
+  -> Merging: 'Iceman Iman X Kyali Pro' (ID 2615, Items: 0)
+  -> Merging: 'Iceman Iman X  Enocz Bristz' (ID 2962, Items: 0)
+  -> Merging: 'Iceman Iman X Satz Ug X Muzy G' (ID 2824, Items: 0)
+
+Cluster Master: 'Tonny Jaa' (ID 1836, Items: 5)
+  -> Merging: 'Tonny Jaa Ft Lanebi Bantu' (ID 2968, Items: 0)
+
+Cluster Master: 'Totolynne' (ID 1839, Items: 5)
+  -> Merging: 'Totolynne X Don Popular' (ID 3516, Items: 0)
+
+Cluster Master: 'Trajor Justone' (ID 11, Items: 9)
+  -> Merging: 'Trajor Juston' (ID 4146, Items: 0)
+  -> Merging: 'Trajor Justone Ft Small Rapper' (ID 4023, Items: 0)
+  -> Merging: 'Trajor Juston X Heavenz Man X Juni Breezy' (ID 2798, Items: 0)
+
+Cluster Master: 'Traylblazor' (ID 1845, Items: 8)
+  -> Merging: 'Traylblazor X Prince Baro' (ID 4430, Items: 0)
+
+Cluster Master: 'Trevour Bao' (ID 1851, Items: 4)
+  -> Merging: 'Trevour Bao Ft LB Sweaz' (ID 3017, Items: 0)
+
+Cluster Master: 'Tricky bwoy ug' (ID 1855, Items: 9)
+  -> Merging: 'Tricky Bwoy' (ID 3779, Items: 1)
+
+Cluster Master: 'Snear Da king' (ID 2621, Items: 6)
+  -> Merging: 'Snear Da King Ft Starboy' (ID 3096, Items: 1)
+  -> Merging: 'Snear Da King Ft Kaga Boy' (ID 4057, Items: 1)
+  -> Merging: 'Snare Da King Ft Kaga Boy' (ID 4069, Items: 1)
+  -> Merging: 'Snear Da King Ft Roo Article' (ID 4393, Items: 1)
+  -> Merging: 'Snear Da King Ft Big Yalaman' (ID 4058, Items: 1)
+
+Cluster Master: 'Buru Weed' (ID 2618, Items: 2)
+  -> Merging: 'Buru Weed Ft Okuru Boy' (ID 2456, Items: 2)
+
+Cluster Master: 'Uncle Prince' (ID 1871, Items: 6)
+  -> Merging: 'Jungle Prince' (ID 2689, Items: 2)
+  -> Merging: 'Jungle Prince X Vanno Vino' (ID 3437, Items: 1)
+
+Cluster Master: 'Unique UG' (ID 1888, Items: 7)
+  -> Merging: 'Unique UG X Sheebah' (ID 3104, Items: 0)
+  -> Merging: 'Unique UG Ft Solo Jazz' (ID 3067, Items: 0)
+  -> Merging: 'Unique UG X Ava Peace X Jowy Landa' (ID 4090, Items: 0)
+
+Cluster Master: 'Urban Messiah' (ID 1883, Items: 9)
+  -> Merging: 'Urban Messiah X Last Card Pro Fai X Bishop' (ID 2828, Items: 0)
+
+Cluster Master: 'Vaddy' (ID 1896, Items: 4)
+  -> Merging: 'Vaddy Ft Hees Money X Fire Niga' (ID 4188, Items: 0)
+  -> Merging: 'Vaddy Ft Hees Money X Fire Niga X Black Wool' (ID 4171, Items: 0)
+
+Cluster Master: 'Vampi Boy' (ID 1913, Items: 5)
+  -> Merging: 'Vampi Boy ft Mc Bonjour' (ID 4109, Items: 0)
+  -> Merging: 'Vampi Boy X Cool Williams' (ID 3193, Items: 0)
+
+Cluster Master: 'Vanclif Music' (ID 1916, Items: 2)
+  -> Merging: 'Vanclif Music X Wuuhuo Official' (ID 3219, Items: 0)
+
+Cluster Master: 'Vano Bway' (ID 1918, Items: 7)
+  -> Merging: 'Vano Bway Ft Denzo Wizzy 256' (ID 3163, Items: 0)
+
+Cluster Master: 'Uncle Sulphur' (ID 1876, Items: 9)
+  -> Merging: 'Uncle Sulphur X Danger Bullet' (ID 2386, Items: 1)
+  -> Merging: 'Uncle Sulphur X Damage' (ID 3998, Items: 0)
+  -> Merging: 'Uncle Sulphur X Angel X Adamz' (ID 2513, Items: 0)
+
+Cluster Master: 'Dr Bush ft B Squere' (ID 3180, Items: 3)
+  -> Merging: 'Dr Bush' (ID 3058, Items: 2)
+  -> Merging: 'Dr Bush Ft Kyali Pro' (ID 4398, Items: 1)
+
+Cluster Master: 'Vine K' (ID 1942, Items: 7)
+  -> Merging: 'Vin K' (ID 1939, Items: 1)
+  -> Merging: 'Vine K Ft Francis' (ID 3060, Items: 0)
+
+Cluster Master: 'Ville Boy' (ID 1940, Items: 7)
+  -> Merging: 'Vile Boy' (ID 1943, Items: 1)
+
+Cluster Master: 'Vibranium' (ID 1934, Items: 4)
+  -> Merging: 'Vibranium Ft VieGo' (ID 2779, Items: 0)
+  -> Merging: 'Vibranium X Agy Man' (ID 2342, Items: 0)
+
+Cluster Master: 'Street Bells Music' (ID 2944, Items: 5)
+  -> Merging: 'Street Bells Music X Leza Nathan' (ID 4299, Items: 2)
+  -> Merging: 'Street Bells Music X Ak Queen' (ID 4400, Items: 1)
+
+Cluster Master: 'Weapon Omukwambwe' (ID 1987, Items: 4)
+  -> Merging: 'Weapon Omukambwe' (ID 2921, Items: 0)
+
+Cluster Master: 'Wójok Dekoda' (ID 1988, Items: 9)
+  -> Merging: 'Wojok Dekoda' (ID 3976, Items: 0)
+
+Cluster Master: 'Willy Vibez' (ID 2011, Items: 9)
+  -> Merging: 'Willy Vybez' (ID 2012, Items: 3)
+  -> Merging: 'Willy Vybez X Kaga' (ID 3248, Items: 0)
+
+Cluster Master: 'Widdy Smiley' (ID 2007, Items: 9)
+  -> Merging: 'Widdy Smiley Ft Lydia' (ID 4295, Items: 0)
+
+Cluster Master: 'Winter Bowy Ug' (ID 2020, Items: 8)
+  -> Merging: 'Winter Bowy Ug X Samarian' (ID 3112, Items: 0)
+
+Cluster Master: 'Sonnet' (ID 3031, Items: 4)
+  -> Merging: 'Sonet' (ID 2623, Items: 1)
+  -> Merging: 'Sonet Ft Don Popular' (ID 2853, Items: 1)
+
+Cluster Master: 'Wizeboytherapper' (ID 2033, Items: 4)
+  -> Merging: 'Wize Boy The Rapper' (ID 3884, Items: 1)
+  -> Merging: 'Wizeboytherapper X GB' (ID 3925, Items: 0)
+
+Cluster Master: 'X Wine' (ID 2061, Items: 9)
+  -> Merging: 'X Finger' (ID 2059, Items: 9)
+  -> Merging: 'X Badizo Chilio Boy' (ID 2062, Items: 8)
+  -> Merging: 'X-Ray Badblood' (ID 2063, Items: 7)
+  -> Merging: 'X Boy' (ID 2066, Items: 6)
+  -> Merging: 'X Man' (ID 2067, Items: 5)
+  -> Merging: 'X Bouy Se' (ID 2058, Items: 5)
+  -> Merging: 'X Bishop' (ID 2060, Items: 4)
+  -> Merging: 'X Ray Boy' (ID 2065, Items: 4)
+  -> Merging: 'X Nakky' (ID 2064, Items: 2)
+  -> Merging: 'X Finger X V Click' (ID 2842, Items: 0)
+  -> Merging: 'X Finger X Raddy Zikky' (ID 3024, Items: 0)
+  -> Merging: 'X Finger X Franklee GB' (ID 3890, Items: 0)
+
+Cluster Master: 'Wizzy Daddy' (ID 2037, Items: 2)
+  -> Merging: 'Wiz Daddy' (ID 2024, Items: 1)
+
+Cluster Master: 'Yankee Max' (ID 2087, Items: 5)
+  -> Merging: 'Yankee Max Ft PT Fresh' (ID 3461, Items: 0)
+
+Cluster Master: 'Yobow' (ID 2107, Items: 9)
+  -> Merging: 'Yobow Ft Mally Wine' (ID 3966, Items: 0)
+
+Cluster Master: 'Yoboy Ben' (ID 2103, Items: 8)
+  -> Merging: 'YoBoy Ken' (ID 2108, Items: 7)
+
+Cluster Master: 'Kings Way' (ID 4414, Items: 9)
+  -> Merging: 'Kingsway' (ID 4413, Items: 1)
+  -> Merging: 'Kings Way ft New Life' (ID 4416, Items: 1)
+
+Cluster Master: 'Ya B2' (ID 2084, Items: 5)
+  -> Merging: 'Ya B2 Ft Dr Rock' (ID 2658, Items: 0)
+  -> Merging: 'Ya B2 Ft Big Boy' (ID 3362, Items: 0)
+
+Cluster Master: 'King Rock UG' (ID 3301, Items: 1)
+  -> Merging: 'King Rock UG Ft Olly Em' (ID 3922, Items: 1)
+  -> Merging: 'King Rock UG Ft Bobi K kiss Ug' (ID 2626, Items: 1)
+
+Cluster Master: 'Young Smile' (ID 2152, Items: 9)
+  -> Merging: 'Young Miles' (ID 2139, Items: 2)
+  -> Merging: 'Young Mile Ft Rita Kabz' (ID 2136, Items: 2)
+  -> Merging: 'Young Smile Ft Fresh Man' (ID 3319, Items: 0)
+
+Cluster Master: 'Young LoverBoy' (ID 2138, Items: 5)
+  -> Merging: 'Young Lover' (ID 2135, Items: 2)
+
+Cluster Master: 'Young Leman' (ID 2133, Items: 10)
+  -> Merging: 'Young Lemon' (ID 2134, Items: 9)
+  -> Merging: 'Young Leman Ft Rap J' (ID 3103, Items: 0)
+  -> Merging: 'Young Leman X L Kizy' (ID 4111, Items: 0)
+  -> Merging: 'Young Leman Ft L Kizy' (ID 3315, Items: 0)
+  -> Merging: 'Young Lemon ft Jk Vanzi & G Rocxy' (ID 3372, Items: 0)
+
+Cluster Master: 'Young Water' (ID 2160, Items: 4)
+  -> Merging: 'Young Patter' (ID 2142, Items: 4)
+
+Cluster Master: 'Young Ridder' (ID 2145, Items: 9)
+  -> Merging: 'Young Ridder X Satz Ug' (ID 2822, Items: 0)
+  -> Merging: 'Young Ridder X Ug senior' (ID 3249, Items: 0)
+
+Cluster Master: 'Young Wayne' (ID 2161, Items: 9)
+  -> Merging: 'Young Wayne Ft Brown Son' (ID 4017, Items: 0)
+
+Cluster Master: 'Zagga Dee' (ID 2177, Items: 9)
+  -> Merging: 'Zagaa Dee' (ID 2171, Items: 2)
+
+Cluster Master: 'Yw Fik Boy' (ID 2170, Items: 9)
+  -> Merging: 'Yw Fik Boy X Gen M Sanga Sanga' (ID 2424, Items: 0)
+  -> Merging: 'Yw Fik Boy X Hon.Ongei Patrick' (ID 3531, Items: 0)
+
+Cluster Master: 'Arson Killaz' (ID 2792, Items: 2)
+  -> Merging: 'Arson Killaz Ft Kaga Boy' (ID 4409, Items: 1)
+
+Cluster Master: 'Zako Berlin' (ID 2187, Items: 9)
+  -> Merging: 'Zako Berlin X King Me' (ID 3094, Items: 0)
+  -> Merging: 'Zako Berlin X DJ Armoni' (ID 2895, Items: 0)
+  -> Merging: 'Zako Berlin X Smart King' (ID 2415, Items: 0)
+
+Cluster Master: 'Ziza West' (ID 2217, Items: 10)
+  -> Merging: 'Ziza Weso' (ID 2215, Items: 2)
+  -> Merging: 'Ziza West X BadMan Razer' (ID 3174, Items: 0)
+
+Cluster Master: 'Zombie Na Chappa' (ID 2223, Items: 4)
+  -> Merging: 'Zombie Na Chappa X Slim Diva X Ben Back' (ID 4233, Items: 0)
+
+Cluster Master: 'Don Signal' (ID 3924, Items: 1)
+  -> Merging: 'Don Signal X Osbee' (ID 2322, Items: 1)
+
+Cluster Master: 'Blvck Marvin' (ID 3056, Items: 2)
+  -> Merging: 'Blvck Marvin Ft Dark j' (ID 4411, Items: 1)
+
+Cluster Master: 'Daddy Silver' (ID 335, Items: 9)
+  -> Merging: 'Daddy Silver X SB Major' (ID 4143, Items: 0)
+
+Cluster Master: 'Ekzo Ekzo' (ID 460, Items: 9)
+  -> Merging: 'Ekzo Ekzo X Smarto' (ID 3125, Items: 0)
+  -> Merging: 'Ekzo Ekzo X Ogona Mazima' (ID 2788, Items: 0)
+  -> Merging: 'Ekzo Ekzo Ft Ogona Mazima' (ID 2869, Items: 0)
+
+Cluster Master: 'Emmatic 256' (ID 500, Items: 3)
+  -> Merging: 'Emmatic 256 X Rizzo' (ID 4237, Items: 0)
+  -> Merging: 'Emmatic 256 X Rizzo X Ragz' (ID 4236, Items: 0)
+
+Cluster Master: '2C Killer' (ID 2242, Items: 4)
+  -> Merging: '2C Killer Ft Vano Vino' (ID 3022, Items: 0)
+
+Cluster Master: '2Brothers Muzik' (ID 2241, Items: 3)
+  -> Merging: '2Brothers Music' (ID 3262, Items: 0)
+
+Cluster Master: '60 Coinz' (ID 2255, Items: 9)
+  -> Merging: '50 Coinz' (ID 2253, Items: 7)
+
+Cluster Master: 'Rochafu Nalo' (ID 3117, Items: 2)
+  -> Merging: 'Rochafu Nalo Ft International' (ID 2955, Items: 1)
+  -> Merging: 'Rochafu Nalo Ft Ikay Flavio Ug' (ID 4412, Items: 1)
+  -> Merging: 'Rochafu Nalo X Ikay Flavio Wansiminoh' (ID 4015, Items: 1)
+
+Cluster Master: 'King Life' (ID 2369, Items: 9)
+  -> Merging: 'King Life X Little Joe' (ID 4033, Items: 1)
+  -> Merging: 'King Life ft Jedza Brown' (ID 3302, Items: 1)
+  -> Merging: 'King Life X Miray Bad Boy' (ID 2756, Items: 1)
+  -> Merging: 'King Life X Jordan Da Rapper' (ID 3473, Items: 1)
+
+Cluster Master: 'Gamba Da Rock' (ID 617, Items: 8)
+  -> Merging: 'Gamba Da Rock X Adala Swagg' (ID 4039, Items: 0)
+
+Cluster Master: 'Leaky Mwaj' (ID 1111, Items: 9)
+  -> Merging: 'Leaky Mwaj X Risky Boy' (ID 2463, Items: 0)
+  -> Merging: 'Leaky Mwaj Ft Smile Boy' (ID 2866, Items: 0)
+  -> Merging: 'Leaky Mwaj Ft Kenny Kesh' (ID 2976, Items: 0)
+  -> Merging: 'Leaky Mwaj X Happy Son X Bro Sabiti' (ID 2849, Items: 0)
+
+Cluster Master: 'Black Face' (ID 3281, Items: 1)
+  -> Merging: 'Mc Black Face' (ID 1245, Items: 1)
+  -> Merging: 'Black Face Ug' (ID 2428, Items: 1)
+  -> Merging: 'Black Face Ft Juma K' (ID 3215, Items: 1)
+  -> Merging: 'Black Face ft Kenny Mars' (ID 3066, Items: 1)
+
+Cluster Master: 'New Son Kwiocwiny Choir' (ID 1314, Items: 10)
+  -> Merging: 'New Son Kwiocwiny Choir X M Oscar' (ID 3107, Items: 2)
+  -> Merging: 'New Son Kwiocwiny Choir X Sister Poline' (ID 3405, Items: 2)
+  -> Merging: 'New Son Kwiocwiny Choir X Lucky Orphan' (ID 3487, Items: 0)
+
+Cluster Master: 'Jingo Man' (ID 2726, Items: 5)
+  -> Merging: 'Pingo Man' (ID 1517, Items: 3)
+  -> Merging: 'Jingo Man Ft Trigga P' (ID 2829, Items: 1)
+
+Cluster Master: 'Salvation Easter' (ID 1679, Items: 9)
+  -> Merging: 'Salvation Esther' (ID 2741, Items: 0)
+  -> Merging: 'Salvation Easter X Bro Bright' (ID 3983, Items: 0)
+  -> Merging: 'Salvation Easter Ft Herbert Shone' (ID 3973, Items: 0)
+  -> Merging: 'Salvation Esther Ft Herbert Shine' (ID 3981, Items: 0)
+
+Cluster Master: 'D\'lyta' (ID 4129, Items: 5)
+  -> Merging: 'D'Lyta X Vigo' (ID 4419, Items: 1)
+
+Cluster Master: 'Lion B' (ID 3122, Items: 1)
+  -> Merging: 'Lion Bee' (ID 2873, Items: 1)
+  -> Merging: 'Lion Lee' (ID 3134, Items: 1)
+  -> Merging: 'Lion B Ft Micky J' (ID 2784, Items: 1)
+  -> Merging: 'Lion B Ft  All Starz Erussi' (ID 2330, Items: 1)
+
+Cluster Master: 'King Me De Vybe' (ID 2785, Items: 3)
+  -> Merging: 'King Me De Vybe Ft Pop J' (ID 2804, Items: 2)
+  -> Merging: 'King Me De Vybe X Zako Berlin' (ID 3091, Items: 1)
+  -> Merging: 'King Me De Vybe X Whistle Kid' (ID 3846, Items: 1)
+
+Cluster Master: 'Creator Luoboy' (ID 2787, Items: 2)
+  -> Merging: 'Creator Luoboy Ft Beenie K' (ID 2975, Items: 1)
+
+Cluster Master: 'Apa Yesu Jeniffer' (ID 2790, Items: 1)
+  -> Merging: 'Apa Yesu Jennifer' (ID 3470, Items: 1)
+
+Cluster Master: 'Joo Kenz' (ID 2472, Items: 14)
+  -> Merging: 'Joo Kenz ft Ivel Shan' (ID 2987, Items: 1)
+  -> Merging: 'Joo Kenz ft G.A Swagga' (ID 2802, Items: 1)
+  -> Merging: 'Joo Kenz ft Lyn C Black Mama' (ID 3946, Items: 1)
+
+Cluster Master: 'Dj Phally Ft Frenzy Boi' (ID 2807, Items: 2)
+  -> Merging: 'Dj Phally Ft Astro Lifa' (ID 2450, Items: 1)
+  -> Merging: 'Dj Phally Ft Elton LoverBoy, Astro Lifa & Twisky Fingaz' (ID 3962, Items: 1)
+
+Cluster Master: 'Aro Star Galaxy' (ID 2648, Items: 4)
+  -> Merging: 'Aro Star Galaxy X Spider' (ID 2812, Items: 1)
+
+Cluster Master: 'King Feffe' (ID 3021, Items: 1)
+  -> Merging: 'King Feffe Ft Fresh Hitter' (ID 2821, Items: 1)
+
+Cluster Master: 'Next Bwoy X Sixco' (ID 2835, Items: 0)
+  -> Merging: 'Next Bwoy X G2 Black 2' (ID 2855, Items: 0)
+
+Cluster Master: 'Hd Pro and Van Vigo' (ID 2863, Items: 0)
+  -> Merging: 'Hd Pro and Van Vigo Ft Mik Paddu' (ID 2838, Items: 0)
+
+Cluster Master: 'Yoffo The Baddest' (ID 2109, Items: 9)
+  -> Merging: 'Yofofo The Baddest' (ID 3073, Items: 1)
+
+Cluster Master: 'Swizzy Badboy' (ID 3937, Items: 3)
+  -> Merging: 'Swizzy Badboy Ft Swagg Man Emma' (ID 4136, Items: 1)
+  -> Merging: 'Swizzy Badboy Ft Fresh Montana X Freedee Bwoy X King Me Pon Deck' (ID 2324, Items: 1)
+
+Cluster Master: 'Mzee B Square' (ID 2860, Items: 3)
+  -> Merging: 'Mzee B Square X G Man X Samsea' (ID 2326, Items: 1)
+
+Cluster Master: 'Fresh montana Ji Music' (ID 2329, Items: 2)
+  -> Merging: 'Fresh montana Ji Music Ft Innadybowy' (ID 2328, Items: 1)
+  -> Merging: 'Fresh Montana Ji Music Ft King Me Pon Deck' (ID 2733, Items: 1)
+
+Cluster Master: 'Big Kid Wiz' (ID 2396, Items: 3)
+  -> Merging: 'Big Kid Wiz X Dohsen Love' (ID 2397, Items: 1)
+  -> Merging: 'Big Kid Wiz Ft Young Kid Ug' (ID 2340, Items: 1)
+
+Cluster Master: 'Ruj Man' (ID 2861, Items: 3)
+  -> Merging: 'Ruj Man X Miray' (ID 2970, Items: 1)
+  -> Merging: 'Ruj Man X Escoin' (ID 2349, Items: 1)
+  -> Merging: 'Ruj Man X Swagg Dee' (ID 4049, Items: 1)
+  -> Merging: 'Ruj Man X Swagg Dee X Kaga Boy' (ID 3142, Items: 1)
+
+Cluster Master: 'Bhad Zaggy' (ID 2351, Items: 5)
+  -> Merging: 'Bhad Zaggy X Alvin Priest' (ID 2864, Items: 1)
+  -> Merging: 'Bhad Zaggy X Badman Wagadugu' (ID 2871, Items: 1)
+  -> Merging: 'Bhad Zaggy X JJ Suru X Wagadugu' (ID 3910, Items: 1)
+  -> Merging: 'Bhad Zaggy X Mc Bonjour Kumasegere' (ID 2468, Items: 1)
+
+Cluster Master: 'King Allan Freshman' (ID 2909, Items: 2)
+  -> Merging: 'King Allan Freshman X Lover Smart' (ID 2354, Items: 2)
+
+Cluster Master: 'Dj Killax Kyz 256' (ID 2356, Items: 11)
+  -> Merging: 'Dj Killax Kyz 256 Ft Kingsley' (ID 3203, Items: 1)
+  -> Merging: 'Dj Killax Kyz 256 Ft Brown Son' (ID 3338, Items: 1)
+  -> Merging: 'Dj Killax Kyz 256 Ft Shammy Queen' (ID 3204, Items: 1)
+  -> Merging: 'Dj Killax Kyz 256 Ft Fidodido X Alvo Misty' (ID 2699, Items: 1)
+  -> Merging: 'Dj Killax Kyz 256 Ft Ogona Mazima X Slim Diva' (ID 3209, Items: 1)
+  -> Merging: 'Dj Killax Kyz 256 Ft Ruger X Chella X Qing Mad X Skaled' (ID 4137, Items: 1)
+
+Cluster Master: 'Big Drimz' (ID 2362, Items: 2)
+  -> Merging: 'Big Drimz X Lton Dickon' (ID 2448, Items: 1)
+
+Cluster Master: 'CY Tip ft Young Lemon' (ID 2365, Items: 1)
+  -> Merging: 'CY Tip ft Dreko De Helpa' (ID 4073, Items: 1)
+  -> Merging: 'CY Tip ft Drecko De Helpa' (ID 4082, Items: 1)
+
+Cluster Master: 'Branny Boy' (ID 2367, Items: 4)
+  -> Merging: 'Branny Boy Ft Snear Da King' (ID 3078, Items: 1)
+
+Cluster Master: 'Binoculars Ft KJ Man' (ID 3995, Items: 1)
+  -> Merging: 'Binoculars X KJ Man X Jeff War' (ID 2372, Items: 1)
+
+Cluster Master: 'Smile Boy' (ID 2374, Items: 4)
+  -> Merging: 'Smile Boy ft O R Innox' (ID 2879, Items: 1)
+  -> Merging: 'Smile Boy Ft Fresh Man' (ID 3300, Items: 1)
+
+Cluster Master: 'Designer Bae' (ID 2383, Items: 18)
+  -> Merging: 'Designer Bae X Slim fit Nation' (ID 3984, Items: 1)
+
+Cluster Master: 'Innoxy Orion Ministry' (ID 2406, Items: 0)
+  -> Merging: 'Innocxy Orion Ministry' (ID 2394, Items: 0)
+
+Cluster Master: 'Ashley Dee Da Queen X Riaso Boy' (ID 2399, Items: 1)
+  -> Merging: 'Ashley Dee Da Queen X Kaga Boy X Gimaxy' (ID 2705, Items: 1)
+
+Cluster Master: 'Black Man' (ID 2341, Items: 2)
+  -> Merging: 'Black Man X Timer X Kelly Wizzy' (ID 2343, Items: 2)
+  -> Merging: 'Black Man X Kelly Wizy' (ID 2400, Items: 1)
+
+Cluster Master: 'Decycle' (ID 3971, Items: 1)
+  -> Merging: 'Decycle Ft MJP' (ID 2405, Items: 1)
+
+Cluster Master: 'Amexy Juicy' (ID 3120, Items: 1)
+  -> Merging: 'Amexy Juicy X Jozy Benda X Cris Ramy' (ID 2410, Items: 1)
+
+Cluster Master: 'Black Niga Marathon' (ID 2423, Items: 0)
+  -> Merging: 'Black Nigga Marathon' (ID 2872, Items: 0)
+  -> Merging: 'Black Nigga Marathon Ft Norman Slelenzer' (ID 3935, Items: 0)
+
+Cluster Master: 'New Life x Gospel Story' (ID 3964, Items: 1)
+  -> Merging: 'New Life' (ID 2426, Items: 0)
+  -> Merging: 'New Life ft Gospel All Stars' (ID 4265, Items: 0)
+
+Cluster Master: 'Mik Paddu' (ID 2430, Items: 1)
+  -> Merging: 'Mik Paddu X Sirgain' (ID 3979, Items: 1)
+  -> Merging: 'Mik Paddu Ft Chris B' (ID 3980, Items: 1)
+  -> Merging: 'Mik Paddu X HD Pro X Van Viko' (ID 3978, Items: 1)
+
+Cluster Master: 'Bunsen Boy' (ID 2433, Items: 1)
+  -> Merging: 'Bunsen Boy Ft Rhozimah' (ID 4059, Items: 1)
+  -> Merging: 'Bunsen Boy Ft Vano Vino' (ID 3000, Items: 1)
+
+Cluster Master: 'Lyra Fetina' (ID 2452, Items: 3)
+  -> Merging: 'Lyra Fetina Ft Wiz Montana Official' (ID 3255, Items: 1)
+
+Cluster Master: 'Little Joe Ug' (ID 2630, Items: 4)
+  -> Merging: 'Little Joe Ug X King Life' (ID 4032, Items: 1)
+
+Cluster Master: 'Rhinox D Blamber Ft Justick UG' (ID 2460, Items: 2)
+  -> Merging: 'Rhinox D Blamber Ft Kyali Pro' (ID 3927, Items: 1)
+  -> Merging: 'Rhinox D Blamber Ft Justik UG X Radjuvanny X Gigga Power' (ID 2986, Items: 1)
+
+Cluster Master: 'Dr Ben' (ID 2462, Items: 5)
+  -> Merging: 'Dr Ben X Mally Kain' (ID 2974, Items: 1)
+
+Cluster Master: 'Try O' (ID 2465, Items: 6)
+  -> Merging: 'Try O Ft Seen Truth' (ID 3261, Items: 1)
+
+Cluster Master: 'Snr Sangz' (ID 2915, Items: 1)
+  -> Merging: 'Snr Sangz X Ju Mic' (ID 2473, Items: 1)
+
+Cluster Master: 'Smaat Maane' (ID 2477, Items: 3)
+  -> Merging: 'Smaat Maane X Vine K' (ID 4164, Items: 2)
+  -> Merging: 'Smaat Maane X Digo Jack' (ID 3303, Items: 1)
+  -> Merging: 'Smaat Maane X Dnl Gang P' (ID 3785, Items: 1)
+
+Cluster Master: 'King Boaz' (ID 2479, Items: 5)
+  -> Merging: 'King Boaz Ft askeyem' (ID 3072, Items: 1)
+  -> Merging: 'King Boaz Ft Geox Lee' (ID 2995, Items: 1)
+  -> Merging: 'King Boaz Ft Agry Rymz' (ID 2896, Items: 1)
+
+Cluster Master: 'Tizo Boy' (ID 1820, Items: 3)
+  -> Merging: 'Tizo Boy Ft Gaz P' (ID 2483, Items: 0)
+
+Cluster Master: 'Stevo' (ID 4224, Items: 1)
+  -> Merging: 'Stevo Ft Star Dee' (ID 2646, Items: 1)
+  -> Merging: 'Stevo X M Star Dee' (ID 2498, Items: 1)
+  -> Merging: 'Stevo X Brighton Ug X Charly Brown' (ID 4173, Items: 1)
+
+Cluster Master: 'Sweaz B' (ID 2334, Items: 2)
+  -> Merging: 'Sweaz B X Life G' (ID 2502, Items: 1)
+  -> Merging: 'Sweaz B Ft Life G' (ID 2501, Items: 1)
+  -> Merging: 'Sweaz B Ft Risk Pan X Life G' (ID 2503, Items: 1)
+
+Cluster Master: 'Shasha Boy Ug' (ID 2755, Items: 2)
+  -> Merging: 'Shasha Boy Ug Ft Vision Media Ug' (ID 2505, Items: 1)
+
+Cluster Master: 'King Rantic' (ID 2507, Items: 3)
+  -> Merging: 'King Rantic X Warm K' (ID 2868, Items: 1)
+
+Cluster Master: 'Freedee Bwoy' (ID 2748, Items: 1)
+  -> Merging: 'Freedee Bwoy Ft Swizzy badboy X Fresh Montana X King Me Pon Deck' (ID 2325, Items: 1)
+
+Cluster Master: 'DJ Reaky 256' (ID 2344, Items: 5)
+  -> Merging: 'DJ Reaky 256 X DJ Vinta 256' (ID 4145, Items: 1)
+
+Cluster Master: 'Rogger B' (ID 2645, Items: 3)
+  -> Merging: 'Rogger B X Deme' (ID 2346, Items: 1)
+
+Cluster Master: 'Frenzy Boi' (ID 3271, Items: 1)
+  -> Merging: 'Frenzy Boy Ft FD Link' (ID 4231, Items: 1)
+  -> Merging: 'Frenzy Boi ft Astro Lifa' (ID 2348, Items: 1)
+
+Cluster Master: 'Deme' (ID 3972, Items: 2)
+  -> Merging: 'Deme X Roger' (ID 2350, Items: 1)
+
+Cluster Master: 'Mzee White' (ID 2467, Items: 1)
+  -> Merging: 'Mzee White Ft Billman' (ID 2361, Items: 1)
+  -> Merging: 'Mzee White Ft Davi Lockson' (ID 3265, Items: 1)
+  -> Merging: 'Mzee White Ft Rap G Pro X K Klipsy' (ID 2981, Items: 1)
+
+Cluster Master: 'Brother King Life' (ID 2368, Items: 5)
+  -> Merging: 'Brother King Life X Bro Kaguta' (ID 2984, Items: 2)
+  -> Merging: 'Brother King Life X Sis Faith' (ID 2875, Items: 1)
+  -> Merging: 'Brother King Life X Bro Advent' (ID 3529, Items: 1)
+
+Cluster Master: 'Diano Jax Mikie' (ID 2379, Items: 4)
+  -> Merging: 'Diano Jax Mikie Ft Bria Big Don' (ID 2455, Items: 1)
+
+Cluster Master: 'Single Wiz' (ID 2384, Items: 5)
+  -> Merging: 'Single Wiz X Aston Pilipili' (ID 2782, Items: 2)
+  -> Merging: 'Single Wiz X Swag Boy' (ID 3252, Items: 1)
+  -> Merging: 'Single Wiz X Mp Poel Muziki' (ID 2993, Items: 1)
+  -> Merging: 'Single Wiz Ft Tressure Justone' (ID 3119, Items: 1)
+
+Cluster Master: 'Bro Sam' (ID 3157, Items: 1)
+  -> Merging: 'Bro Sam X Sister Hilder' (ID 2385, Items: 1)
+
+Cluster Master: 'Big Brain' (ID 2418, Items: 1)
+  -> Merging: 'Big Brain X Spear Zang' (ID 3268, Items: 1)
+
+Cluster Master: 'Black Bush' (ID 2420, Items: 3)
+  -> Merging: 'Black Bush X Small Boy Rapper' (ID 2749, Items: 2)
+  -> Merging: 'Black Bush Ft Jagua Boy' (ID 2750, Items: 1)
+  -> Merging: 'Black Bush Ft Fresh Brown X Super Jaguar' (ID 2799, Items: 1)
+  -> Merging: 'Black Bush Ft Small Boy Rapa X Simple Kid' (ID 3930, Items: 1)
+
+Cluster Master: 'Profeta Sam' (ID 2431, Items: 2)
+  -> Merging: 'Profeta Sam Ft Young Pastor' (ID 2512, Items: 2)
+  -> Merging: 'Profeta Sam Ft Smart R' (ID 3305, Items: 1)
+
+Cluster Master: 'Young Kid Ug Afrika' (ID 2440, Items: 0)
+  -> Merging: 'Young Kid Afrika Ft LB Sweaz' (ID 3953, Items: 0)
+
+Cluster Master: 'Bro Lucky' (ID 2443, Items: 4)
+  -> Merging: 'Bro Lucky X Sis Sunday' (ID 3486, Items: 1)
+
+Cluster Master: 'Freshman' (ID 2736, Items: 3)
+  -> Merging: 'Freshman Ft Or Innox' (ID 2461, Items: 2)
+  -> Merging: 'Freshman X Oja' (ID 3025, Items: 1)
+  -> Merging: 'Freshman X Young Smile' (ID 3296, Items: 1)
+
+Cluster Master: 'Brother Charles' (ID 2487, Items: 8)
+  -> Merging: 'Brother Charles Ft Fr Bieveni' (ID 2464, Items: 3)
+  -> Merging: 'Brother Charles X D O Sam' (ID 3026, Items: 1)
+
+Cluster Master: 'Miray Bad Boy' (ID 2474, Items: 3)
+  -> Merging: 'Miray Badboy' (ID 3283, Items: 2)
+  -> Merging: 'Miray Badboy Ft Small Rapper' (ID 3959, Items: 1)
+  -> Merging: 'Miray Bad Boy X Vaila Bank' (ID 3270, Items: 0)
+
+Cluster Master: 'LP Shady' (ID 2476, Items: 1)
+  -> Merging: 'LP Shaady' (ID 3291, Items: 1)
+
+Cluster Master: 'Aston Pilipili X Kyali Pro' (ID 3975, Items: 1)
+  -> Merging: 'Aston Pilipili X Coxson Kabaka' (ID 2480, Items: 1)
+  -> Merging: 'Astonpilipili X Free Man X Kabaka X Lati K' (ID 3170, Items: 1)
+
+Cluster Master: 'Mikhi Focus Ft Vaddy Pro' (ID 2724, Items: 1)
+  -> Merging: 'Mikhi Focus Ft Kyali Pro' (ID 4163, Items: 1)
+  -> Merging: 'Mikhi Focus Ft Heavenz Man' (ID 2495, Items: 1)
+
+Cluster Master: 'King J.I.C' (ID 2517, Items: 4)
+  -> Merging: 'King J.I.C X Sammix B.I.' (ID 4065, Items: 1)
+
+Cluster Master: 'Allanz Matic Ug' (ID 2669, Items: 3)
+  -> Merging: 'Allanz Matic Ug X LD' (ID 4127, Items: 1)
+  -> Merging: 'Allanz Matic Ug Ft Tooro X Bunyoro All Stars' (ID 2515, Items: 1)
+
+Cluster Master: 'King Young' (ID 2539, Items: 4)
+  -> Merging: 'King Young Ft Star Y' (ID 4179, Items: 1)
+  -> Merging: 'King Young Ft Kyam Dey' (ID 4170, Items: 1)
+  -> Merging: 'King Young Ft Young Fresh' (ID 2535, Items: 1)
+
+Cluster Master: 'Asante Pirwoth' (ID 4234, Items: 6)
+  -> Merging: 'Asante Pirwoth Ft Emma' (ID 2554, Items: 1)
+
+Cluster Master: 'King Father UG' (ID 2672, Items: 2)
+  -> Merging: 'King Father UG Ft Fat A' (ID 4192, Items: 1)
+  -> Merging: 'King Father UG ft Less Buoy De Thunder' (ID 2564, Items: 1)
+
+Cluster Master: 'Swagg Dee' (ID 2878, Items: 6)
+  -> Merging: 'Swagg Dee Ft Kaga Boy' (ID 4211, Items: 1)
+  -> Merging: 'PoSwagg Dee Ft Kaga Boy X VSDI' (ID 2967, Items: 1)
+  -> Merging: 'Swagg Dee X Okoro Boy X Coolest King X Jacob Malley' (ID 2633, Items: 1)
+
+Cluster Master: 'Kyali Pro' (ID 2639, Items: 4)
+  -> Merging: 'Kyali Pro X Mikhi Focus' (ID 4162, Items: 1)
+  -> Merging: 'Kyali Pro X Aston Pilipili' (ID 3974, Items: 1)
+
+Cluster Master: 'Lil Sky Ug' (ID 2670, Items: 1)
+  -> Merging: 'Lil Sky Ug Ft O4 Dabi' (ID 4048, Items: 1)
+
+Cluster Master: 'Jeniffer Apa Yesu' (ID 2744, Items: 2)
+  -> Merging: 'Jennifer Apa Yesu' (ID 3468, Items: 2)
+
+Cluster Master: 'Jm Powel' (ID 3286, Items: 1)
+  -> Merging: 'Mp Powel X Crown Music' (ID 4422, Items: 1)
+  -> Merging: 'Jm Powel X Extravegaz X Flow Rotator' (ID 3515, Items: 1)
+
+Cluster Master: 'CS James' (ID 2747, Items: 1)
+  -> Merging: 'CS James Ft Queen Nema' (ID 3917, Items: 1)
+
+Cluster Master: 'MC Radiator' (ID 2771, Items: 2)
+  -> Merging: 'MC Radiata' (ID 2945, Items: 1)
+
+Cluster Master: 'Freego Blaze Ft King Nation' (ID 3996, Items: 2)
+  -> Merging: 'Freego Blaze X Billo' (ID 2635, Items: 1)
+
+Cluster Master: 'Astrid Gee' (ID 2644, Items: 2)
+  -> Merging: 'Astrid Gee X Lil Joax' (ID 4121, Items: 1)
+
+Cluster Master: 'Rubber King' (ID 4216, Items: 2)
+  -> Merging: 'Rubber King X Pepolistical' (ID 4294, Items: 1)
+  -> Merging: 'Rubber King Ft Collina Pepo' (ID 2652, Items: 1)
+  -> Merging: 'Rubber King Ft Nicomatic pro' (ID 3498, Items: 1)
+
+Cluster Master: 'Ama G X Brain Force' (ID 2663, Items: 2)
+  -> Merging: 'Ama G' (ID 3911, Items: 1)
+
+Cluster Master: 'Br Ronald' (ID 2906, Items: 2)
+  -> Merging: 'Bro Ronald' (ID 2665, Items: 2)
+
+Cluster Master: 'Fred Nangai' (ID 2673, Items: 1)
+  -> Merging: 'Fred Nangai ft Cash Jay' (ID 4091, Items: 1)
+
+Cluster Master: 'DJ Bondy Ug Ft Monopoly' (ID 3427, Items: 4)
+  -> Merging: 'DJ Bondy Ug' (ID 2691, Items: 2)
+  -> Merging: 'DJ Bondy Ug Ft Khappa Fella' (ID 3055, Items: 1)
+
+Cluster Master: 'Brother Lameck' (ID 2693, Items: 3)
+  -> Merging: 'Brother Lameck Ft Pat Breezy' (ID 3952, Items: 1)
+
+Cluster Master: 'Lucky Moon' (ID 2716, Items: 1)
+  -> Merging: 'Lucky Moon Ft Allstar' (ID 3028, Items: 1)
+
+Cluster Master: 'CK Clause' (ID 2727, Items: 4)
+  -> Merging: 'CK Clause X Aston Steve' (ID 3326, Items: 1)
+  -> Merging: 'CK Clause Ft Sundee Promotion' (ID 3109, Items: 1)
+
+Cluster Master: 'Jordan Da Rapper' (ID 2758, Items: 3)
+  -> Merging: 'Jordan De Rapper Ft Sasha Fouchu' (ID 3527, Items: 1)
+
+Cluster Master: 'Sniper Man X Brenda K2' (ID 2914, Items: 2)
+  -> Merging: 'Sniper man' (ID 2765, Items: 1)
+
+Cluster Master: 'King Frazy' (ID 2774, Items: 2)
+  -> Merging: 'King Frazy Ft X Luoboy' (ID 2957, Items: 1)
+
+Cluster Master: 'Rhino Boy' (ID 3333, Items: 2)
+  -> Merging: 'Rhino Boy Ft Funny Nakol' (ID 2775, Items: 1)
+  -> Merging: 'Rhino Boy X King Soma UG' (ID 2938, Items: 1)
+
+Cluster Master: 'Boifriendz' (ID 2777, Items: 1)
+  -> Merging: 'Boifriendz X Heavenz Man' (ID 3502, Items: 1)
+
+Cluster Master: 'Minster Acoborn' (ID 2801, Items: 0)
+  -> Merging: 'Minister Acoborn' (ID 3943, Items: 0)
+
+Cluster Master: 'Better Boy' (ID 2806, Items: 3)
+  -> Merging: 'Better Boy X Astro Lifa' (ID 4209, Items: 1)
+
+Cluster Master: 'Mozzey Slimkey X M Dino' (ID 2811, Items: 1)
+  -> Merging: 'Mozzey Slimkey Ft Laxy Gang' (ID 2904, Items: 1)
+
+Cluster Master: 'Dj Duncan' (ID 2820, Items: 10)
+  -> Merging: 'DJ Duncan Ft Trizo Trizo X Rosh Frequency' (ID 4116, Items: 1)
+
+Cluster Master: 'Smart K' (ID 3192, Items: 3)
+  -> Merging: 'Smart K ft Haida' (ID 2847, Items: 1)
+
+Cluster Master: 'Bobi Dee' (ID 3479, Items: 5)
+  -> Merging: 'Bobi Dee X Kay Jackson' (ID 2918, Items: 1)
+  -> Merging: 'Bobi Dee X Kevin Zhaky' (ID 4026, Items: 1)
+
+Cluster Master: 'Noelbeats' (ID 2927, Items: 2)
+  -> Merging: 'Noelbeats X Sama Vybz' (ID 4150, Items: 1)
+  -> Merging: 'Noelbeats X Monk Siza' (ID 4152, Items: 1)
+  -> Merging: 'Noelbeats X Chacha X STK' (ID 4153, Items: 1)
+  -> Merging: 'Noelbeats ft Rasport X DJ Frank' (ID 4149, Items: 1)
+
+Cluster Master: 'Cyborg' (ID 4005, Items: 1)
+  -> Merging: 'Cyborg X King Lion' (ID 2933, Items: 1)
+
+Cluster Master: 'Fresh Cover' (ID 2937, Items: 8)
+  -> Merging: 'Fresh Cover Ft Trigger Man' (ID 3298, Items: 2)
+  -> Merging: 'Fresh Cover Ft Black Cover Dee' (ID 3047, Items: 1)
+
+Cluster Master: 'Minister Missionary Ft Sammix Pro' (ID 2977, Items: 2)
+  -> Merging: 'Minister Missionary' (ID 2969, Items: 1)
+
+Cluster Master: 'Mr Vumbi' (ID 3131, Items: 1)
+  -> Merging: 'Mr Vumbi Ft Ntasha' (ID 3945, Items: 1)
+  -> Merging: 'Mr Vumbi Ft Asko BwoyQ' (ID 2884, Items: 1)
+
+Cluster Master: 'Lito Kid' (ID 3905, Items: 2)
+  -> Merging: 'Lito Kid X Don Popular' (ID 3471, Items: 1)
+  -> Merging: 'Lito Kid Ft Baby Junior X Small Rapper' (ID 2893, Items: 1)
+
+Cluster Master: 'Evangelist Trever' (ID 2910, Items: 1)
+  -> Merging: 'Evangelist Trever Ft Crystal Hope' (ID 3127, Items: 1)
+
+Cluster Master: 'Brother Jeremy' (ID 2926, Items: 4)
+  -> Merging: 'Brother Jeremy ft Lworombe' (ID 3210, Items: 1)
+
+Cluster Master: 'Tyzak' (ID 2930, Items: 8)
+  -> Merging: 'Tyzak Ft Free Boy' (ID 4218, Items: 1)
+  -> Merging: 'Tyzak Ft Rappa Blutit' (ID 4219, Items: 1)
+
+Cluster Master: 'King Soma Ft Rhino Boy' (ID 2941, Items: 1)
+  -> Merging: 'King Soma UG Ft Rhino Boy' (ID 2939, Items: 1)
+
+Cluster Master: 'Anj Bad Gyal' (ID 3165, Items: 2)
+  -> Merging: 'Anj Badgyal' (ID 2985, Items: 1)
+
+Cluster Master: 'Evangelist Sigima' (ID 2989, Items: 9)
+  -> Merging: 'Evagelist Sigima' (ID 3071, Items: 2)
+  -> Merging: 'Evagelist Sigima Ft Jagen Don Jerry' (ID 3328, Items: 1)
+
+Cluster Master: 'Joanitah D Gyal' (ID 3239, Items: 1)
+  -> Merging: 'Joanitah Da Gyal' (ID 2990, Items: 1)
+  -> Merging: 'Joanitah De Gyal' (ID 3508, Items: 1)
+
+Cluster Master: 'Pretty Sco' (ID 4110, Items: 1)
+  -> Merging: 'Pretty Sco X Navi M Dee' (ID 3005, Items: 1)
+
+Cluster Master: 'Dj Charleston' (ID 3190, Items: 2)
+  -> Merging: 'Dj Charleston Ft LB Sweaz X Trevour Bao' (ID 3013, Items: 1)
+
+Cluster Master: 'Dj Jackie 256' (ID 3195, Items: 7)
+  -> Merging: 'Dj Jackie 256 Ft Fidodido' (ID 3406, Items: 2)
+  -> Merging: 'Dj Jackie 256  Ft  Os Touch' (ID 3288, Items: 1)
+  -> Merging: 'Dj Jackie 256 Ft LB Sweaz X Trevour' (ID 3015, Items: 1)
+  -> Merging: 'Dj Jackie 256  Ft Vano Vino X Elton Lover Boy' (ID 3357, Items: 1)
+
+Cluster Master: 'Jabi Tic' (ID 3029, Items: 0)
+  -> Merging: 'Jabi Tich' (ID 3477, Items: 0)
+
+Cluster Master: 'Doctor Steward IP Man' (ID 3489, Items: 15)
+  -> Merging: 'Doctor Steward IP Man X Pretty Sko' (ID 4193, Items: 1)
+  -> Merging: 'Doctor Steward IP Man X Kasie Kasie' (ID 3039, Items: 1)
+
+Cluster Master: 'Frere Uyirwoth' (ID 3048, Items: 9)
+  -> Merging: 'Frere Uyirwoth JPC Ft arts Pacifique' (ID 4041, Items: 1)
+
+Cluster Master: 'Star Kid Ft Lil joax' (ID 3923, Items: 1)
+  -> Merging: 'Star Kid Ft Master Lucky' (ID 3087, Items: 1)
+
+Cluster Master: 'Moze Stylo' (ID 3090, Items: 1)
+  -> Merging: 'Moze Stylo X Dr Love' (ID 3891, Items: 1)
+  -> Merging: 'Mozey Stylo X Tcorner Boyz X Dj Jackie 256' (ID 4282, Items: 1)
+
+Cluster Master: 'SlimFit Nation' (ID 3931, Items: 3)
+  -> Merging: 'Slimfit Nation ft Lion Lee' (ID 3121, Items: 1)
+
+Cluster Master: 'King Danzo' (ID 3137, Items: 3)
+  -> Merging: 'King Denzo' (ID 3355, Items: 3)
+
+Cluster Master: 'King Crown' (ID 4186, Items: 3)
+  -> Merging: 'King Crown Ft Big Swagg' (ID 3169, Items: 1)
+
+Cluster Master: 'Phantom Elly' (ID 1515, Items: 2)
+  -> Merging: 'Phantom Elly Ft WizB Mazina Allstar' (ID 3233, Items: 0)
+
+Cluster Master: 'Tempo Temple' (ID 4045, Items: 0)
+  -> Merging: 'Tempo Temple X Vela Pricila' (ID 3539, Items: 0)
+  -> Merging: 'Tempo Temple X Grace Vela Pricila' (ID 3099, Items: 0)
+
+Cluster Master: 'Sin Boy X Jampino' (ID 4094, Items: 2)
+  -> Merging: 'Sin Boy' (ID 4095, Items: 1)
+  -> Merging: 'Sin Boy Ft Gampino' (ID 3102, Items: 1)
+
+Cluster Master: 'Fresh Kabs' (ID 3108, Items: 5)
+  -> Merging: 'Fresh Kabs Ft Collina Pepo' (ID 4144, Items: 1)
+
+Cluster Master: 'City Boy Salah' (ID 311, Items: 1)
+  -> Merging: 'City Boy Salah Ft J Saffi' (ID 3111, Items: 0)
+
+Cluster Master: 'Young Jay Official' (ID 4014, Items: 0)
+  -> Merging: 'Young Jay Official X Bazil' (ID 3113, Items: 0)
+
+Cluster Master: 'Rojo Man' (ID 3146, Items: 1)
+  -> Merging: 'Rojo Man X Angel Man' (ID 4099, Items: 1)
+  -> Merging: 'Rojo Man Ft Avono All star' (ID 4092, Items: 1)
+
+Cluster Master: 'AraTabz' (ID 3149, Items: 3)
+  -> Merging: 'AraTabz X Giga Bytes' (ID 4139, Items: 1)
+  -> Merging: 'AraTabz Ft Keens Benja' (ID 3318, Items: 1)
+
+Cluster Master: 'Rich B' (ID 3426, Items: 1)
+  -> Merging: 'Rich Boy' (ID 3175, Items: 1)
+
+Cluster Master: 'Blessed Boy X Dicky Wine' (ID 3339, Items: 1)
+  -> Merging: 'Blessed Boy Ft Dicky Wine' (ID 3177, Items: 1)
+
+Cluster Master: 'Kiss Boy' (ID 4166, Items: 1)
+  -> Merging: 'Kins Boy X OSB De Mighty' (ID 3185, Items: 1)
+
+Cluster Master: 'DJ Rogerscho Ug' (ID 3201, Items: 4)
+  -> Merging: 'DJ Rogerscho' (ID 4213, Items: 1)
+
+Cluster Master: 'Bro Miracle Charles' (ID 3276, Items: 2)
+  -> Merging: 'Bro Miracle Charles X Bro Jimmy' (ID 4255, Items: 1)
+
+Cluster Master: 'Ragz Aya Doo' (ID 3284, Items: 0)
+  -> Merging: 'Ragz Ayadoo X Dton Fyn Geng' (ID 3275, Items: 0)
+
+Cluster Master: 'Kaga X Asa' (ID 3311, Items: 1)
+  -> Merging: 'Kaga ft Okapi' (ID 4068, Items: 1)
+
+Cluster Master: 'Smarto Fresh Geng' (ID 3360, Items: 1)
+  -> Merging: 'Smarto Fresh Geng X Slimfit Nation' (ID 4263, Items: 1)
+
+Cluster Master: 'Spais Wagwan 20 Boyz' (ID 3363, Items: 1)
+  -> Merging: 'Spais Wagwan 20 Boyz X Rapp D Fy' (ID 3364, Items: 1)
+
+Cluster Master: 'King Mizzo D' Rapkomanda' (ID 3968, Items: 1)
+  -> Merging: 'King Mizzo The Rap Komanda' (ID 3386, Items: 1)
+
+Cluster Master: 'Amudhan OK' (ID 3431, Items: 1)
+  -> Merging: 'Amudhan OK Ft Bobby Events' (ID 3396, Items: 1)
+
+Cluster Master: 'Dj Gravy-J De Sideway' (ID 3412, Items: 1)
+  -> Merging: 'Dj Gravy-J de Sdieway' (ID 3414, Items: 1)
+
+Cluster Master: 'Brother Raymond' (ID 3483, Items: 1)
+  -> Merging: 'Brother Raymond Ft Pickup' (ID 4047, Items: 1)
+
+Cluster Master: 'MK Mopa' (ID 3488, Items: 1)
+  -> Merging: 'MP Mopao' (ID 3495, Items: 1)
+  -> Merging: 'Mk Mopao Ft Chosen Boy' (ID 4261, Items: 1)
+
+Cluster Master: 'Brinola Ft Lillian Kin' (ID 3490, Items: 2)
+  -> Merging: 'Brinola' (ID 4257, Items: 1)
+
+Cluster Master: 'Jeezy 128' (ID 939, Items: 9)
+  -> Merging: 'Jeezy 128 Ft Riaso Boy' (ID 4087, Items: 0)
+
+Cluster Master: 'Astro Lifa' (ID 4072, Items: 2)
+  -> Merging: 'Astro Lifa X Better Boy' (ID 4208, Items: 1)
+  -> Merging: 'Astro Lifa X Laxzy Mover' (ID 3822, Items: 1)
+
+Cluster Master: 'Pop J' (ID 3847, Items: 3)
+  -> Merging: 'Pop J Ft Whistle Kid' (ID 3833, Items: 1)
+
+Cluster Master: 'Royal Da King' (ID 3954, Items: 1)
+  -> Merging: 'Royal Da King Ft Fresh Blood' (ID 3949, Items: 1)
+  -> Merging: 'Royal Da King X Peace Blood X Fresh Blood' (ID 3950, Items: 1)
+
+Cluster Master: 'Jenko Music' (ID 4140, Items: 1)
+  -> Merging: 'Jenko Music X Bro David X US Soul X Slim Diva' (ID 3970, Items: 1)
+
+Cluster Master: 'Messiah' (ID 4013, Items: 1)
+  -> Merging: 'Messiah Ft Kyali Pro' (ID 4232, Items: 1)
+
+Cluster Master: 'Black Dollar' (ID 4066, Items: 3)
+  -> Merging: 'Black Dollar ft Quinzy' (ID 4285, Items: 1)
+
+Cluster Master: 'Nigo Kiss' (ID 4077, Items: 0)
+  -> Merging: 'Nigo Kiss X Ok James' (ID 4076, Items: 0)
+
+Cluster Master: 'Pujar Macos Pml' (ID 4142, Items: 1)
+  -> Merging: 'Pujar Macos Pml Ft Maxcom Trak' (ID 4138, Items: 1)
+
+Cluster Master: 'Dimagneto' (ID 4215, Items: 3)
+  -> Merging: 'Dimagneto Ft Davis Kano X Alvo Misty' (ID 4225, Items: 1)
+
+[DRY RUN] Would perform 1000 merges.

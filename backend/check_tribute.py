@@ -7,5 +7,7 @@ url = os.environ.get("SUPABASE_URL")
 key = os.environ.get("SUPABASE_SERVICE_KEY")
 supabase = create_client(url, key)
 
-res = supabase.table("songs").select("id", count="exact").execute()
-print(f"Total songs in DB: {res.count}")
+res = supabase.table("songs").select("*").ilike("title", "%tribute%").execute()
+print("Songs with Tribute in title:")
+for r in res.data:
+    print(r)

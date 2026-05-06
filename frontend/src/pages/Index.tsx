@@ -8,6 +8,7 @@ import { usePlayer } from "@/context/PlayerContext";
 import { Song } from "@/lib/mock-data";
 import OnboardingCarousel from "@/components/OnboardingCarousel";
 import SongCover from "@/components/SongCover";
+import { Skeleton } from "@/components/Skeleton";
 
 const ONBOARDED_KEY = "plugg.onboarded.v1";
 type Tab = "tracks" | "playlists";
@@ -27,14 +28,14 @@ const Index = () => {
   };
 
   // Data Hooks
-  const { songs: trendingSongs } = useTrendingSongs();
-  const { songs: newSongs } = useNewSongs();
+  const { songs: trendingSongs, isLoading: isTrendingLoading } = useTrendingSongs();
+  const { songs: newSongs, isLoading: isNewLoading } = useNewSongs();
   const { songs: topHits } = useTopHits();
-  const { data: topArtists } = useTopArtists();
+  const { data: topArtists, isLoading: isArtistsLoading } = useTopArtists();
   
-  const { songs: trendingPlaylists } = useTrendingPlaylists();
+  const { songs: trendingPlaylists, isLoading: isTrendingPlaylistsLoading } = useTrendingPlaylists();
   const { songs: newPlaylists } = useNewPlaylists();
-  const { songs: topPlaylists } = useTopPlaylists();
+  const { songs: topPlaylists, isLoading: isTopPlaylistsLoading } = useTopPlaylists();
 
   useEffect(() => {
     try {
@@ -135,8 +136,19 @@ const Index = () => {
                   <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold bg-secondary/50 px-2 py-0.5 rounded-full">Top 5</span>
                 </div>
                 <div className="flex gap-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory px-0 pb-2">
-                  {trendingSongs.slice(0, 5).map((song, i) => (
-                    <motion.button
+                  {isTrendingLoading ? (
+                    Array.from({ length: 5 }).map((_, i) => (
+                      <div key={`skel-h-${i}`} className="snap-start shrink-0 w-44 group text-left">
+                        <Skeleton className="aspect-square w-full rounded-[32px] bg-secondary/30" />
+                        <div className="mt-3 px-1 space-y-2">
+                          <Skeleton className="h-3 w-3/4 bg-secondary/30" />
+                          <Skeleton className="h-2 w-1/2 bg-secondary/30" />
+                        </div>
+                      </div>
+                    ))
+                  ) : (
+                    trendingSongs.slice(0, 5).map((song, i) => (
+                      <motion.button
                       key={song.id}
                       whileTap={{ scale: 0.96 }}
                       onClick={() => handlePlay(song, trendingSongs)}
@@ -162,15 +174,29 @@ const Index = () => {
                         </p>
                       </div>
                     </motion.button>
-                  ))}
+                    ))
+                  )}
                 </div>
               </section>
               {/* ── Trending now Card ── */}
               <section className="bg-secondary/30 rounded-[32px] p-6 border border-white/5 shadow-xl">
                 <h2 className="text-xl font-bold tracking-tight mb-5">Trending now</h2>
                 <div className="space-y-5">
-                  {trendingSongs.slice(0, 5).map((song, i) => (
-                    <button key={song.id} onClick={() => handlePlay(song, trendingSongs)} className="w-full flex items-center gap-4 group text-left">
+                  {isTrendingLoading ? (
+                    Array.from({ length: 5 }).map((_, i) => (
+                      <div key={`skel-t-${i}`} className="w-full flex items-center gap-4">
+                        <Skeleton className="w-3 h-3 bg-secondary/30" />
+                        <Skeleton className="w-12 h-12 rounded-xl shrink-0 bg-secondary/30" />
+                        <div className="flex-1 min-w-0 space-y-2">
+                          <Skeleton className="h-3 w-3/4 bg-secondary/30" />
+                          <Skeleton className="h-2 w-1/2 bg-secondary/30" />
+                        </div>
+                        <Skeleton className="w-6 h-2 bg-secondary/30" />
+                      </div>
+                    ))
+                  ) : (
+                    trendingSongs.slice(0, 5).map((song, i) => (
+                      <button key={song.id} onClick={() => handlePlay(song, trendingSongs)} className="w-full flex items-center gap-4 group text-left">
                       <span className="w-4 text-[13px] font-bold text-muted-foreground/40 tabular-nums">{i + 1}</span>
                       <div className="w-12 h-12 rounded-xl overflow-hidden shrink-0 border border-white/5 bg-secondary/50 shadow-lg">
                         <SongCover song={song} size={48} rounded="none" className="w-full h-full object-cover transition-transform group-active:scale-95" />
@@ -183,7 +209,8 @@ const Index = () => {
                         {formatViews(song.plays)}
                       </div>
                     </button>
-                  ))}
+                    ))
+                  )}
                 </div>
               </section>
 
@@ -191,8 +218,20 @@ const Index = () => {
               <section className="bg-secondary/30 rounded-[32px] p-6 border border-white/5 shadow-xl">
                 <h2 className="text-xl font-bold tracking-tight mb-5">Who to listen to</h2>
                 <div className="space-y-5">
-                  {topArtists?.slice(0, 5).map((artist) => (
-                    <div key={artist.id} className="flex items-center gap-4">
+                  {isArtistsLoading ? (
+                    Array.from({ length: 5 }).map((_, i) => (
+                      <div key={`skel-a-${i}`} className="flex items-center gap-4">
+                        <Skeleton className="w-12 h-12 rounded-full shrink-0 bg-secondary/30" />
+                        <div className="flex-1 min-w-0 space-y-2">
+                          <Skeleton className="h-3 w-2/3 bg-secondary/30" />
+                          <Skeleton className="h-2 w-1/3 bg-secondary/30" />
+                        </div>
+                        <Skeleton className="w-16 h-8 rounded-full bg-secondary/30" />
+                      </div>
+                    ))
+                  ) : (
+                    topArtists?.slice(0, 5).map((artist) => (
+                      <div key={artist.id} className="flex items-center gap-4">
                       <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center overflow-hidden flex-shrink-0 border border-white/5 shadow-lg">
                         {artist.image_url ? (
                           <img src={artist.image_url} alt={artist.name} className="w-full h-full object-cover" />
@@ -206,7 +245,8 @@ const Index = () => {
                       </div>
                       <button onClick={() => navigate(`/profile/${artist.id}`)} className="bg-primary text-primary-foreground px-5 py-2 rounded-full text-xs font-black hover:scale-105 active:scale-95 transition-all shadow-md">View</button>
                     </div>
-                  ))}
+                    ))
+                  )}
                 </div>
               </section>
 
@@ -214,8 +254,20 @@ const Index = () => {
               <section className="bg-secondary/30 rounded-[32px] p-6 border border-white/5 shadow-xl">
                 <h2 className="text-xl font-bold tracking-tight mb-5">New Uploads</h2>
                 <div className="space-y-5">
-                  {newSongs.slice(0, 5).map((song) => (
-                    <button key={song.id} onClick={() => handlePlay(song, newSongs)} className="w-full flex items-center gap-4 group text-left">
+                  {isNewLoading ? (
+                    Array.from({ length: 5 }).map((_, i) => (
+                      <div key={`skel-n-${i}`} className="w-full flex items-center gap-4">
+                        <Skeleton className="w-12 h-12 rounded-xl shrink-0 bg-secondary/30" />
+                        <div className="flex-1 min-w-0 space-y-2">
+                          <Skeleton className="h-3 w-3/4 bg-secondary/30" />
+                          <Skeleton className="h-2 w-1/2 bg-secondary/30" />
+                        </div>
+                        <Skeleton className="w-6 h-2 bg-secondary/30" />
+                      </div>
+                    ))
+                  ) : (
+                    newSongs.slice(0, 5).map((song) => (
+                      <button key={song.id} onClick={() => handlePlay(song, newSongs)} className="w-full flex items-center gap-4 group text-left">
                       <div className="w-12 h-12 rounded-xl overflow-hidden shrink-0 border border-white/5 bg-secondary/50 shadow-lg">
                         <SongCover song={song} size={48} rounded="none" className="w-full h-full object-cover transition-transform group-active:scale-95" />
                       </div>
@@ -227,7 +279,8 @@ const Index = () => {
                         New
                       </div>
                     </button>
-                  ))}
+                    ))
+                  )}
                 </div>
               </section>
             </motion.div>
@@ -249,8 +302,19 @@ const Index = () => {
                   <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold bg-secondary/50 px-2 py-0.5 rounded-full">Top 5</span>
                 </div>
                 <div className="flex gap-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory px-0 pb-2">
-                  {trendingPlaylists.slice(0, 5).map((pl, i) => (
-                    <motion.button
+                  {isTrendingPlaylistsLoading ? (
+                    Array.from({ length: 5 }).map((_, i) => (
+                      <div key={`skel-p-${i}`} className="snap-start shrink-0 w-44 group text-left">
+                        <Skeleton className="aspect-square w-full rounded-[32px] bg-secondary/30" />
+                        <div className="mt-3 px-1 space-y-2">
+                          <Skeleton className="h-3 w-3/4 bg-secondary/30" />
+                          <Skeleton className="h-2 w-1/2 bg-secondary/30" />
+                        </div>
+                      </div>
+                    ))
+                  ) : (
+                    trendingPlaylists.slice(0, 5).map((pl, i) => (
+                      <motion.button
                       key={pl.id}
                       whileTap={{ scale: 0.96 }}
                       onClick={() => handlePlay(pl, trendingPlaylists)}
@@ -276,15 +340,29 @@ const Index = () => {
                         </p>
                       </div>
                     </motion.button>
-                  ))}
+                    ))
+                  )}
                 </div>
               </section>
               {/* ── Trending Mixes Card ── */}
               <section className="bg-secondary/30 rounded-[32px] p-6 border border-white/5 shadow-xl">
                 <h2 className="text-xl font-bold tracking-tight mb-5">Trending Mixes</h2>
                 <div className="space-y-5">
-                  {trendingPlaylists.slice(0, 5).map((pl, i) => (
-                    <button key={pl.id} onClick={() => handlePlay(pl, trendingPlaylists)} className="w-full flex items-center gap-4 group text-left">
+                  {isTrendingPlaylistsLoading ? (
+                    Array.from({ length: 5 }).map((_, i) => (
+                      <div key={`skel-tp-${i}`} className="w-full flex items-center gap-4">
+                        <Skeleton className="w-3 h-3 bg-secondary/30" />
+                        <Skeleton className="w-12 h-12 rounded-xl shrink-0 bg-secondary/30" />
+                        <div className="flex-1 min-w-0 space-y-2">
+                          <Skeleton className="h-3 w-3/4 bg-secondary/30" />
+                          <Skeleton className="h-2 w-1/2 bg-secondary/30" />
+                        </div>
+                        <Skeleton className="w-6 h-2 bg-secondary/30" />
+                      </div>
+                    ))
+                  ) : (
+                    trendingPlaylists.slice(0, 5).map((pl, i) => (
+                      <button key={pl.id} onClick={() => handlePlay(pl, trendingPlaylists)} className="w-full flex items-center gap-4 group text-left">
                       <span className="w-4 text-[13px] font-bold text-muted-foreground/40 tabular-nums">{i + 1}</span>
                       <div className="w-12 h-12 rounded-xl overflow-hidden shrink-0 border border-white/5 bg-secondary/50 shadow-lg">
                         <SongCover song={pl} size={48} rounded="none" className="w-full h-full object-cover transition-transform group-active:scale-95" />
@@ -297,7 +375,8 @@ const Index = () => {
                         {formatViews(pl.plays)}
                       </div>
                     </button>
-                  ))}
+                    ))
+                  )}
                 </div>
               </section>
 
@@ -305,8 +384,21 @@ const Index = () => {
               <section className="bg-secondary/30 rounded-[32px] p-6 border border-white/5 shadow-xl">
                 <h2 className="text-xl font-bold tracking-tight mb-5">Most Downloaded</h2>
                 <div className="space-y-5">
-                  {topPlaylists.slice(0, 5).map((pl, i) => (
-                    <button key={pl.id} onClick={() => handlePlay(pl, topPlaylists)} className="w-full flex items-center gap-4 group text-left">
+                  {isTopPlaylistsLoading ? (
+                    Array.from({ length: 5 }).map((_, i) => (
+                      <div key={`skel-mp-${i}`} className="w-full flex items-center gap-4">
+                        <Skeleton className="w-3 h-3 bg-secondary/30" />
+                        <Skeleton className="w-12 h-12 rounded-xl shrink-0 bg-secondary/30" />
+                        <div className="flex-1 min-w-0 space-y-2">
+                          <Skeleton className="h-3 w-3/4 bg-secondary/30" />
+                          <Skeleton className="h-2 w-1/2 bg-secondary/30" />
+                        </div>
+                        <Skeleton className="w-6 h-2 bg-secondary/30" />
+                      </div>
+                    ))
+                  ) : (
+                    topPlaylists.slice(0, 5).map((pl, i) => (
+                      <button key={pl.id} onClick={() => handlePlay(pl, topPlaylists)} className="w-full flex items-center gap-4 group text-left">
                       <span className="w-4 text-[13px] font-bold text-muted-foreground/40 tabular-nums">{i + 1}</span>
                       <div className="w-12 h-12 rounded-xl overflow-hidden shrink-0 border border-white/5 bg-secondary/50 shadow-lg">
                         <SongCover song={pl} size={48} rounded="none" className="w-full h-full object-cover transition-transform group-active:scale-95" />
@@ -319,7 +411,8 @@ const Index = () => {
                         {pl.downloads} DL
                       </div>
                     </button>
-                  ))}
+                    ))
+                  )}
                 </div>
               </section>
             </motion.div>

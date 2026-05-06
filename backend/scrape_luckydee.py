@@ -2,12 +2,11 @@ import requests
 from bs4 import BeautifulSoup
 import re
 
-url = "https://www.westnilebiz.com/audios"
+url = "https://www.westnilebiz.com/audios/artist/24/luckydee"
 res = requests.get(url)
 soup = BeautifulSoup(res.text, 'html.parser')
+
 links = soup.find_all('a', href=lambda h: h and '/audio/' in h)
-ids = []
+print(f"Songs on artist page: {len(links)}")
 for l in links:
-    match = re.search(r'/audio/(\d+)', l.get('href'))
-    if match: ids.append(int(match.group(1)))
-print("Max ID on /audios:", max(ids) if ids else None)
+    print(f"  {l.get_text(strip=True)} -> {l.get('href')}")

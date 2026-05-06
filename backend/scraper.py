@@ -456,16 +456,26 @@ async def scrape_newsongs_sequentially():
                     batch_ids.append(sid)
             
             if not batch_ids:
-                print("    🏁 No valid song IDs found in this batch.")
-                break
-                
+                print("    ⚠️ No valid song IDs parsed in this batch. Attempting to extract next ID from links...")
+                link_ids = []
+                for l in potential_links:
+                    m = re.search(r'/audio/(\d+)', l.get('href', ''))
+                    if m:
+                        link_ids.append(int(m.group(1)))
+                if link_ids:
+                    next_id = min(link_ids)
+                else:
+                    print("    🏁 No valid audio links found in this batch. Exiting deep scrape.")
+                    break
+            else:
+                next_id = min(batch_ids)
+
             # Update current_id to the smallest ID found
-            next_id = min(batch_ids)
             if next_id >= int(current_id):
-                # This could happen if the batch only contains the same ID or if the server repeats data
-                # We should stop to avoid infinite loops
-                print(f"    ⚠️ Warning: ID did not decrease ({current_id} -> {next_id}). Breaking.")
-                break
+                print(f"    ⚠️ Warning: ID did not decrease ({current_id} -> {next_id}). Decrementing manually by 16.")
+                next_id = int(current_id) - 16
+                if next_id <= 0:
+                    break
                 
             current_id = str(next_id)
             total_new += len(batch_ids)
