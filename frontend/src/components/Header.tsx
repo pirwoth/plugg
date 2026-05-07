@@ -1,5 +1,5 @@
-import { Menu } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import logo from "@/assets/logo.png";
 
 interface HeaderProps {
   onSearch: () => void;
@@ -17,7 +17,7 @@ const Header = ({ onRefresh }: HeaderProps) => {
         className="flex items-center"
         aria-label="Plugg Home"
       >
-        <img src="/logo.png" alt="plugg" className="h-6 w-auto opacity-90" />
+        <span className="text-2xl font-bold tracking-tight text-foreground">plugg</span>
       </button>
     </header>
   );

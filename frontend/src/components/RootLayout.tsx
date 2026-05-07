@@ -3,7 +3,7 @@ import { useLocation, useNavigate, Outlet } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import DesktopSidebar from "@/components/DesktopSidebar";
 import RightPanel from "@/components/RightPanel";
-import Header from "@/components/Header";
+import Header from "./Header";
 import MiniPlayer from "@/components/MiniPlayer";
 import FullPlayer from "@/components/FullPlayer";
 import MobileTabBar from "@/components/MobileTabBar";

@@ -132,7 +132,7 @@ const Auth = () => {
       <main className="flex-1 flex flex-col items-center justify-center px-5 py-10">
         <div className="w-full max-w-sm">
           <div className="text-center mb-8">
-            <img src="/logo.png" alt="Plugg" className="h-12 w-auto mx-auto" />
+            <span className="text-4xl font-bold tracking-tight text-foreground">plugg</span>
             <p className="text-sm text-muted-foreground mt-3">
               {mode === "signin" ? "Welcome back, listener." : "Join the community of listeners."}
             </p>
