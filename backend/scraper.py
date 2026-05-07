@@ -2,7 +2,6 @@ import re
 import asyncio
 from urllib.parse import urljoin
 from bs4 import BeautifulSoup
-from playwright.async_api import async_playwright
 import config
 import requests
 from database import (
@@ -73,19 +72,19 @@ async def infer_genre(artist_name: str, bio: str, song_titles: list) -> str:
         return None
 
 
-async def scrape_artists_from_letter(letter: str, page):
+async def scrape_artists_from_letter(letter: str):
     """Extract all artist names and profile URLs from a letter page."""
     url = f"{config.BASE_URL}/artistes/letter/{letter}.html"
     print(f"  🔤 Letter {letter.upper()}: {url}")
 
-    await page.goto(url, wait_until='domcontentloaded', timeout=60000)
     try:
-        await page.wait_for_selector('div.all-artistes', timeout=10000)
-    except Exception:
-        print(f"  No artists found for {letter.upper()}.")
+        response = await asyncio.to_thread(requests.get, url, headers=config.HEADERS, timeout=30)
+        response.raise_for_status()
+    except Exception as e:
+        print(f"  Error fetching {letter.upper()}: {e}")
         return []
 
-    html = await page.content()
+    html = response.text
     soup = BeautifulSoup(html, 'html.parser')
 
     artists = []
@@ -113,39 +112,28 @@ async def scrape_artists_from_letter(letter: str, page):
     return artists
 
 
-async def process_artists_batch(artists, browser):
+async def process_artists_batch(artists):
     """Process a list of artists with limited concurrency."""
     semaphore = asyncio.Semaphore(config.MAX_CONCURRENT_ARTISTS)
 
     async def sem_scrape(artist):
         async with semaphore:
-            await scrape_artist_page(artist['url'], artist['name'], artist['image_url'], browser)
+            await scrape_artist_page(artist['url'], artist['name'], artist['image_url'])
 
     print(f"  🚀 Processing {len(artists)} artists (Concurrency: {config.MAX_CONCURRENT_ARTISTS})...")
     tasks = [sem_scrape(artist) for artist in artists]
     await asyncio.gather(*tasks)
 
 
-async def scrape_artist_page(artist_url: str, artist_name: str, artist_image_url: str, browser):
-    """Open a new tab, scrape bio and all songs, then close."""
-    context = await browser.new_context()
-    page = await context.new_page()
+async def scrape_artist_page(artist_url: str, artist_name: str, artist_image_url: str):
+    """Fetch artist page via requests, scrape bio and all songs."""
     try:
         print(f"    🎤 {artist_name}")
 
-        # Use domcontentloaded to avoid waiting for ads/images
-        await page.goto(artist_url, wait_until='domcontentloaded', timeout=60000)
-
-        # Wait for a heading that confirms page loaded
-        try:
-            await page.wait_for_selector(
-                f'h1:has-text("{artist_name}"), h2:has-text("{artist_name}")',
-                timeout=10000
-            )
-        except:
-            await page.wait_for_selector('h1, h2', timeout=5000)
-
-        html = await page.content()
+        response = await asyncio.to_thread(requests.get, artist_url, headers=config.HEADERS, timeout=30)
+        response.raise_for_status()
+        
+        html = response.text
         soup = BeautifulSoup(html, 'html.parser')
 
         # --- Biography ---
@@ -275,9 +263,6 @@ async def scrape_artist_page(artist_url: str, artist_name: str, artist_image_url
 
     except Exception as e:
         print(f"    ❌ Error processing {artist_name}: {e}")
-    finally:
-        await page.close()
-        await context.close()
 
 
 
@@ -490,7 +475,7 @@ async def scrape_newsongs_sequentially():
     print(f"🎉 Deep Scrape complete! Extracted {total_new} items.")
 
 
-async def scrape_audios_from_letter(letter: str, page):
+async def scrape_audios_from_letter(letter: str):
     """Fallback sweep to extract audios directly and implicitly create missing artists.
     Supports pagination via ?page=N.
     """
@@ -500,15 +485,16 @@ async def scrape_audios_from_letter(letter: str, page):
         print(f"  🎶 Audio Sweep {letter.upper()} (Page {p_num}): {url}")
 
         try:
-            res = await page.goto(url, wait_until='domcontentloaded', timeout=60000)
-            if res.status == 404:
+            response = await asyncio.to_thread(requests.get, url, headers=config.HEADERS, timeout=30)
+            if response.status_code == 404:
                 print(f"    No more pages for {letter.upper()}.")
                 break
+            response.raise_for_status()
         except Exception as e:
             print(f"  Failed to load audios for {letter.upper()} P{p_num}: {e}")
             break
 
-        html = await page.content()
+        html = response.text
         soup = BeautifulSoup(html, 'html.parser')
         
         songs = soup.find_all('div', class_='col-lg-2') or soup.find_all('div', class_='col-lg-3')
