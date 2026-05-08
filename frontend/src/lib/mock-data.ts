@@ -3,6 +3,7 @@ export type Genre = "afrobeats" | "dancehall" | "gospel" | "hiphop" | "rnb" | "p
 export interface Song {
   id: string;
   artistName: string;
+  artistId?: string;
   artistAvatar: string;
   title: string;
   plays: number;

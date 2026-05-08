@@ -1,0 +1,19 @@
+{
+  "rewrites": [
+    {
+      "source": "/profile/:id",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(?i).*(bot|whatsapp|facebook|twitter|linkedin|skype|telegram|discord).*"
+        }
+      ],
+      "destination": "/api/social-profile?id=:id"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

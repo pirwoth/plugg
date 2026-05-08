@@ -240,7 +240,7 @@ const ArtistDashboard = () => {
             <p className="text-sm text-muted-foreground">Register to start uploading your music.</p>
             <div>
               <label className="text-xs font-semibold text-muted-foreground uppercase tracking-wider px-1">
-                Mobile Money number for tips
+                Phone Number
               </label>
               <div className="relative mt-1.5">
                 <Smartphone size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground" />
@@ -248,9 +248,6 @@ const ArtistDashboard = () => {
                   onChange={(e) => setProfile({ ...profile, phone: e.target.value })}
                   className="w-full pl-11 pr-4 py-3 rounded-xl bg-secondary text-foreground placeholder:text-muted-foreground text-sm outline-none focus:ring-2 focus:ring-primary/50" />
               </div>
-              <p className="text-[11px] text-muted-foreground mt-1.5 px-1">
-                Tips from fans will be sent here via MTN MoMo or Airtel Money.
-              </p>
             </div>
             <input type="text" placeholder="Full Name" value={profile.name}
               onChange={(e) => setProfile({ ...profile, name: e.target.value })}

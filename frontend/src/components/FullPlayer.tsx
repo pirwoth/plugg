@@ -1,11 +1,10 @@
 import { useState } from "react";
-import { Play, Pause, SkipBack, SkipForward, Heart, ChevronDown, Share2, Shuffle, Repeat, Volume2, Gift } from "lucide-react";
+import { Play, Pause, SkipBack, SkipForward, Heart, ChevronDown, Share2, Shuffle, Repeat, Volume2 } from "lucide-react";
 import { Song, getArtistIdByName } from "@/lib/mock-data";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { toast } from "@/hooks/use-toast";
 import SongCover from "@/components/SongCover";
-import TipModal from "@/components/TipModal";
 
 interface FullPlayerProps {
   song: Song;
@@ -33,13 +32,18 @@ import { usePlayer } from "@/context/PlayerContext";
 const FullPlayer = ({ song, isPlaying, onToggle, onNext, onPrev, onLike, onClose }: FullPlayerProps) => {
   const { currentTime, duration, seek, volume, setVolume, isShuffle, isRepeat, toggleShuffle, toggleRepeat } = usePlayer();
   const navigate = useNavigate();
-  const [tipOpen, setTipOpen] = useState(false);
 
   const handleShare = async () => {
+    let shareUrl = window.location.href;
+    const artistId = song.artistId || getArtistIdByName(song.artistName);
+    if (artistId) {
+      shareUrl = `${window.location.origin}/profile/${artistId}`;
+    }
+
     const shareData = {
       title: song.title,
       text: `Check out ${song.title} by ${song.artistName} on Plugg`,
-      url: window.location.href,
+      url: shareUrl,
     };
     try {
       if (navigator.share) {

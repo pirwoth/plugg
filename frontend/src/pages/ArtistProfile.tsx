@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { ArrowLeft, Music, UserPlus, UserCheck, BadgeCheck, Gift } from "lucide-react";
+import { ArrowLeft, Music, UserPlus, UserCheck, BadgeCheck } from "lucide-react";
 import { GENRE_LABEL, GENRE_EMOJI, Genre, Song } from "@/lib/mock-data";
 import SongItem from "@/components/SongItem";
 import ClampedBio from "@/components/ClampedBio";
-import TipModal from "@/components/TipModal";
 import { usePlayer } from "@/context/PlayerContext";
 import { toast } from "@/hooks/use-toast";
 import { useQuery } from "@tanstack/react-query";
@@ -13,7 +12,6 @@ import { supabase } from "@/lib/supabase";
 const ArtistProfile = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [tipOpen, setTipOpen] = useState(false);
 
   const { currentSong, isPlaying, play, followedArtists, toggleFollow } = usePlayer();
 
@@ -40,6 +38,7 @@ const ArtistProfile = () => {
         const latestStats = statsArray.sort((a, b) => new Date(b.date || 0).getTime() - new Date(a.date || 0).getTime())[0] || { plays: 0, downloads: 0 };
         return {
           id: row.id.toString(),
+          artistId: id,
           artistName: artistData.name,
           artistAvatar: artistData.image_url || `https://api.dicebear.com/7.x/initials/svg?seed=${encodeURIComponent(artistData.name)}&backgroundColor=d97706`,
           title: row.title || 'Unknown Title',
@@ -175,13 +174,6 @@ const ArtistProfile = () => {
               {isFollowing ? <UserCheck size={16} /> : <UserPlus size={16} />}
               {isFollowing ? "Following" : "Follow"}
             </button>
-            <button
-              onClick={() => toast({ title: "Coming soon", description: "Tipping via MTN MoMo and Airtel is currently under development!" })}
-              className="flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-semibold border border-primary/40 text-primary hover:bg-primary/10 transition-colors"
-            >
-              <Gift size={16} />
-              Send tip
-            </button>
           </div>
         </div>
       </div>
@@ -207,7 +199,6 @@ const ArtistProfile = () => {
         )}
       </div>
 
-      <TipModal open={tipOpen} onClose={() => setTipOpen(false)} artistName={artist.name} />
     </div>
   );
 };

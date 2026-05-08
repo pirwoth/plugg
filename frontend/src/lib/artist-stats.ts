@@ -5,8 +5,6 @@ export interface SongStats {
   plays: number;
   likes: number;
   downloads: number;
-  tips: number;
-  tipAmount: number; // in USD
   comments: number;
   shares: number;
 }
@@ -15,8 +13,6 @@ export interface ArtistStats {
   totalPlays: number;
   totalLikes: number;
   totalDownloads: number;
-  totalTips: number;
-  totalTipAmount: number;
   totalComments: number;
   totalShares: number;
   followers: number;
@@ -41,11 +37,9 @@ function statsForSong(song: Song): SongStats {
   const plays = song.plays;
   const likes = song.likes;
   const downloads = song.downloads;
-  const tips = intFrom(song.id, 1, 0, Math.max(2, Math.floor(plays / 400)));
-  const tipAmount = tips === 0 ? 0 : tips * intFrom(song.id, 2, 1, 8);
   const comments = intFrom(song.id, 3, 0, Math.floor(plays / 30));
   const shares = intFrom(song.id, 4, 0, Math.floor(plays / 50));
-  return { song, plays, likes, downloads, tips, tipAmount, comments, shares };
+  return { song, plays, likes, downloads, comments, shares };
 }
 
 export function getArtistStats(artistName: string): ArtistStats {
@@ -55,8 +49,6 @@ export function getArtistStats(artistName: string): ArtistStats {
   const totalPlays = songStats.reduce((a, s) => a + s.plays, 0);
   const totalLikes = songStats.reduce((a, s) => a + s.likes, 0);
   const totalDownloads = songStats.reduce((a, s) => a + s.downloads, 0);
-  const totalTips = songStats.reduce((a, s) => a + s.tips, 0);
-  const totalTipAmount = songStats.reduce((a, s) => a + s.tipAmount, 0);
   const totalComments = songStats.reduce((a, s) => a + s.comments, 0);
   const totalShares = songStats.reduce((a, s) => a + s.shares, 0);
 
@@ -79,8 +71,6 @@ export function getArtistStats(artistName: string): ArtistStats {
     totalPlays,
     totalLikes,
     totalDownloads,
-    totalTips,
-    totalTipAmount,
     totalComments,
     totalShares,
     followers,
