@@ -244,11 +244,11 @@ async def scrape_artist_page(artist_url: str, artist_name: str, artist_image_url
 
             # Store in DB — route to the right table
             if is_dj_playlist(title):
-                rec_id = upsert_playlist(artist_id, title, cover_url, song_url)
+                rec_id, is_new = upsert_playlist(artist_id, title, cover_url, song_url)
                 upsert_playlist_stats(rec_id, plays, downloads)
                 print(f"      🎵 [PLAYLIST] {title} ({plays} plays)")
             else:
-                rec_id = upsert_song(artist_id, title, cover_url, song_url)
+                rec_id, is_new = upsert_song(artist_id, title, cover_url, song_url)
                 upsert_stats(rec_id, plays, downloads)
                 print(f"      🎵 {title} ({plays} plays)")
             
@@ -268,11 +268,11 @@ async def scrape_artist_page(artist_url: str, artist_name: str, artist_image_url
 
 def process_audio_card(container):
     """Parses a single audio card and saves it to the database.
-    Returns the extracted song ID if successful.
+    Returns (extracted_song_id, is_new).
     """
     link_elem = container.find('a', href=re.compile(r'/audio/\d+'))
     if not link_elem:
-        return None
+        return None, False
         
     href = link_elem.get('href')
     song_url = urljoin(config.BASE_URL, href)
@@ -304,7 +304,7 @@ def process_audio_card(container):
         title_text = link_elem.text.strip()
         
     if not title_text:
-        return song_id_int
+        return song_id_int, False
         
     # Parse Artist and Song Name from title (format: "SongName - ArtistName")
     artist_name = "Unknown Artist"
@@ -340,17 +340,18 @@ def process_audio_card(container):
         else: downloads = int(float(d))
         
     # Db integration
+    is_new = False
     try:
         if is_dj_playlist(title_text):
-            rec_id = upsert_playlist(artist_id, title_text, cover_url, song_url)
+            rec_id, is_new = upsert_playlist(artist_id, title_text, cover_url, song_url)
             upsert_playlist_stats(rec_id, plays, downloads)
         else:
-            song_id = upsert_song(artist_id, title_text, cover_url, song_url)
-            upsert_stats(song_id, plays, downloads)
+            song_id_db, is_new = upsert_song(artist_id, title_text, cover_url, song_url)
+            upsert_stats(song_id_db, plays, downloads)
     except Exception as e:
         print(f"      ❌ Ghost sync error for {artist_name}: {e}")
         
-    return song_id_int
+    return song_id_int, is_new
 
 
 async def scrape_newsongs_sequentially():
@@ -373,10 +374,18 @@ async def scrape_newsongs_sequentially():
         last_loaded_id_val = last_loaded_id_input.get('value')
         print(f"  Starting from ID: {last_loaded_id_val}")
         
+        consecutive_existing = 0
+        MAX_CONSECUTIVE_EXISTING = 50
+        
         # Initial scrape of the first batch on the page
         containers = soup.find_all('div', class_=re.compile(r'col-lg-2|col-lg-3|col-md-3|col-sm-4'))
         for c in containers:
-            process_audio_card(c)
+            sid, is_new = process_audio_card(c)
+            if sid:
+                if is_new:
+                    consecutive_existing = 0
+                else:
+                    consecutive_existing += 1
             
     except Exception as e:
         print(f"  ❌ Failed to fetch initial deep scrape page: {e}")
@@ -436,9 +445,17 @@ async def scrape_newsongs_sequentially():
 
             batch_ids = []
             for c in containers:
-                sid = process_audio_card(c)
+                sid, is_new = process_audio_card(c)
                 if sid:
                     batch_ids.append(sid)
+                    if is_new:
+                        consecutive_existing = 0
+                    else:
+                        consecutive_existing += 1
+            
+            if consecutive_existing >= MAX_CONSECUTIVE_EXISTING:
+                print(f"    🏁 Short-circuit: Hit {consecutive_existing} existing songs in a row. Deep Scrape finished.")
+                break
             
             if not batch_ids:
                 print("    ⚠️ No valid song IDs parsed in this batch. Attempting to extract next ID from links...")
@@ -507,13 +524,20 @@ async def scrape_audios_from_letter(letter: str):
             
         print(f"      Matched {len(songs)} audio cards.")
         page_count = 0
+        new_count = 0
         
         for container in songs:
-            process_audio_card(container)
+            sid, is_new = process_audio_card(container)
+            if is_new:
+                new_count += 1
             page_count += 1
                 
         total_count += page_count
-        print(f"      ✅ Page {p_num} swept: {page_count} items. Total so far: {total_count}")
+        print(f"      ✅ Page {p_num} swept: {page_count} items ({new_count} new). Total so far: {total_count}")
+        
+        if new_count == 0:
+            print(f"    🏁 Short-circuit: No new songs found on this page. Stopping sweep for {letter.upper()}.")
+            break
         
         # If we got significantly less than a full page (usually 100), we've reached the end
         if len(songs) < 50:

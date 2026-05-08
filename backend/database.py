@@ -59,7 +59,7 @@ def update_artist_genre(artist_id: int, genre: str):
     except Exception as e:
         print(f"  ⚠️ Failed to update genre for artist {artist_id}: {e}")
 
-def upsert_song(artist_id: int, title: str, cover_url: str, page_url: str) -> int:
+def upsert_song(artist_id: int, title: str, cover_url: str, page_url: str) -> tuple[int, bool]:
     try:
         existing = supabase.table('songs').select('id', 'title', 'cover_url').eq('page_url', page_url).execute()
         if existing.data:
@@ -74,7 +74,7 @@ def upsert_song(artist_id: int, title: str, cover_url: str, page_url: str) -> in
             if update_data:
                 supabase.table('songs').update(update_data).eq('id', song_id).execute()
                 
-            return song_id
+            return song_id, False
             
         new_song = supabase.table('songs').insert({
             'title': title,
@@ -82,7 +82,7 @@ def upsert_song(artist_id: int, title: str, cover_url: str, page_url: str) -> in
             'cover_url': cover_url,
             'page_url': page_url
         }).execute()
-        return new_song.data[0]['id']
+        return new_song.data[0]['id'], True
     except Exception as e:
         print(f"  ⚠️ Song DB error: {e}")
         raise
@@ -100,8 +100,8 @@ def upsert_stats(song_id: int, plays: int, downloads: int):
 # Playlist (DJ Mixtape) helpers
 # ────────────────────────────────────────────────────────────
 
-def upsert_playlist(artist_id: int, title: str, cover_url: str, page_url: str) -> int:
-    """Insert or update a DJ mixtape, return its ID."""
+def upsert_playlist(artist_id: int, title: str, cover_url: str, page_url: str) -> tuple[int, bool]:
+    """Insert or update a DJ mixtape, return its (ID, is_new)."""
     try:
         existing = supabase.table('playlists').select('id', 'title', 'cover_url').eq('page_url', page_url).execute()
         if existing.data:
@@ -113,7 +113,7 @@ def upsert_playlist(artist_id: int, title: str, cover_url: str, page_url: str) -
                 update_data['cover_url'] = cover_url
             if update_data:
                 supabase.table('playlists').update(update_data).eq('id', playlist_id).execute()
-            return playlist_id
+            return playlist_id, False
 
         new_pl = supabase.table('playlists').insert({
             'title': title,
@@ -121,7 +121,7 @@ def upsert_playlist(artist_id: int, title: str, cover_url: str, page_url: str) -
             'cover_url': cover_url,
             'page_url': page_url
         }).execute()
-        return new_pl.data[0]['id']
+        return new_pl.data[0]['id'], True
     except Exception as e:
         print(f'  ⚠️ Playlist DB error: {e}')
         raise
