@@ -32,11 +32,19 @@ const AuthContext = createContext<AuthContextValue | null>(null);
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
   const [session, setSession] = useState<Session | null>(null);
-  const [profile, setProfile] = useState<Profile | null>(() => {
-    const saved = localStorage.getItem("plugg_cached_profile");
-    return saved ? JSON.parse(saved) : null;
-  });
+  const [profile, setProfile] = useState<Profile | null>(null);
   const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (typeof localStorage !== "undefined") {
+      const saved = localStorage.getItem("plugg_cached_profile");
+      if (saved) {
+        try {
+          setProfile(JSON.parse(saved));
+        } catch {}
+      }
+    }
+  }, []);
 
   const fetchProfile = useCallback(async (uid: string, authUser?: import("@supabase/supabase-js").User) => {
     const { data } = await supabase.from("profiles").select("*").eq("id", uid).single();

@@ -1,5 +1,5 @@
 import { Home, Search, Heart, User, Settings } from "lucide-react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { usePathname, useRouter } from "next/navigation";
 import { useAuth } from "@/context/AuthContext";
 
 interface DesktopSidebarProps {
@@ -9,17 +9,17 @@ interface DesktopSidebarProps {
 }
 
 const DesktopSidebar = ({ onSearch, onOpenFavorites, onRefresh }: DesktopSidebarProps) => {
-  const navigate = useNavigate();
-  const location = useLocation();
+  const router = useRouter();
+  const pathname = usePathname();
   const { user, profile } = useAuth();
   const displayName = profile?.full_name || user?.email?.split("@")[0] || "Listener";
 
   const items = [
-    { icon: Home, label: "Home", onClick: onRefresh, active: location.pathname === "/" },
-    { icon: Search, label: "Search", onClick: onSearch, active: location.pathname === "/search" },
-    { icon: Heart, label: "Favourites", onClick: onOpenFavorites, active: location.pathname === "/favorites" },
-    { icon: User, label: "Profile", onClick: () => navigate("/account"), active: location.pathname === "/account" },
-    { icon: Settings, label: "Settings", onClick: () => navigate("/settings"), active: location.pathname === "/settings" },
+    { icon: Home, label: "Home", onClick: onRefresh, active: pathname === "/" },
+    { icon: Search, label: "Search", onClick: onSearch, active: pathname === "/search" },
+    { icon: Heart, label: "Favourites", onClick: onOpenFavorites, active: pathname === "/favorites" },
+    { icon: User, label: "Profile", onClick: () => router.push("/account"), active: pathname === "/account" },
+    { icon: Settings, label: "Settings", onClick: () => router.push("/settings"), active: pathname === "/settings" },
   ];
 
   return (
@@ -65,7 +65,7 @@ const DesktopSidebar = ({ onSearch, onOpenFavorites, onRefresh }: DesktopSidebar
       {/* Guest button remains at bottom, but user info is now in nav */}
       {!user && (
         <button
-          onClick={() => navigate("/auth")}
+          onClick={() => router.push("/auth")}
           className="mt-4 px-5 py-2.5 rounded-full bg-primary text-primary-foreground text-sm font-semibold hover:opacity-90 transition-opacity self-start"
         >
           <span className="hidden xl:inline">Sign in</span>

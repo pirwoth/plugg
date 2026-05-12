@@ -1,5 +1,5 @@
 import { Search, Music } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import { useTrendingSongs, useAllSongs } from "@/hooks/useSongs";
 import { Skeleton } from "@/components/Skeleton";
 
@@ -14,7 +14,7 @@ function formatCount(n: number): string {
 }
 
 const RightPanel = ({ onSearch }: RightPanelProps) => {
-  const navigate = useNavigate();
+  const router = useRouter();
   // Fetch live trending songs instead of mock data
   const { songs: liveTrendingSongs, isLoading: trendingLoading } = useTrendingSongs();
   const topTrending = liveTrendingSongs ? liveTrendingSongs.slice(0, 5) : [];
@@ -112,7 +112,7 @@ const RightPanel = ({ onSearch }: RightPanelProps) => {
           suggestedArtists.map((artist) => (
             <button
               key={artist.id}
-              onClick={() => navigate(`/profile/${artist.id}`)}
+              onClick={() => router.push(`/profile/${artist.id}`)}
               className="flex items-center gap-3 w-full px-4 py-3 hover:bg-secondary/50 transition-colors text-left"
             >
               <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">

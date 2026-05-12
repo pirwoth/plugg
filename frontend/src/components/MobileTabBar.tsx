@@ -1,5 +1,5 @@
 import { Home, Search, Heart, User } from "lucide-react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { usePathname, useRouter } from "next/navigation";
 import { useAuth } from "@/context/AuthContext";
 
 interface MobileTabBarProps {
@@ -7,8 +7,8 @@ interface MobileTabBarProps {
 }
 
 const MobileTabBar = (_: MobileTabBarProps) => {
-  const navigate = useNavigate();
-  const location = useLocation();
+  const router = useRouter();
+  const pathname = usePathname();
   const { user, profile } = useAuth();
 
   const tabs = [
@@ -25,13 +25,13 @@ const MobileTabBar = (_: MobileTabBarProps) => {
     >
       <ul className="max-w-lg mx-auto flex items-center justify-around px-2 py-2">
         {tabs.map(({ icon: Icon, label, path }) => {
-          const active = location.pathname === path;
+          const active = pathname === path;
           const isProfile = path === "/account";
 
           return (
             <li key={path} className="flex-1">
               <button
-                onClick={() => navigate(path)}
+                onClick={() => router.push(path)}
                 aria-label={label}
                 aria-current={active ? "page" : undefined}
                 className={`w-full flex items-center justify-center py-2 rounded-full transition-colors ${

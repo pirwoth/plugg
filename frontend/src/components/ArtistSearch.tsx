@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Search, X, Music } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { supabase } from "@/lib/supabase";
 import { useQuery } from "@tanstack/react-query";
@@ -10,7 +10,7 @@ interface ArtistSearchProps {
 }
 
 const ArtistSearch = ({ onClose }: ArtistSearchProps) => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const [query, setQuery] = useState("");
 
   const { data: artists, isLoading } = useQuery({
@@ -63,7 +63,7 @@ const ArtistSearch = ({ onClose }: ArtistSearchProps) => {
             key={artist.id}
             onClick={() => {
               onClose();
-              navigate(`/profile/${artist.id}`);
+              router.push(`/profile/${artist.id}`);
             }}
             className="flex items-center gap-3 px-4 py-3 w-full text-left border-b border-border active:bg-secondary/50 transition-colors"
           >

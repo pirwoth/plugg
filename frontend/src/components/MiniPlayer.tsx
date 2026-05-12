@@ -3,7 +3,7 @@ import { Play, Pause, X, SkipBack, SkipForward, Shuffle, Repeat, Volume2, Maximi
 import { Song, getArtistIdByName } from "@/lib/mock-data";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePlayer } from "@/context/PlayerContext";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import SongCover from "@/components/SongCover";
 import HeartBurstButton from "@/components/HeartBurstButton";
 
@@ -23,13 +23,13 @@ function formatTime(sec: number): string {
 
 const MiniPlayer = ({ song, isPlaying, onToggle, onClose, onExpand }: MiniPlayerProps) => {
   const { next, prev, toggleLike, currentTime, duration, seek, volume, setVolume, isShuffle, isRepeat, toggleShuffle, toggleRepeat } = usePlayer();
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const goToArtist = (e: React.MouseEvent) => {
     e.stopPropagation();
     if (!song) return;
     const id = getArtistIdByName(song.artistName);
-    if (id) navigate(`/artist/${id}`);
+    if (id) router.push(`/profile/${id}`);
   };
 
   if (!song) return null;

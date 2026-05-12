@@ -36,34 +36,42 @@ interface PlayerContextValue {
 const PlayerContext = createContext<PlayerContextValue | null>(null);
 
 export const PlayerProvider = ({ children }: { children: ReactNode }) => {
-  const [currentSong, setCurrentSong] = useState<Song | null>(() => {
-    try {
-      const saved = localStorage.getItem("plugg_current_song");
-      return saved ? JSON.parse(saved) : null;
-    } catch { return null; }
-  });
+  const [currentSong, setCurrentSong] = useState<Song | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [showFullPlayer, setShowFullPlayer] = useState(false);
   const [likedSongs, setLikedSongs] = useState<Set<string>>(new Set());
   const [followedArtists, setFollowedArtists] = useState<Set<string>>(new Set());
-  const [playlist, setPlaylist] = useState<Song[]>(() => {
-    try {
-      const saved = localStorage.getItem("plugg_playlist");
-      return saved ? JSON.parse(saved) : [];
-    } catch { return []; }
-  });
-  const savedTime = (() => { try { return parseFloat(localStorage.getItem("plugg_current_time") || "0") || 0; } catch { return 0; } })();
-  const [currentTime, setCurrentTime] = useState(savedTime);
+  const [playlist, setPlaylist] = useState<Song[]>([]);
+  const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [volumeState, setVolumeState] = useState(0.7);
   const [isShuffle, setIsShuffle] = useState(false);
   const [isRepeat, setIsRepeat] = useState(false);
-  const [recentlyPlayed, setRecentlyPlayed] = useState<Song[]>(() => {
-    try {
-      const saved = localStorage.getItem("plugg_recently_played");
-      return saved ? JSON.parse(saved) : [];
-    } catch { return []; }
-  });
+  const [recentlyPlayed, setRecentlyPlayed] = useState<Song[]>([]);
+
+  useEffect(() => {
+    if (typeof localStorage !== "undefined") {
+      try {
+        const savedSong = localStorage.getItem("plugg_current_song");
+        if (savedSong) setCurrentSong(JSON.parse(savedSong));
+      } catch {}
+
+      try {
+        const savedPlaylist = localStorage.getItem("plugg_playlist");
+        if (savedPlaylist) setPlaylist(JSON.parse(savedPlaylist));
+      } catch {}
+
+      try {
+        const savedTime = parseFloat(localStorage.getItem("plugg_current_time") || "0");
+        if (savedTime && !isNaN(savedTime)) setCurrentTime(savedTime);
+      } catch {}
+
+      try {
+        const savedRecently = localStorage.getItem("plugg_recently_played");
+        if (savedRecently) setRecentlyPlayed(JSON.parse(savedRecently));
+      } catch {}
+    }
+  }, []);
   const [favoriteSongs, setFavoriteSongs] = useState<Song[]>([]);
   const [loadingFavorites, setLoadingFavorites] = useState(false);
   const [hasCountedCurrent, setHasCountedCurrent] = useState(false);

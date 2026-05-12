@@ -2,7 +2,7 @@ import { Play, Download } from "lucide-react";
 import { Song, getArtistIdByName } from "@/lib/mock-data";
 import { supabaseUrl } from "@/lib/supabase";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import SongCover from "@/components/SongCover";
 import EqualizerBars from "@/components/EqualizerBars";
 
@@ -31,11 +31,11 @@ function formatDate(date: Date): string {
 }
 
 const SongItem = ({ song, isPlaying, onPlay, index, rank }: SongItemProps) => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const artistId = getArtistIdByName(song.artistName);
   const goToArtist = (e: React.MouseEvent) => {
     e.stopPropagation();
-    if (artistId) navigate(`/profile/${artistId}`);
+    if (artistId) router.push(`/profile/${artistId}`);
   };
   return (
     <motion.div

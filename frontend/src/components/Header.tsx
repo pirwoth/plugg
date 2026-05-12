@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+
 import logo from "@/assets/logo.png";
 
 interface HeaderProps {
@@ -8,7 +8,7 @@ interface HeaderProps {
 }
 
 const Header = ({ onRefresh }: HeaderProps) => {
-  const navigate = useNavigate();
+
 
   return (
     <header className="lg:hidden flex items-center justify-between px-5 py-4 bg-background border-b border-border/50 sticky top-0 z-50">

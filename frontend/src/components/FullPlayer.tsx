@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Play, Pause, SkipBack, SkipForward, Heart, ChevronDown, Share2, Shuffle, Repeat, Volume2 } from "lucide-react";
 import { Song, getArtistIdByName } from "@/lib/mock-data";
 import { motion, AnimatePresence } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import { toast } from "@/hooks/use-toast";
 import SongCover from "@/components/SongCover";
 
@@ -31,7 +31,7 @@ import { usePlayer } from "@/context/PlayerContext";
 
 const FullPlayer = ({ song, isPlaying, onToggle, onNext, onPrev, onLike, onClose }: FullPlayerProps) => {
   const { currentTime, duration, seek, volume, setVolume, isShuffle, isRepeat, toggleShuffle, toggleRepeat } = usePlayer();
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const handleShare = async () => {
     let shareUrl = window.location.href;
@@ -61,7 +61,7 @@ const FullPlayer = ({ song, isPlaying, onToggle, onNext, onPrev, onLike, onClose
     const id = getArtistIdByName(song.artistName);
     if (id) {
       onClose();
-      navigate(`/artist/${id}`);
+      router.push(`/profile/${id}`);
     }
   };
 
